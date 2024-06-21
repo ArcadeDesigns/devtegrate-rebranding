@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% include 'components/navbar.html' %}
+        {% include 'components/notification.html' %}
+
+        <div class="ctn-section-header">
+            <img class="ctn-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Image">
+
+            <div class="secondary-ctn-section-header-ctn">
+                <h2>Microsoft Azure</h2>
+                <p>Home&nbsp;&nbsp;-&nbsp;&nbsp;Azure Professional Tips and Guide.</p>
+            </div>
+        </div>
+
+        <div class="inspiration-content-log">
+            <div class="inspiration-content-log-text">
+                <span>Development. Integration. Devtegrate.</span>
+                <h2>How we Use Azure at Devtegrate</h2>
+                
+                <p>Azure is Microsoft solution to Amazon Web Service. Both are classified as Cloud Service provider and a major platform used by DevOps Engineer. Microsoft Azure also comprises of various tools and just as instances are launched on AWS and other Cloud Platforms Azure takes pride in this actions as well with Automation actions done by AKS (Azure Kubernetes Service).</p>
+                
+                <p>However there is a very thin line between Azure and AWS. First would be relating to the price of both platform; it is believed that AWS charges higher when compared to Azure prices for Service provided which are relatively lower. Also AWS framework lack basic assignment of tools and representation using basic concept when compared to Azure framework, which makes it easy to identify and navigate through with little complexities.</p>
+
+                <p>Azure also possesses a lower regional reach when compared to AWS, but makes up for this short coming by being the more preferred choice for app service environment creation and ensuring Scalability and Automation. DevOps is fast becoming an important part of technological advancement, with various organizations seeking cloud integration for their software due to its efficiency, reliability and effectiveness.</p>
+            </div>
+
+            <div class="inspiration-content-log-img">
+                <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718895701/devtegrate-brand/0_MCsGhkvp8vwPqKFH_ui2k6r.png" alt="Devtegrate Cloud Images">
+            </div>
+        </div>
+
+        {% include 'components/footer.html' %}
+    {% endblock %}

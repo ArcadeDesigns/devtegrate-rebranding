@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% include 'components/navbar.html' %}
+        {% include 'components/notification.html' %}
+
+        <div class="ctn-section-header">
+            <img class="ctn-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Image">
+
+            <div class="ctn-section-header-ctn">
+                <h2>Devtegrate Cloud Integration</h2>
+                <h3>Overview of Devtegrate's Cloud Services</h3>
+                <div class="btn-ctn">
+                    <a href="">
+                        <span>More Information</span>
+                        <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+
+                    <a href="">
+                        <span>Consult with us?</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ctn-section-two">
+            <div class="ctn-section-two-cn">
+                <h2>Understanding Devtegrate Cloud Integration</h2>
+                <p>Devtegrate Cloud Services can help businesses with cloud integration by providing them with the tools and services they need to connect their cloud-based applications and services seamlessly. Devtegrate Cloud Services can help businesses with data integration, application integration, process integration, and hybrid integration through various methods such as ETL tools, APIs, or integration platforms. By leveraging cloud integration, businesses can optimize their operations, improve productivity, and provide better customer experiences.</p>
+
+                <p>Devtegrate Cloud Services is a cloud-based service that helps businesses manage their IT infrastructure and applications in the cloud. Cloud integration is an essential component of Devtegrate Cloud Services as it allows businesses to connect their cloud-based applications and services to share data and workflows seamlessly. Here are some ways Devtegrate Cloud Services can help businesses with cloud integration</p>
+            </div>
+
+            <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718723200/devtegrate-updates/Artboard_7_hsnpvj.png" alt="Devtegrate Cloud Images">
+        </div>
+
+        <div class="ctn-section-two-cn-ctn">
+            <div class="ctn-section-two-cn-ctn-box-ctn">
+                <div class="swiper-wrapper">
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Data Integration</h2>
+                        <p>Devtegrate Cloud Services can help businesses move data from one system or application to another through ETL tools, APIs, or webhooks. This can help businesses connect different databases, data warehouses, or data lakes in the cloud, enabling them to analyze and visualize data more effectively.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Application Integration</h2>
+                        <p>Devtegrate Cloud Services can help businesses connect cloud-based applications and services to create end-to-end workflows. For example, Devtegrate Cloud Services can help an e-commerce site integrate their order management system, payment gateway, and shipping carrier service to process and fulfill orders seamlessly.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Process Integration</h2>
+                        <p>Devtegrate Cloud Services can help businesses automate tasks and streamline operations by connecting different business processes and workflows. For example, Devtegrate Cloud Services can help a marketing team integrate their cloud-based CRM system and marketing automation platform to manage leads and campaigns more efficiently.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Hybrid Integration</h2>
+                        <p>Devtegrate Cloud Services can help businesses connect their cloud-based applications and services to on-premise systems, such as ERP or legacy applications. This can help businesses in enterprise environments where a mix of cloud and on-premise systems coexist, enabling them to manage their IT infrastructure and applications more effectively.</p>
+                    </div>
+                </div>
+
+                <ul class="control" id="custom-control">
+                    <li class="prev"><span class="material-symbols-outlined">chevron_left</span></li>
+                    <li class="next"><span class="material-symbols-outlined">chevron_right</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-banner">
+            <img class="footer-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Cloud Images">
+
+            <div class="footer-banner-content">
+                <h3>Devtegrate Cloud Services</h3>
+                <h2>Cloud Automation</h2>
+                <p>Devtegrate Cloud Services is a cutting-edge cloud-based solution that assists businesses in automating their IT infrastructure and applications in the cloud. The process of cloud automation is fundamental to Devtegrate Cloud Services as it allows businesses to optimize their IT operations and enhance efficiency. Learn about our cloud automation process.</p>
+
+                <a href="{{ url_for('cloud_automation') }}">
+                    <span>Cloud Automation</span>
+                    <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+            </div>
+            
+        </div>
+
+        {% include 'components/footer.html' %}
+    {% endblock %}

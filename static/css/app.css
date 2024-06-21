@@ -1,116 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-  font-family: "Poppins", sans-serif;
-  font-optical-sizing: auto;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -124,7 +18,7 @@
   /*variables Colors*/
   --primary-color: #FFFFFF;
   --secondary-color: #000000;
-  --tertiary-color: ------;
+  --tertiary-color: #1596F5;
   --background-color: ------;
   --text-color: #888888;
   --reserved-color: ------;
@@ -151,6 +45,12 @@ header {
   width: 100%;
   height: auto;
   padding: 10px;
+  background: rgba(100, 100, 100, .4);
+  backdrop-filter: saturate(180%) blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
 header nav {
@@ -198,8 +98,8 @@ header nav .ctn-cta .cta {
   color: var(--primary-color);
   font-size: var(--span-text);
   font-weight: 500;
-  border-radius: 50px;
-  padding: 15px 30px;
+  border-radius: 5px;
+  padding: 10px 30px;
   background-color: var(--tertiary-color);
 }
 
@@ -219,7 +119,273 @@ header nav ul li {
 
 header nav ul li a {
   text-decoration: none;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-size: var(--span-text);
   font-weight: 500;
+}
+
+header nav ul li a:hover {
+  color: var(--tertiary-color);
+}
+
+footer {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: var(--secondary-color);
+  padding: 5%;
+}
+
+.footer-header {
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 2% 0;
+}
+
+.footer-header img {
+  width: 150px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.footer-header-icon {
+  justify-content: flex-end;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
+.footer-header-icon li {
+  list-style: none;
+}
+
+.footer-header-icon li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: var(--p-text);
+  font-weight: 500;
+  padding: 5px;
+}
+
+.footer-header-line {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  border-radius: 10px;
+  padding: 1px;
+  background-color: var(--primary-color);
+}
+
+.footer-header-content {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding: 2% 0;
+}
+
+.footer-header-content-details {
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-right: 8%;
+}
+
+.footer-header-content-details h2 {
+  font-size: var(--medium-text);
+  font-weight: 700;
+  color: var(--tertiary-color);
+}
+
+.footer-header-content-details p {
+  font-size: var(--span-text);
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.footer-header-content-details a {
+  font-size: var(--span-text);
+  font-weight: 500;
+  color: var(--primary-color);
+  background-color: var(--tertiary-color);
+  color: var(--primary-color);
+  border-radius: 5px;
+  padding: 10px 50px;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  display: flex;
+}
+
+.footer-header-content-details a img {
+  width: 25px;
+  height: auto;
+  object-fit: scale-down;
+  padding-left: 5px;
+}
+
+.footer-header-content-link {
+  width: 60%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: minmax(-20px, auto);
+  grid-auto-flow: dense;
+  gap: 1em;
+}
+
+.footer-header-content-link li {
+  list-style: none;
+  padding: 10px;
+}
+
+.footer-header-content-link li a {
+  text-decoration: none;
+  font-size: var(--span-text);
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.footer-subscription-ctn {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-subscription-cn {
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2% 0;
+}
+
+.footer-subscription-cn h3 {
+  font-size: var(--p-text);
+  font-weight: 700;
+  color: var(--tertiary-color);
+}
+
+.footer-subscription-cn p {
+  font-size: var(--span-text);
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.footer-subscription-form {
+  justify-content: center;
+  align-items: flex-end;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-subscription-form form {
+  width: auto;
+  height: auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+}
+
+.footer-subscription-form form input {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+}
+
+.footer-subscription-form form button {
+  background-color: var(--tertiary-color);
+  font-size: var(--span-text);
+  font-weight: 500;
+  color: var(--primary-color);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+footer .span-text {
+  font-size: var(--span-text);
+  color: var(--primary-color);
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.drop-down span {
+  color: var(--primary-color);
+  font-size: var(--span-text);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.drop-down ul {
+  padding-left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  max-width: 300px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px auto;
+  height: auto;
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+  background: rgba(100, 100, 100, .4);
+  border-radius: 10px;
+  backdrop-filter: saturate(180%) blur(10px);
+  transition: all 1s ease;
+}
+
+.drop-down ul li {
+  padding: 10px;
+}
+
+.drop-down ul li a:hover {
+  color: var(--secondary-color);
+}
+
+.drop-down:hover ul {
+  display: flex;
+  opacity: 1;
+}
+
+.drop-down ul:hover {
+  background-color: var(--tertiary-color);
 }

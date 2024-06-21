@@ -5,11 +5,28 @@
 		</div>
 
 		<ul>
-			<li><a href="">Technology</a></li>
-			<li><a href="">Cloud Platform</a></li>
-			<li><a href="">Our Services</a></li>
-			<li><a href="">About Us</a></li>
-			<li><a href="">Contact Us</a></li>
+
+			<li class="drop-down">
+				<span>Technology</span>
+				<ul>
+					<li><a href="">Cloud Infrastructure</a></li>
+					<li><a href="">Cloud Computing</a></li>
+					<li><a href="">Cloud DevOps</a></li>
+					<li><a href="">Cloud Automation</a></li>
+					<li><a href="">Cloud Integration</a></li>
+				</ul>
+			</li>
+
+			<li class="drop-down">
+				<span>Cloud Platform</span>
+				<ul>
+					<li><a href="{{ url_for('aws') }}">Amazon Web Service</a></li>
+					<li><a href="{{ url_for('azure') }}">Microsoft Azure</a></li>
+					<li><a href="{{ url_for('gcp') }}">Google Cloud Service</a></li>
+				</ul>
+			</li>
+			<li><a href="{{ url_for('service') }}">Our Services</a></li>
+			<li><a href="{{ url_for('about') }}">About Us</a></li>
 		</ul>
 
 		<div class="ctn-cta">

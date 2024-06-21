@@ -133,11 +133,123 @@ def google_login():
     auth_url = f"{GOOGLE_AUTH_URL}?{'&'.join(f'{key}={value}' for key, value in params.items())}"
     return redirect(auth_url)
 
+####################################################################################################################################################################################
+####################################################################################################################################################################################
+####################################################################################################################################################################################
+####################################################################################################################################################################################
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html',
         title_tag='Devtegrate Cloud | Cloud Services | Cloud DevOps',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/cloud-integration', methods=['GET', 'POST'])
+def cloud_integration():
+    return render_template('pages/cloud-integration.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/cloud-automation', methods=['GET', 'POST'])
+def cloud_automation():
+    return render_template('pages/cloud-automation.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/cloud-computing', methods=['GET', 'POST'])
+def cloud_computing():
+    return render_template('pages/cloud-computing.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/inspiration', methods=['GET', 'POST'])
+def inspiration():
+    return render_template('pages/inspiration.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/team', methods=['GET', 'POST'])
+def team():
+    return render_template('pages/team.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/amazon-web-service', methods=['GET', 'POST'])
+def aws():
+    return render_template('pages/aws.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/microsoft-azure', methods=['GET', 'POST'])
+def azure():
+    return render_template('pages/azure.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/google-cloud-service', methods=['GET', 'POST'])
+def gcp():
+    return render_template('pages/gcp.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/cloud-infrastructure', methods=['GET', 'POST'])
+def cloud_infrastructure():
+    return render_template('pages/cloud-infrastructure.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/cloud-devops', methods=['GET', 'POST'])
+def cloud_devops():
+    return render_template('pages/cloud-devops.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/about-us', methods=['GET', 'POST'])
+def about():
+    return render_template('pages/about.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/our-services', methods=['GET', 'POST'])
+def service():
+    return render_template('pages/service.html',
+        title_tag='',
         meta_description='',
         url_link='',
         revised=''

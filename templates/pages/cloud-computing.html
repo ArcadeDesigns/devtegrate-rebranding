@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% include 'components/navbar.html' %}
+        {% include 'components/notification.html' %}
+
+        <div class="ctn-section-header">
+            <img class="ctn-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Image">
+
+            <div class="ctn-section-header-ctn">
+                <h2>Understanding Devtegrate Cloud Computing</h2>
+                <h3>Overview of Devtegrate's Cloud Services</h3>
+                <div class="btn-ctn">
+                    <a href="">
+                        <span>More Information</span>
+                        <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+
+                    <a href="">
+                        <span>Consult with us?</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ctn-section-two">
+            <div class="ctn-section-two-cn">
+                <h2>Cloud Computing with Devtegrate</h2>
+                <p>Cloud computing has become a vital part of modern-day businesses, providing scalability, flexibility, and cost-effectiveness to organizations. In simple terms, cloud computing is the delivery of computing services over the internet. These services include servers, storage, databases, networking, software, and analytics.</p>
+
+                <p>Cloud computing services can be divided into three main categories: Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS), and Software-as-a-Service (SaaS).</p>
+            </div>
+
+            <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1696848767/devtegrate-updates/Server_status-cuate_tnfcfh.png" alt="Devtegrate Cloud Images">
+        </div>
+
+        <div class="ctn-section-two-cn-ctn">
+            <div class="ctn-section-two-cn-ctn-box-ctn">
+                <div class="swiper-wrapper">
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Infrastructure as a service</h2>
+                        <p>IaaS involves the provision of virtualized computing resources, such as servers, storage, and networking, over the internet. Customers can rent these resources from cloud service providers, paying only for what they use, and scale their infrastructure up or down as required.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Platform as a service</h2>
+                        <p>PaaS provides a platform for customers to develop, run, and manage their own applications, without the need to build and maintain the underlying infrastructure. PaaS includes tools and services for application development, deployment, and management.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Software as a service</h2>
+                        <p>SaaS provides software applications that are hosted by a cloud service provider and delivered over the internet. Customers can access these applications from anywhere, without the need to install them on their own devices.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>The migration stage</h2>
+                        <p>The migration stage involves transferring the organization's data, applications, and services to the cloud service provider's infrastructure. This stage can be challenging, as it requires careful planning and coordination to ensure that data is migrated securely and without any loss or corruption.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>The deployment stage</h2>
+                        <p>The deployment stage involves configuring and setting up the cloud infrastructure and services to ensure they are accessible and performant. This stage involves setting up security protocols, configuring network settings, and ensuring that the organization's applications and services are working correctly.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>The management stage</h2>
+                        <p>The management stage involves monitoring and maintaining the cloud infrastructure and services to ensure they remain secure, scalable, and performant. This stage involves monitoring usage and performance, implementing security updates and patches, and managing user access and permissions.</p>
+                    </div>
+                </div>
+
+                <ul class="control" id="custom-control">
+                    <li class="prev"><span class="material-symbols-outlined">chevron_left</span></li>
+                    <li class="next"><span class="material-symbols-outlined">chevron_right</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-banner">
+            <img class="footer-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Cloud Images">
+
+            <div class="footer-banner-content">
+                <h3>Devtegrate Cloud Services</h3>
+                <h2>Cloud Integration</h2>
+                <p>Devtegrate Cloud Services is a cloud-based service that helps businesses manage their IT infrastructure and applications in the cloud. Cloud integration is an essential component of Devtegrate Cloud Services as it allows businesses to connect their cloud-based applications and services to share data and workflows seamlessly. Here are some ways Devtegrate Cloud Services can help businesses with cloud integration. Learn about our cloud automation process.</p>
+
+                <a href="{{ url_for('cloud_integration') }}">
+                    <span>Cloud Integration</span>
+                    <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+            </div>
+            
+        </div>
+
+        {% include 'components/footer.html' %}
+    {% endblock %}

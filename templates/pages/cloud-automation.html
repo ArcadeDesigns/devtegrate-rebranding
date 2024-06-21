@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% include 'components/navbar.html' %}
+        {% include 'components/notification.html' %}
+
+        <div class="ctn-section-header">
+            <img class="ctn-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Image">
+
+            <div class="ctn-section-header-ctn">
+                <h2>Devtegrate Cloud Automation</h2>
+                <h3>Overview of Devtegrate's Cloud Services</h3>
+                <div class="btn-ctn">
+                    <a href="">
+                        <span>More Information</span>
+                        <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+
+                    <a href="">
+                        <span>Consult with us?</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ctn-section-two">
+            <div class="ctn-section-two-cn">
+                <h2>Understanding Devtegrate Cloud Automation</h2>
+                <p>Devtegrate Cloud Services is an advanced solution that can help businesses automate their IT infrastructure and applications in the cloud. Devtegrate Cloud Services can provide businesses with a range of tools and services that can streamline their operations. By leveraging cloud automation, businesses can optimize their IT operations, reduce costs, and enhance efficiency.</p>
+
+                <p>Devtegrate Cloud Services is a cutting-edge cloud-based solution that assists businesses in automating their IT infrastructure and applications in the cloud. The process of cloud automation is fundamental to Devtegrate Cloud Services as it allows businesses to optimize their IT operations and enhance efficiency. Here are some ways that Devtegrate Cloud Services can support businesses with cloud automation.</p>
+            </div>
+
+            <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718723200/devtegrate-updates/Artboard_7_hsnpvj.png" alt="Devtegrate Cloud Images">
+        </div>
+
+        <div class="ctn-section-two-cn-ctn">
+            <div class="ctn-section-two-cn-ctn-box-ctn">
+                <div class="swiper-wrapper">
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Provisioning and Configuration</h2>
+                        <p>Devtegrate Cloud Services can help businesses automate the provisioning and configuration of their cloud infrastructure. This enables businesses to create and deploy new virtual machines, databases, and storage resources quickly and easily without any manual intervention. With Devtegrate Cloud Services, businesses can significantly reduce deployment times from days or weeks to mere minutes.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Orchestration</h2>
+                        <p>Devtegrate Cloud Services can support businesses in automating their workflows and processes. This involves the creation of complex workflows that involve multiple applications and services that are then executed automatically. Devtegrate Cloud Services ensures that workflows are executed consistently and reliably without any manual intervention.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Monitoring and Management</h2>
+                        <p>Devtegrate Cloud Services can assist businesses in automatically monitoring and managing their cloud infrastructure and applications. This feature enables businesses to set up alerts and notifications that keep them informed of any issues or problems with their infrastructure or applications. With Devtegrate Cloud Services, businesses can proactively monitor their IT environment and take corrective action before issues become critical.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Security and Compliance</h2>
+                        <p>Devtegrate Cloud Services can aid businesses in ensuring that their IT environment is secure and compliant with regulatory requirements automatically. This means that businesses can set up security policies and compliance rules that are automatically enforced across their cloud infrastructure and applications. With Devtegrate Cloud Services, businesses can mitigate their risk of security breaches and remain compliant with industry regulations.</p>
+                    </div>
+                </div>
+
+                <ul class="control" id="custom-control">
+                    <li class="prev"><span class="material-symbols-outlined">chevron_left</span></li>
+                    <li class="next"><span class="material-symbols-outlined">chevron_right</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-banner">
+            <img class="footer-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Cloud Images">
+
+            <div class="footer-banner-content">
+                <h3>Devtegrate Cloud Services</h3>
+                <h2>Cloud Integration</h2>
+                <p>Devtegrate Cloud Services is a cloud-based service that helps businesses manage their IT infrastructure and applications in the cloud. Cloud integration is an essential component of Devtegrate Cloud Services as it allows businesses to connect their cloud-based applications and services to share data and workflows seamlessly. Here are some ways Devtegrate Cloud Services can help businesses with cloud integration. Learn about our cloud automation process.</p>
+
+                <a href="{{ url_for('cloud_integration') }}">
+                    <span>Cloud Integration</span>
+                    <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+            </div>    
+        </div>
+
+        {% include 'components/footer.html' %}
+    {% endblock %}

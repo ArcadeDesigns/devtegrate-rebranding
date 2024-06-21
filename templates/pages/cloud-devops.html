@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% include 'components/navbar.html' %}
+        {% include 'components/notification.html' %}
+
+        <div class="ctn-section-header">
+            <img class="ctn-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Image">
+
+            <div class="ctn-section-header-ctn">
+                <h2>Devtegrate Cloud DevOps and DevSecOps</h2>
+                <h3>Overview of Devtegrate's Cloud Services</h3>
+                <div class="btn-ctn">
+                    <a href="">
+                        <span>More Information</span>
+                        <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+
+                    <a href="">
+                        <span>Consult with us?</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ctn-section-two">
+            <div class="ctn-section-two-cn">
+                <h2>Understanding Devtegrate Cloud DevOps</h2>
+                <p>DevOps and DevSecOps are two related methodologies that have gained popularity in recent years due to their ability to improve software delivery processes and increase collaboration between developers, IT operations, and security teams. At Devtegrate, we offer comprehensive Cloud DevOps and DevSecOps services that help our clients to streamline their software development processes, increase efficiency, and reduce time-to-market.</p>
+
+                <p>Our Cloud DevOps services are designed to enable our clients to automate their software delivery pipelines, including building, testing, and deployment processes. We use industry-standard tools such as Jenkins, Docker, Kubernetes, and AWS to create scalable and reliable cloud-based infrastructures that allow our clients to deploy their applications with ease. Our experienced DevOps engineers work closely with our clients to understand their unique needs and to design custom-tailored solutions that meet their specific requirements.</p>
+
+                <p>In addition to our Cloud DevOps services, we also offer DevSecOps services that help our clients to integrate security into their software delivery processes. Our DevSecOps services ensure that our clients' applications are secure by design and that security is embedded throughout the software development lifecycle. We use industry-standard security tools such as SonarQube, Nessus, and Checkmarx to perform security testing and to identify and mitigate potential security vulnerabilities.</p>
+
+                <p>At Devtegrate, our Cloud DevOps and DevSecOps services are based on a comprehensive process that includes the following steps:</p>
+            </div>
+
+            <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1696848767/devtegrate-updates/Cloud_sync-bro_1_adrxgw.png" alt="Devtegrate Cloud Images">
+        </div>
+
+        <div class="ctn-section-two-cn-ctn">
+            <div class="ctn-section-two-cn-ctn-box-ctn">
+                <div class="swiper-wrapper">
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Assessment and Planning</h2>
+                        <p>Our team works with our clients to understand their current software delivery processes, identify pain points, and define project requirements.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Design and Architecture</h2>
+                        <p>Our experienced DevOps and DevSecOps engineers design custom-tailored solutions that meet our clients' specific needs and requirements.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Implementation and Configuration</h2>
+                        <p>We use industry-standard tools and technologies to implement and configure the infrastructure, tools, and processes required to automate software delivery pipelines and to integrate security into the software development lifecycle.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Testing and Deployment</h2>
+                        <p>Our team performs comprehensive testing to ensure that the software delivery process is working as expected and that the applications are delivered with high quality.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Cloud Optimization</h2>
+                        <p>Devtegrate can help businesses optimize their cloud infrastructure and applications to ensure that they perform efficiently and cost-effectively. This includes monitoring, managing, and optimizing cloud resources, as well as implementing automation and DevOps practices.</p>
+                    </div>
+                </div>
+
+                <ul class="control" id="custom-control">
+                    <li class="prev"><span class="material-symbols-outlined">chevron_left</span></li>
+                    <li class="next"><span class="material-symbols-outlined">chevron_right</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-banner">
+            <img class="footer-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Cloud Images">
+
+            <div class="footer-banner-content">
+                <h3>Devtegrate Cloud Services</h3>
+                <h2>Cloud Integration</h2>
+                <p>Devtegrate Cloud Services is a cloud-based service that helps businesses manage their IT infrastructure and applications in the cloud. Cloud integration is an essential component of Devtegrate Cloud Services as it allows businesses to connect their cloud-based applications and services to share data and workflows seamlessly. Here are some ways Devtegrate Cloud Services can help businesses with cloud integration. Learn about our cloud automation process.</p>
+
+                <a href="{{ url_for('cloud_integration') }}">
+                    <span>Cloud Integration</span>
+                    <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+            </div>    
+        </div>
+
+        {% include 'components/footer.html' %}
+    {% endblock %}

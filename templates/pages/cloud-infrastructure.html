@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% include 'components/navbar.html' %}
+        {% include 'components/notification.html' %}
+
+        <div class="ctn-section-header">
+            <img class="ctn-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Image">
+
+            <div class="ctn-section-header-ctn">
+                <h2>Devtegrate Cloud Infrastructure</h2>
+                <h3>Overview of Devtegrate's Cloud Services</h3>
+                <div class="btn-ctn">
+                    <a href="">
+                        <span>More Information</span>
+                        <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+
+                    <a href="">
+                        <span>Consult with us?</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ctn-section-two">
+            <div class="ctn-section-two-cn">
+                <h2>Cloud Infrastructure at Devtegrate</h2>
+                <p>Cloud infrastructure refers to the collection of hardware, software, and networking resources that enable the delivery of cloud computing services. At Devtegrate, we provide a robust and scalable cloud infrastructure that can handle a wide range of workloads and applications.</p>
+            </div>
+
+            <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1696848768/devtegrate-updates/Endpoint-cuate_1_a1noei.png" alt="Devtegrate Cloud Images">
+        </div>
+
+        <div class="ctn-section-two-cn-ctn">
+            <div class="ctn-section-two-cn-ctn-box-ctn">
+                <div class="swiper-wrapper">
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Virtualized Architecture</h2>
+                        <p>Our cloud infrastructure is based on a virtualized architecture, which means that we can create multiple virtual machines (VMs) on a single physical server. Each VM runs a separate operating system and applications, which provides an isolated environment for different workloads. This approach allows us to optimize resource utilization and provide cost-effective solutions for our clients.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Data Centers</h2>
+                        <p>At the core of our cloud infrastructure are our data centers, which are located in multiple regions across the world. Our data centers are designed to provide high availability, scalability, and security for our clients' applications and data. They are equipped with redundant power supplies, cooling systems, and network connections to ensure continuous uptime and availability.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Optimized Performance</h2>
+                        <p>Our cloud infrastructure is also designed to provide high performance for applications and workloads. We use the latest hardware and networking technologies to ensure fast and reliable performance. Our infrastructure is also optimized for different types of workloads, such as compute-intensive, memory-intensive, and storage-intensive workloads.</p>
+                    </div>
+
+                    <div class="ctn-section-two-cn-ctn-box">
+                        <h2>Cloud Services</h2>
+                        <p>In addition to our infrastructure, we provide a wide range of cloud services that enable our clients to run their applications and workloads in the cloud. These services include compute services, storage services, networking.</p>
+                    </div>
+                </div>
+
+                <ul class="control" id="custom-control">
+                    <li class="prev"><span class="material-symbols-outlined">chevron_left</span></li>
+                    <li class="next"><span class="material-symbols-outlined">chevron_right</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-banner">
+            <img class="footer-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Cloud Images">
+
+            <div class="footer-banner-content">
+                <h3>Devtegrate Cloud Services</h3>
+                <h2>Cloud Integration</h2>
+                <p>Devtegrate Cloud Services is a cloud-based service that helps businesses manage their IT infrastructure and applications in the cloud. Cloud integration is an essential component of Devtegrate Cloud Services as it allows businesses to connect their cloud-based applications and services to share data and workflows seamlessly. Here are some ways Devtegrate Cloud Services can help businesses with cloud integration. Learn about our cloud automation process.</p>
+
+                <a href="{{ url_for('cloud_integration') }}">
+                    <span>Cloud Integration</span>
+                    <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                    </a>
+            </div>    
+        </div>
+
+        {% include 'components/footer.html' %}
+    {% endblock %}
