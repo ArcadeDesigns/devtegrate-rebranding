@@ -597,4 +597,16 @@ footer .span-text {
     display: none;
   }
 
+  .responsive-menu {
+    max-width: 60%;
+  }
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 430px) {
+  
+  .responsive-menu {
+    max-width: 80%;
+  }
+
 }

@@ -1058,6 +1058,11 @@
 		font-size: var(--small-text);
 	}
 
+	.page-grid-layout-box a {
+		display: flex;
+		flex-direction: row;
+	}
+
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 375px) {
