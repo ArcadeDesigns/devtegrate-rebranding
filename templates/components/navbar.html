@@ -1,11 +1,10 @@
 <header>
 	<nav>
-		<div class="navbar-logo">
+		<a href="{{ url_for('index') }}" class="navbar-logo">
 			<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221343/devtegrate-updates/Asset_2_pwuunu.png" alt="Devtegrate Cloud Services">
-		</div>
+		</a>
 
 		<ul>
-
 			<li class="drop-down">
 				<span>Technology</span>
 				<ul>
@@ -32,6 +31,47 @@
 		<div class="ctn-cta">
 			<a class="cta" href="">Get In Touch</a>
 		</div>
-		
 	</nav>
 </header>
+
+<div class="responsive-navbar">
+	<div class="responsive-navbar-header">
+		<a href="{{ url_for('index') }}" class="responsive-navbar-logo">
+			<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221343/devtegrate-updates/Asset_2_pwuunu.png" alt="Devtegrate Cloud Services">
+		</a>
+		<div class="menu active "><img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1719249068/devtegrate-brand/Menu_2_vw3npf.png" alt="Devtegrate Cloud Services"></div>
+	</div>
+
+	<div class="responsive-menu">
+		<div class="menu active"><img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1719249105/devtegrate-brand/Close_1_k31kmj.png" alt="Devtegrate Cloud Services"></div>
+
+		<ul>
+			<li class="responsive-drop-down">
+				<span>Technology<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1719252801/devtegrate-brand/Expand_Arrow_xgsfhe.png" alt="Devtegrate Cloud Services"> </span>
+				<ul class="responsive-list">
+					<li><a href="{{ url_for('cloud_infrastructure') }}">Cloud Infrastructure</a></li>
+					<li><a href="{{ url_for('cloud_computing') }}">Cloud Computing</a></li>
+					<li><a href="{{ url_for('cloud_devops') }}">Cloud DevOps</a></li>
+					<li><a href="{{ url_for('cloud_automation') }}">Cloud Automation</a></li>
+					<li><a href="{{ url_for('cloud_integration') }}">Cloud Integration</a></li>
+				</ul>
+			</li>
+
+			<li class="responsive-drop-down">
+				<span>Cloud Platform<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1719252801/devtegrate-brand/Expand_Arrow_xgsfhe.png" alt="Devtegrate Cloud Services"> </span>
+				<ul class="responsive-list">
+					<li><a href="{{ url_for('aws') }}">Amazon Web Service</a></li>
+					<li><a href="{{ url_for('azure') }}">Microsoft Azure</a></li>
+					<li><a href="{{ url_for('gcp') }}">Google Cloud Service</a></li>
+				</ul>
+			</li>
+
+			<li class="decorated-responsiveness"><a href="{{ url_for('service') }}">Our Services</a></li>
+			<li class="decorated-responsiveness"><a href="{{ url_for('about') }}">About Us</a></li>
+		</ul>
+
+		<div class="responsive-ctn-cta">
+			<a class="cta" href="">Get In Touch</a>
+		</div>
+	</div>
+</div>

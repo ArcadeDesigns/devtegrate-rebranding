@@ -7,7 +7,7 @@ function SwiperSliderDef() {
     let currentIndex = 0;
 
     function updateSlidePosition() {
-        swiperWrapper.style.transform = `translateX(-${currentIndex * 50}%)`;
+        swiperWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
     nextButton.addEventListener('click', () => {
