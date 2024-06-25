@@ -21,3 +21,25 @@ function ResponsiveMenuNavigation() {
         });
     });
 };
+
+function AutomatedSlider() {
+    const images = document.querySelectorAll('.slider-img');
+    const contents = document.querySelectorAll('.header-content-container');
+    const nextPageBtn = document.querySelector('.header-nav span:first-child');
+
+    let currentIndex = 0;
+
+    const slideToNext = () => {
+        images[currentIndex].classList.remove('active');
+        contents[currentIndex].classList.remove('active');
+
+        currentIndex = (currentIndex + 1) % images.length;
+
+        images[currentIndex].classList.add('active');
+        contents[currentIndex].classList.add('active');
+    };
+
+    nextPageBtn.addEventListener('click', slideToNext);
+
+    setInterval(slideToNext, 500000); // Slide every 5 seconds
+};

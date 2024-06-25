@@ -96,80 +96,84 @@
       document.addEventListener("DOMContentLoaded", ResponsiveMenuNavigation);
     </script>
 
-  <script>
-    ScrollReveal({
-      reset: true,
-      distance: "200px",
-      duration: 1500,
-      delay: 600,
-    });
+    <script>
+      document.addEventListener("DOMContentLoaded", AutomatedSlider);
+    </script>
 
-    ScrollReveal().reveal(".reveal__left", { delay: 200, origin: "left" });
-    ScrollReveal().reveal(".reveal__right", {
-      delay: 200,
-      origin: "right",
-    });
+    <script>
+      ScrollReveal({
+        reset: true,
+        distance: "200px",
+        duration: 1500,
+        delay: 600,
+      });
 
-    ScrollReveal().reveal(".reveal__top", { delay: 200, origin: "top" });
-    ScrollReveal().reveal(".reveal__bottom", {
-      delay: 200,
-      origin: "bottom",
-    });
+      ScrollReveal().reveal(".reveal__left", { delay: 200, origin: "left" });
+      ScrollReveal().reveal(".reveal__right", {
+        delay: 200,
+        origin: "right",
+      });
 
-    // Text Animation Section //
+      ScrollReveal().reveal(".reveal__top", { delay: 200, origin: "top" });
+      ScrollReveal().reveal(".reveal__bottom", {
+        delay: 200,
+        origin: "bottom",
+      });
 
-    ScrollReveal().reveal(".reveal__top", { 
-      delay: 500, 
-      origin: "top" 
-    });
+      // Text Animation Section //
 
-    ScrollReveal().reveal(".reveal__bottom", {
-      delay: 500,
-      origin: "bottom",
-    });
+      ScrollReveal().reveal(".reveal__top", { 
+        delay: 500, 
+        origin: "top" 
+      });
 
-    ScrollReveal().reveal(".reveal__left", { 
-      delay: 500, 
-      origin: "left" 
-    });
+      ScrollReveal().reveal(".reveal__bottom", {
+        delay: 500,
+        origin: "bottom",
+      });
 
-    ScrollReveal().reveal(".reveal__right", {
-      delay: 500,
-      origin: "right",
-    });
+      ScrollReveal().reveal(".reveal__left", { 
+        delay: 500, 
+        origin: "left" 
+      });
 
-    ScrollReveal().reveal(".reveal__interval__top", {
-      delay: 400,
-      origin: "top",
-      interval: 200,
-    });
+      ScrollReveal().reveal(".reveal__right", {
+        delay: 500,
+        origin: "right",
+      });
 
-    ScrollReveal().reveal(".reveal__interval__left", {
-      delay: 400,
-      origin: "left",
-      interval: 200,
-    });
+      ScrollReveal().reveal(".reveal__interval__top", {
+        delay: 400,
+        origin: "top",
+        interval: 200,
+      });
 
-    ScrollReveal().reveal(".reveal__interval__right", {
-      delay: 400,
-      origin: "right",
-      interval: 200,
-    });
+      ScrollReveal().reveal(".reveal__interval__left", {
+        delay: 400,
+        origin: "left",
+        interval: 200,
+      });
 
-    ScrollReveal().reveal(".reveal__interval__bottom", {
-      delay: 400,
-      origin: "bottom",
-      interval: 200,
-    });
+      ScrollReveal().reveal(".reveal__interval__right", {
+        delay: 400,
+        origin: "right",
+        interval: 200,
+      });
 
-    ScrollReveal().reveal(".reveal__text", {
-      delay: 1000,
-      origin: "left",
-    });
-    
-  </script>
+      ScrollReveal().reveal(".reveal__interval__bottom", {
+        delay: 400,
+        origin: "bottom",
+        interval: 200,
+      });
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</body>
+      ScrollReveal().reveal(".reveal__text", {
+        delay: 1000,
+        origin: "left",
+      });
+      
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
 
 </html>
