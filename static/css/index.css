@@ -1041,7 +1041,7 @@
 .footer-form-ctn-box form .footer-form-ctn-box-box .footer-form-ctn-box-box-cn label {
 	font-size: var(--span-text);
 	font-weight: 500;
-	color: var(--secondary-color);
+	color: var(--primary-color);
 }
 
 .footer-form-ctn-box form .footer-form-ctn-box-box .footer-form-ctn-box-box-cn input {
@@ -1052,6 +1052,7 @@
 	height: auto;
 	min-height: 50px;
 	padding: 10px;
+	outline: none;
 	border-radius: 5px;
 	border: 2px solid var(--secondary-color);
 }
@@ -1064,6 +1065,7 @@
 	height: auto;
 	min-height: 50px;
 	padding: 10px;
+	outline: none;
 	border-radius: 5px;
 	border: 2px solid var(--secondary-color);
 }
@@ -1092,7 +1094,7 @@
 	padding-left: 5px;
 }
 
-@media screen and (max-width: 1280px) and (-webkit-min-device-pixel-ratio: 0.800) {
+@media screen and (max-width: 1280px) {
 
 	.page-client-icon {
         width: 100%;
@@ -1103,6 +1105,16 @@
         grid-auto-flow: dense;
         gap: .5em;   
     }
+
+    .updated-ctn-grid-box:nth-child(3){
+    	border-left: none;
+		border-right: 1px solid var(--secondary-color);
+	}
+
+	.updated-ctn-grid-box:nth-child(4){
+		border-right: none;
+		border-bottom: 1px solid var(--secondary-color);
+	}
 
 }
 
@@ -1163,6 +1175,34 @@
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 853px) {
+
+	.updated-ctn-grid {
+		grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+	}
+
+	.updated-ctn-grid-box:nth-child(1){
+    	border: none;
+	}
+
+	.updated-ctn-grid-box:nth-child(2){
+		border: none;
+	}
+
+	.updated-ctn-grid-box:nth-child(3){
+    	border: none;
+	}
+
+	.updated-ctn-grid-box:nth-child(4){
+		border: none;
+	}
+
+	.updated-ctn-grid-box:nth-child(5){
+    	border: none;
+	}
+
+	.updated-ctn-grid-box:nth-child(6){
+		border: none;
+	}
 
 	.page-client-icon {
         grid-template-columns: repeat(auto-fill, minmax(150px, auto));
@@ -1253,6 +1293,35 @@
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 540px) {
+
+	.footer-form-ctn-box form .footer-form-ctn-box-box {
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.footer-form-ctn-box form button {
+		width: 100%;
+	}
+
+	.footer-form-ctn-box form .footer-form-ctn-box-box .footer-form-ctn-box-box-cn {
+		width: 100%;
+	}
+
+	.updated-ctn-grid {
+		padding: 0;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+	}
 
 	.header-content-container.active {
 		max-width: 100%;

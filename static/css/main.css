@@ -1025,12 +1025,19 @@
 
 .service-ctn-grid {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(450px, auto));
     grid-template-rows: minmax(-20px, auto);
     grid-auto-flow: dense;
     gap: 1em;
+}
+
+.service-ctn-grid li {
+    color: var(--secondary-color);
+    font-weight: 500;
+    font-size: var(--span-text);
+    padding: 10px;
 }
 
 .service-ctn-grid-box {
@@ -1621,6 +1628,47 @@
     font-size: var(--span-text);
     font-weight: 500;
     color: var(--primary-color);
+}
+
+.secondary-ctn-section-header-ctn-flex {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+}
+
+.secondary-ctn-section-header-ctn-flex a {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    padding: 10px 30px;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    display: flex;
+}
+
+.secondary-ctn-section-header-ctn-flex a input {
+    margin-right: 5px;
+    border: 1px solid var(--secondary-color);
+    background-color: transparent;
+    outline: none;
+}
+
+.secondary-ctn-section-header-ctn-flex a span {
+    font-size: var(--span-text);
+    font-weight: 500;
+}
+
+.secondary-ctn-section-header-ctn-flex a img {
+    width: 25px;
+    height: auto;
+    object-fit: scale-down;
+    padding-left: 5px;
 }
 
 @media screen and (max-width: 1280px) and (-webkit-min-device-pixel-ratio: 0.800) {
