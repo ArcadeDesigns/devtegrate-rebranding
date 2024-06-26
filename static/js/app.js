@@ -24,3 +24,23 @@ function SwiperSliderDef() {
         }
     });
 };
+
+function toggleOtherIndustry() {
+    var industry = document.getElementById("industry").value;
+    var otherIndustry = document.getElementById("other-industry");
+    if (industry === "Other") {
+        otherIndustry.style.display = "block";
+    } else {
+        otherIndustry.style.display = "none";
+    }
+}
+
+function toggleOtherHelp() {
+    var helpWith = document.getElementById("help-with").value;
+    var otherHelp = document.getElementById("other-help");
+    if (helpWith === "Other") {
+        otherHelp.style.display = "block";
+    } else {
+        otherHelp.style.display = "none";
+    }
+}
