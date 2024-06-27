@@ -93,6 +93,7 @@
 	height: 100%;
 	display: flex;
 	position: relative;
+	z-index: 555;
 }
 
 .header-content-container.active {
