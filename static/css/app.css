@@ -104,13 +104,14 @@ header nav .ctn-cta .cta {
 }
 
 header nav ul {
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: auto;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
+  gap: 3em;
 }
 
 header nav ul li {
@@ -357,7 +358,28 @@ footer .span-text {
   cursor: pointer;
 }
 
-.drop-down ul {
+.drop-down .img-navbar {
+  padding-left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  max-width: 300px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px auto;
+  height: auto;
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+  background: rgba(100, 100, 100, .4);
+  border-radius: 10px;
+  backdrop-filter: saturate(180%) blur(10px);
+  transition: all 1s ease;
+  gap: 1em;
+}
+
+.drop-down .drop-down-navbar {
+  gap: 1em;
   padding-left: 0;
   position: absolute;
   top: 100%;

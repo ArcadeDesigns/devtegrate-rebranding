@@ -7,18 +7,18 @@
 		<ul>
 			<li class="drop-down">
 				<span>Technology</span>
-				<ul>
-					<li><a href="{{ url_for('cloud_infrastructure') }}">Cloud Infrastructure</a></li>
-					<li><a href="{{ url_for('cloud_computing') }}">Cloud Computing</a></li>
+				<ul class="img-navbar">
+					<li><a href="{{ url_for('cloud_service') }}">Cloud Services</a></li>
+					<li><a href="{{ url_for('security_compliance') }}">Security and Compliance</a></li>
 					<li><a href="{{ url_for('cloud_devops') }}">Cloud DevOps</a></li>
-					<li><a href="{{ url_for('cloud_automation') }}">Cloud Automation</a></li>
-					<li><a href="{{ url_for('cloud_integration') }}">Cloud Integration</a></li>
+					<li><a href="{{ url_for('software_development') }}">Software Development</a></li>
+					<li><a href="{{ url_for('cyber_security') }}">Cyber Security</a></li>
 				</ul>
 			</li>
 
 			<li class="drop-down">
-				<span>Cloud Platform</span>
-				<ul>
+				<span>Industries</span>
+				<ul class="drop-down-navbar">
 					<li><a href="{{ url_for('aws') }}">Amazon Web Service</a></li>
 					<li><a href="{{ url_for('azure') }}">Microsoft Azure</a></li>
 					<li><a href="{{ url_for('gcp') }}">Google Cloud Service</a></li>
@@ -58,7 +58,7 @@
 			</li>
 
 			<li class="responsive-drop-down">
-				<span>Cloud Platform<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1719252801/devtegrate-brand/Expand_Arrow_xgsfhe.png" alt="Devtegrate Cloud Services"> </span>
+				<span>Industries<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1719252801/devtegrate-brand/Expand_Arrow_xgsfhe.png" alt="Devtegrate Cloud Services"> </span>
 				<ul class="responsive-list">
 					<li><a href="{{ url_for('aws') }}">Amazon Web Service</a></li>
 					<li><a href="{{ url_for('azure') }}">Microsoft Azure</a></li>

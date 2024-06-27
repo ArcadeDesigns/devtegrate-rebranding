@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% include 'components/navbar.html' %}
+        {% include 'components/notification.html' %}
+
+        <div class="ctn-section-header">
+            <img class="ctn-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Image">
+
+            <div class="secondary-ctn-section-header-ctn">
+                <h2>Cybersecurity Threats are Evolving. Is Your Business Prepared?</h2>
+                <p>Our Comprehensive Cybersecurity Services Safeguard Your Data & Systems.</p>
+
+                <a href="">
+                    <span>Get a Free Security Assessment</span>
+                    <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                </a>
+            </div>
+        </div>
+
+        <div class="service-ctn">
+            <div class="service-ctn-header">
+                <span class="service-header-span"></span>
+                <h2>Protecting Your Business in a Digital World</h2>
+                <p>The digital landscape offers incredible opportunities for businesses but also exposes them to a growing number of cyber threats. Data breaches, ransomware attacks, and online scams can have devastating consequences, causing financial losses, reputational damage, and operational disruption.</p>
+                <p>Our team of security experts possesses in-depth knowledge of the latest threats and vulnerabilities, allowing us to develop a tailored security strategy that addresses your specific needs.</p>
+
+                <a href="">
+                    <span>Schedule a Free Security Consultation</span>
+                    <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+                </a>
+            </div>
+
+            <div class="service-ctn-grid">
+                <li>Identify and address vulnerabilities in your systems before attackers can exploit them</li>
+                <li>Proactively detect and neutralize cyber threats</li>
+                <li>Help you navigate the complexities of data privacy laws and industry regulations</li>
+                <li>Maintain business continuity and ensure your operations remain uninterrupted</li>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-title">
+              <h2>Frequently Asked Questions</h2>
+              <!--<p>Get insights on what we do and how we do it.</p>-->
+            </div>
+
+            <div class="layout">
+              <div class="accordion">
+                <div class="accordion__question">
+                  <p>
+                    How much does cybersecurity cost?
+                    <i class="bx bx-plus"></i>
+                  </p>
+
+                </div>
+                <div class="accordion__answer">
+                  <li>The cost varies based on your specific needs and the services you choose. However, the potential cost savings from preventing a cyberattack far outweigh the investment in cybersecurity solutions.</li>
+                </div>
+              </div>
+              <div class="accordion">
+                <div class="accordion__question">
+                  <p>
+                    How long does it take to implement your cybersecurity services?
+                    <i class="bx bx-plus"></i>
+                  </p>
+                </div>
+                <div class="accordion__answer">
+                  <li>The implementation timeline depends on the specific services you choose and the complexity of your IT infrastructure. A basic security assessment can be completed within a few weeks, while implementing a comprehensive security solution may take longer. We'll work closely with you to understand your needs and provide a realistic timeline.</li>
+                </div>
+              </div>
+              <div class="accordion">
+                <div class="accordion__question">
+                  <p>
+                    What happens if I need to report a cyberattack?
+                    <i class="bx bx-plus"></i>
+                  </p>
+                </div>
+                <div class="accordion__answer">
+                    <li>Time is critical. Our incident response services can guide you through the process of containing the attack, mitigating damage, recovering data, and reporting the incident to the</li>
+                </div>
+              </div>
+              <div class="accordion">
+                <div class="accordion__question">
+                  <p>
+                    What government regulations might impact my business's cybersecurity practices?
+                    <i class="bx bx-plus"></i>
+                  </p>
+
+                </div>
+                <div class="accordion__answer">
+                  <li>
+                    Depending on your industry, data privacy regulations might dictate specific security measures you need to implement.
+                  </li>
+
+                </div>
+              </div>
+
+              <div class="accordion">
+                <div class="accordion__question">
+                  <p>
+                    How do you keep costs under control and within budget?
+                    <i class="bx bx-plus"></i>
+                  </p>
+
+                </div>
+                <div class="accordion__answer">
+                  <li>
+                    We provide transparent pricing and cost estimates upfront. We also leverage Agile methodologies to deliver working software iteratively, which allows for early feedback and course correction, preventing costly rework later in the process
+                  </li>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        {% include 'components/footer.html' %}
+    {% endblock %}

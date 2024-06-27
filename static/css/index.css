@@ -917,6 +917,10 @@
 	font-weight: 500;
 }
 
+.filter-img-ctn {
+	filter: invert(100%);
+}
+
 .updated-ctn-grid-box:hover {
 	background-color: transparent;
 	transition: all 3s ease;

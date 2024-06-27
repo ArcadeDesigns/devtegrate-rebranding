@@ -228,15 +228,6 @@ def cloud_infrastructure():
         revised=''
     )
 
-@app.route('/cloud-devops', methods=['GET', 'POST'])
-def cloud_devops():
-    return render_template('pages/cloud-devops.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
-    )
-
 @app.route('/about-us', methods=['GET', 'POST'])
 def about():
     return render_template('pages/about.html',
@@ -246,9 +237,54 @@ def about():
         revised=''
     )
 
+@app.route('/cloud-services', methods=['GET', 'POST'])
+def cloud_service():
+    return render_template('pages/cloud-services.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
 @app.route('/our-services', methods=['GET', 'POST'])
 def service():
     return render_template('pages/service.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/cloud-devops', methods=['GET', 'POST'])
+def cloud_devops():
+    return render_template('pages/cloud-devops.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/security-compliance', methods=['GET', 'POST'])
+def security_compliance():
+    return render_template('pages/security-compliance.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/software-development', methods=['GET', 'POST'])
+def software_development():
+    return render_template('pages/software-development.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/cyber-security', methods=['GET', 'POST'])
+def cyber_security():
+    return render_template('pages/cyber-security.html',
         title_tag='',
         meta_description='',
         url_link='',
