@@ -2015,6 +2015,16 @@
 
 @media screen and (max-width: 540px) and (-webkit-min-device-pixel-ratio: 0.720) {
 
+    .updated-asset-grid {
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
     .faq {
         padding: 0;
     }
