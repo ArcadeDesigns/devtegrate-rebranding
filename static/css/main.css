@@ -34,6 +34,13 @@
   --link-span-text: 0.8em;
 }
 
+.message-font {
+    font-size: 0.9em;
+    font-weight: 100;
+    text-align: center;
+    color: var(--secondary_color);
+}
+
 .ctn-section-header {
     justify-content: center;
     align-items: center;
@@ -992,6 +999,12 @@
 .service-ctn-header h2 {
     color: var(--secondary-color);
     font-size: var(--medium-text);
+    font-weight: 700;
+}
+
+.service-ctn-header h3 {
+    color: var(--secondary-color);
+    font-size: var(--small-text);
     font-weight: 700;
 }
 

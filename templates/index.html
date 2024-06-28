@@ -282,7 +282,7 @@
                         <h2>Struggling with IT Infrastructure Costs and Complexity?</h2>
                         <p>Move your business to the cloud and unlock a world of scalability, flexibility, and cost savings. Our secure cloud solutions allow you to focus on your core business while we manage your IT infrastructure.</p>
 
-                        <a href="">
+                        <a href="{{ url_for('cloud_service') }}">
                             <span>Learn More About Cloud Migration</span>
                             <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
                         </a>
@@ -299,7 +299,7 @@
                         <h2>Worried About Data Breaches and Cyber Attacks?</h2>
                         <p>Protect your business-critical data and systems from evolving cyber threats. Our comprehensive cybersecurity solutions offer proactive threat detection, incident response, and ongoing security monitoring for complete peace of mind.</p>
 
-                        <a href="">
+                        <a href="{{ url_for('cyber_security') }}">
                             <span>How We Can Enhance Your Security</span>
                             <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
                         </a>
@@ -316,7 +316,7 @@
                         <h2>Navigating Complex IT Compliance Requirements?</h2>
                         <p>Stay compliant with industry regulations and data privacy laws. Our compliance experts help you navigate complex regulations and ensure your IT systems meet all necessary standards for your industry.</p>
                         
-                        <a href="">
+                        <a href="{{ url_for('security_compliance') }}">
                             <span>Explore Our Compliance Services</span>
                             <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
                         </a>
@@ -333,7 +333,7 @@
                         <h2>Feeling Slowed Down by Manual IT Processes?</h2>
                         <p>We bridge the gap between development and operations, leading to faster deployments and higher quality software.</p>
 
-                        <a href="">
+                        <a href="{{ url_for('cloud_devops') }}">
                             <span>DevOps Can Optimize Your Development</span>
                             <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
                         </a>
@@ -367,7 +367,7 @@
                         <h2>Need Custom Software Solutions to Drive Your Business Forward?</h2>
                         <p>Our skilled developers create innovative and  tailor-made software solutions that meet your specific business needs. We leverage the latest technologies to deliver high-performance and scalable software applications.</p>
 
-                        <a href="">
+                        <a href="{{ url_for('software_development') }}">
                             <span>Custom Software Development Needs</span>
                             <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
                         </a>
@@ -378,8 +378,16 @@
 
         <div class="footer-form-ctn">
             <div class="footer-form-ctn-box">
-                <form>
+                <form method="POST">
+                    {{ form.hidden_tag() }}
                     <h2>Optin Form Fields</h2>
+
+                    {% for message in get_flashed_messages() %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <p class="message-font">Hi! {{ message }}</p>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
 
                     <div class="footer-form-ctn-box-box">
                         <div class="footer-form-ctn-box-box-cn">
@@ -389,17 +397,17 @@
 
                         <div class="footer-form-ctn-box-box-cn">
                             <label for="work-email">Work Email</label>
-                            <input type="email" id="work-email" name="work-email" pattern="^[a-zA-Z0-9._%+-]+@(?!(gmail\.com|yahoo\.com|outlook\.com)).+\.[a-zA-Z]{2,}$" required>
+                            <input type="email" id="work-email" name="recipient_emails" pattern="^[a-zA-Z0-9._%+-]+@(?!(gmail\.com|yahoo\.com|outlook\.com)).+\.[a-zA-Z]{2,}$" required>
                         </div>
 
                         <div class="footer-form-ctn-box-box-cn">
                             <label for="company-name">Company Name</label>
-                            <input type="text" id="company-name" name="company-name" required>
+                            <input type="text" id="company-name" name="company_name" required>
                         </div>
 
                         <div class="footer-form-ctn-box-box-cn">
                             <label for="company-size">Company Size</label>
-                            <select id="company-size" name="company-size" required>
+                            <select id="company-size" name="company_size" required>
                                 <option value="1-10">1-10</option>
                                 <option value="11-50">11-50</option>
                                 <option value="51-200">51-200</option>
@@ -420,12 +428,12 @@
                                 <option value="Other">Other</option>
                             </select>
 
-                            <input type="text" id="other-industry" name="other-industry" placeholder="Please specify your industry" style="display:none;">
+                            <input type="text" id="other-industry" name="other_industry" placeholder="Please specify your industry" style="display:none;">
                         </div>
 
                         <div class="footer-form-ctn-box-box-cn">
                             <label for="help-with">What do you need help with?</label>
-                            <select id="help-with" name="help-with" required onchange="toggleOtherHelp()">
+                            <select id="help-with" name="help_with" required onchange="toggleOtherHelp()">
                                 <option value="Cloud Services">Cloud Services</option>
                                 <option value="Automation">Automation</option>
                                 <option value="Devops">Devops</option>
@@ -434,18 +442,17 @@
                                 <option value="Software Development">Software Development</option>
                                 <option value="Other">Other</option>
                             </select>
-                            <input type="text" id="other-help" name="other-help" placeholder="Please specify what you need help with" style="display:none;">
+                            <input type="text" id="other_help" name="other-help" placeholder="Please specify what you need help with" style="display:none;">
                         </div>
                     </div>
 
-                    <button type="submit">
+                    <button type="submit" name="submit">
                         <span>Schedule Your Free IT Assessment Call</span>
                         <img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
                     </button>
                 </form>
             </div>
-        </div>
-        
+        </div>        
 
         {% include 'components/footer.html' %}
     {% endblock %}

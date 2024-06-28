@@ -140,7 +140,59 @@ def google_login():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    form = MessagesForm()
+    if form.validate_on_submit():
+        sender_email = 'folayemiebire@gmail.com'
+        name = form.name.data
+        recipient_emails = 'tobi@devtegrate.com'
+        company_name = form.company_name.data
+        company_size = form.company_size.data
+        industry = form.industry.data
+        other_industry = form.other_industry.data
+        help_with = form.help_with.data
+        other_help = form.other_help.data
+
+        try:
+            api_key = '7313cf6592999b69b87e0136ef2d0eea'
+            api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
+
+            mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+
+            data = {
+                'Messages': [
+                    {
+                        "From": {
+                            "Email": sender_email,
+                            "Name": "Devtegrate"
+                        },
+                        "To": [
+                            {
+                                "Email": recipient_emails,
+                                "Name": "Devtegrate"
+                            }
+                        ],
+                        "Subject": subject,
+                        "TextPart": "",
+                        "HTMLPart": f'''<h2 style="@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); font-family: 'poppins', sans-serif; font-size: 1.4em; font-weight: 100; color: #000000; text-align: left; padding: 0 0 15px 0;"">You just received a message<br>{message}<br><p @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); font-family: 'poppins', sans-serif; font-size: 0.9em; font-weight: 100; color: #000000; text-align: left; padding: 0 0 15px 0;">Contact phone number:</p>{phone}</p>''',
+                        "CustomID": "AppGettingStartedTest"
+                    }
+                ]
+            }
+
+            result = mailjet.send.create(data=data)
+            
+            # Check if the request was successful (status code 2xx)
+            if result.status_code == 200:
+                flash("Thank you for reaching out. Your message has been successfully sent. We will promptly review your inquiry and get in touch with you at our earliest convenience.")
+            else:
+                print(f"Failed to send the email. MailJet API response: {result.json()}")
+                flash("Failed to send the email.", 'danger')
+        except Exception as e:
+            print(f"Error occurred while sending the emails: {e}")
+            flash("Failed to send the email.", 'danger')
+
     return render_template('index.html',
+        form=form,
         title_tag='Devtegrate Cloud | Cloud Services | Cloud DevOps',
         meta_description='',
         url_link='',
@@ -285,6 +337,33 @@ def software_development():
 @app.route('/cyber-security', methods=['GET', 'POST'])
 def cyber_security():
     return render_template('pages/cyber-security.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/financial-services', methods=['GET', 'POST'])
+def financial_services():
+    return render_template('pages/financial-services.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/government', methods=['GET', 'POST'])
+def government():
+    return render_template('pages/government.html',
+        title_tag='',
+        meta_description='',
+        url_link='',
+        revised=''
+    )
+
+@app.route('/health', methods=['GET', 'POST'])
+def health():
+    return render_template('pages/health.html',
         title_tag='',
         meta_description='',
         url_link='',
