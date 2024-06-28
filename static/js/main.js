@@ -31,3 +31,20 @@ function DropDownMenuFocus() {
     });
   });
 };
+
+function ShowContent() {
+  const identifiers = document.querySelectorAll('.updated-swiper-identifier');
+  const grids = document.querySelectorAll('.updated-swiper-ctn-grid');
+
+  identifiers.forEach((identifier, index) => {
+    identifier.addEventListener('click', function() {
+    // Remove 'active' class from all identifiers and grids
+      identifiers.forEach(id => id.classList.remove('active'));
+      grids.forEach(grid => grid.classList.remove('active'));
+
+      // Add 'active' class to the clicked identifier and the corresponding grid
+      identifier.classList.add('active');
+      grids[index].classList.add('active');
+    });
+  });
+};
