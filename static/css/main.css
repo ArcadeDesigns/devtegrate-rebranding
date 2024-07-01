@@ -2015,6 +2015,26 @@
 
 @media screen and (max-width: 540px) and (-webkit-min-device-pixel-ratio: 0.720) {
 
+    .updated-swiper-ctn-grid.active {
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .updated-swiper-ctn-grid {
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        height: auto;
+        display: none;
+        flex-direction: column;
+    }
+
     .updated-asset-grid {
         justify-content: center;
         align-items: center;
