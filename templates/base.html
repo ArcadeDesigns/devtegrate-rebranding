@@ -74,6 +74,24 @@
 
   {% endblock %}
 
+  <!-- Calendly badge widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"
+    async></script>
+
+    <script type="text/javascript">
+      window.onload = function () {
+        Calendly.initBadgeWidget({
+          url: "https://calendly.com/devtegrate",
+          text: "Get In touch with Devtegrate.",
+          color: "#35A6FF",
+          textColor: "#ffffff",
+        });
+      };
+    </script>
+  <!-- Calendly badge widget end -->
+
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
