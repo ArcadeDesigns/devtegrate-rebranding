@@ -667,6 +667,29 @@
 	padding-left: 5px;
 }
 
+.inspiration-banner-content-text a {
+	background-color: var(--tertiary-color);
+	color: var(--primary-color);
+	border-radius: 5px;
+	padding: 10px 50px;
+	width: auto;
+	height: auto;
+	text-decoration: none;
+	display: flex;
+}
+
+.inspiration-banner-content-text a span {
+	font-size: var(--span-text);
+	font-weight: 500;
+}
+
+.inspiration-banner-content-text a img {
+	width: 25px;
+	height: auto;
+	object-fit: scale-down;
+	padding-left: 5px;
+}
+
 .feature-section-platforms {
 	justify-content: center;
 	align-items: center;
