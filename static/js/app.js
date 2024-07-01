@@ -44,3 +44,9 @@ function toggleOtherHelp() {
         otherHelp.style.display = "none";
     }
 }
+
+function redirectToCloudService() {
+    if (document.getElementById('cloud-checkbox').checked) {
+        window.location.href = "/cloud-services";
+    }
+}
