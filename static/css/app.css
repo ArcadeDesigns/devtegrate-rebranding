@@ -326,6 +326,7 @@ footer {
   font-size: var(--span-text);
   color: var(--secondary-color);
   font-weight: 500;
+  outline: none;
 }
 
 .footer-subscription-form form button {
