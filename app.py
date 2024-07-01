@@ -145,7 +145,7 @@ def index():
         sender_email = 'folayemiebire@gmail.com'
         name = form.name.data
         email = form.email.data
-        recipient_emails = 'quinndaisy.blog@gmail.com'
+        recipient_emails = 'tobi@devtegrate.com'
         company_name = form.company_name.data
         company_size = form.company_size.data
         industry = form.industry.data
