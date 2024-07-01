@@ -7,7 +7,7 @@ from flask_wtf.file import FileField
 
 class MessagesForm(FlaskForm):
     name = StringField()
-    recipient_emails = StringField()
+    email = StringField()
     company_name = StringField()
     company_size = StringField()
     industry = StringField()

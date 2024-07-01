@@ -144,7 +144,8 @@ def index():
     if form.validate_on_submit():
         sender_email = 'folayemiebire@gmail.com'
         name = form.name.data
-        recipient_emails = 'tobi@devtegrate.com'
+        email = form.email.data
+        recipient_emails = 'quinndaisy.blog@gmail.com'
         company_name = form.company_name.data
         company_size = form.company_size.data
         industry = form.industry.data
@@ -171,9 +172,27 @@ def index():
                                 "Name": "Devtegrate"
                             }
                         ],
-                        "Subject": subject,
+                        "Subject": 'Devtegrate Cloud Service',
                         "TextPart": "",
-                        "HTMLPart": f'''<h2 style="@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); font-family: 'poppins', sans-serif; font-size: 1.4em; font-weight: 100; color: #000000; text-align: left; padding: 0 0 15px 0;"">You just received a message<br>{message}<br><p @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'); font-family: 'poppins', sans-serif; font-size: 0.9em; font-weight: 100; color: #000000; text-align: left; padding: 0 0 15px 0;">Contact phone number:</p>{phone}</p>''',
+                        "HTMLPart": f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
+            <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+
+                <h1 style="color: #1596F5; font-size: 1.5em; margin-bottom: 20px;">Hi there, You just received a new message</h1>
+                <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
+                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Name:</strong> {name}</p>
+                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Work Email:</strong> {email}</p>
+                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Name:</strong> {company_name}</p>
+                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Size:</strong> {company_size}</p>
+                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Industry:</strong> {industry}</p>
+                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Other Industry:</strong> {other_industry}</p>
+                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>What do you need help with?</strong> {help_with}</p>
+                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Other Help:</strong> {other_help}</p>
+
+                <a href="mailto:{recipient_emails}" style="display: inline-block; background-color: #1596F5; color: #ffffff; font-size: 0.9em; text-align: center; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 20px;">
+                    Would you like to respond?
+                </a>
+            </div>
+        </div>''',
                         "CustomID": "AppGettingStartedTest"
                     }
                 ]
@@ -194,9 +213,9 @@ def index():
     return render_template('index.html',
         form=form,
         title_tag='Devtegrate Cloud | Cloud Services | Cloud DevOps',
-        meta_description='',
-        url_link='',
-        revised=''
+        meta_description='Welcome to Devtegrate, your premier partner for comprehensive cloud services and expert cloud DevOps solutions. Enhance your business agility and efficiency with our state-of-the-art cloud solutions.',
+        url_link='https://devtegrate.com/',
+        revised='2024-07-01'
     )
 
 @app.route('/cloud-integration', methods=['GET', 'POST'])
