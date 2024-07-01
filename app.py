@@ -202,181 +202,181 @@ def index():
 @app.route('/cloud-integration', methods=['GET', 'POST'])
 def cloud_integration():
     return render_template('pages/cloud-integration.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Cloud Integration Services | Seamlessly Connect Your Systems',
+        meta_description='Discover top-notch cloud integration services to seamlessly connect your systems and streamline your operations. Enhance your business agility with our expert solutions.',
+        url_link='https://devtegrate.com/cloud-integration',
+        revised='2024-07-01'
     )
 
 @app.route('/cloud-automation', methods=['GET', 'POST'])
 def cloud_automation():
     return render_template('pages/cloud-automation.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Cloud Automation Solutions | Optimize and Automate Workflows',
+        meta_description='Explore advanced cloud automation solutions to optimize and automate your workflows. Increase efficiency and reduce operational costs with our state-of-the-art automation services.',
+        url_link='https://devtegrate.com/cloud-automation',
+        revised='2024-07-01'
     )
 
 @app.route('/cloud-computing', methods=['GET', 'POST'])
 def cloud_computing():
     return render_template('pages/cloud-computing.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Cloud Computing Services | Scalable and Secure Solutions',
+        meta_description='Get the best cloud computing services with scalable and secure solutions tailored to your business needs. Leverage our expertise to drive your digital transformation.',
+        url_link='https://devtegrate.com/cloud-computing',
+        revised='2024-07-01'
     )
 
 @app.route('/inspiration', methods=['GET', 'POST'])
 def inspiration():
     return render_template('pages/inspiration.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Inspiration and Ideas | Innovative Solutions for Your Business',
+        meta_description='Find inspiration and innovative ideas to take your business to the next level. Discover trends, tips, and success stories that can help you grow and thrive.',
+        url_link='https://devtegrate.com/inspiration',
+        revised='2024-07-01'
     )
 
 @app.route('/team', methods=['GET', 'POST'])
 def team():
     return render_template('pages/team.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Meet Our Team | Experts in Cloud Solutions and Services',
+        meta_description='Meet our team of experts dedicated to providing top-notch cloud solutions and services. Learn more about the professionals driving your success.',
+        url_link='https://devtegrate.com/team',
+        revised='2024-07-01'
     )
 
 @app.route('/amazon-web-service', methods=['GET', 'POST'])
 def aws():
     return render_template('pages/aws.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Amazon Web Services (AWS) | Reliable and Scalable Cloud Solutions',
+        meta_description='Leverage Amazon Web Services (AWS) for reliable and scalable cloud solutions. Our expert team provides comprehensive AWS services tailored to your needs.',
+        url_link='https://devtegrate.com/amazon-web-service',
+        revised='2024-07-01'
     )
 
 @app.route('/microsoft-azure', methods=['GET', 'POST'])
 def azure():
     return render_template('pages/azure.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Microsoft Azure Services | Secure and Flexible Cloud Solutions',
+        meta_description='Explore Microsoft Azure services for secure and flexible cloud solutions. Our experienced team helps you harness the power of Azure to achieve your business goals.',
+        url_link='https://devtegrate.com/microsoft-azure',
+        revised='2024-07-01'
     )
 
 @app.route('/google-cloud-service', methods=['GET', 'POST'])
 def gcp():
     return render_template('pages/gcp.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Google Cloud Services (GCP) | Powerful and Innovative Cloud Solutions',
+        meta_description='Discover Google Cloud Services (GCP) for powerful and innovative cloud solutions. Our experts provide tailored GCP services to support your business transformation.',
+        url_link='https://devtegrate.com/google-cloud-service',
+        revised='2024-07-01'
     )
 
 @app.route('/cloud-infrastructure', methods=['GET', 'POST'])
 def cloud_infrastructure():
     return render_template('pages/cloud-infrastructure.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Cloud Infrastructure Solutions | Scalable and Robust | Devtegrate',
+        meta_description='Enhance your business operations with our scalable and robust cloud infrastructure solutions. Trust Devtegrate for reliable cloud infrastructure services.',
+        url_link='https://devtegrate.com/cloud-infrastructure',
+        revised='2024-07-01'
     )
 
 @app.route('/about-us', methods=['GET', 'POST'])
 def about():
     return render_template('pages/about.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='About Devtegrate | Leading Cloud Solutions Provider',
+        meta_description='Learn more about Devtegrate, a leading provider of innovative cloud solutions. Discover our mission, vision, and the team behind our success.',
+        url_link='https://devtegrate.com/about-us',
+        revised='2024-07-01'
     )
 
 @app.route('/cloud-services', methods=['GET', 'POST'])
 def cloud_service():
     return render_template('pages/cloud-services.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Comprehensive Cloud Services | Tailored to Your Needs | Devtegrate',
+        meta_description='Explore Devtegrate’s comprehensive cloud services, tailored to meet your business needs. From integration to automation, we offer end-to-end cloud solutions.',
+        url_link='https://devtegrate.com/cloud-services',
+        revised='2024-07-01'
     )
 
 @app.route('/our-services', methods=['GET', 'POST'])
 def service():
     return render_template('pages/service.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Our Services | Expert Cloud Solutions and Consulting | Devtegrate',
+        meta_description='Discover the wide range of cloud solutions and consulting services offered by Devtegrate. Our expert team is dedicated to helping your business thrive.',
+        url_link='https://devtegrate.com/our-services',
+        revised='2024-07-01'
     )
 
 @app.route('/cloud-devops', methods=['GET', 'POST'])
 def cloud_devops():
     return render_template('pages/cloud-devops.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Cloud DevOps Services | Streamline Development and Operations | Devtegrate',
+        meta_description='Optimize your development and operations with Devtegrate’s cloud DevOps services. Streamline workflows and enhance efficiency with our expert solutions.',
+        url_link='https://devtegrate.com/cloud-devops',
+        revised='2024-07-01'
     )
 
 @app.route('/security-compliance', methods=['GET', 'POST'])
 def security_compliance():
     return render_template('pages/security-compliance.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Cloud Security and Compliance | Protect Your Data | Devtegrate',
+        meta_description='Ensure the security and compliance of your cloud infrastructure with Devtegrate. Protect your data and meet regulatory requirements with our expert services.',
+        url_link='https://devtegrate.com/security-compliance',
+        revised='2024-07-01'
     )
 
 @app.route('/software-development', methods=['GET', 'POST'])
 def software_development():
     return render_template('pages/software-development.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Custom Software Development Services | Innovative Solutions | Devtegrate',
+        meta_description='Transform your business with custom software development services from Devtegrate. Our innovative solutions are designed to meet your unique needs.',
+        url_link='https://devtegrate.com/software-development',
+        revised='2024-07-01'
     )
 
 @app.route('/cyber-security', methods=['GET', 'POST'])
 def cyber_security():
     return render_template('pages/cyber-security.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Cyber Security Services | Protect Your Business | Devtegrate',
+        meta_description='Safeguard your business with Devtegrate’s comprehensive cyber security services. Protect your data and systems from threats with our expert solutions.',
+        url_link='https://devtegrate.com/cyber-security',
+        revised='2024-07-01'
     )
 
 @app.route('/financial-services', methods=['GET', 'POST'])
 def financial_services():
     return render_template('pages/financial-services.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Financial Services Solutions | Enhance Your Financial Operations | Devtegrate',
+        meta_description='Optimize your financial operations with Devtegrate’s tailored financial services solutions. Improve efficiency and compliance with our expert services.',
+        url_link='https://devtegrate.com/financial-services',
+        revised='2024-07-01'
     )
 
 @app.route('/government', methods=['GET', 'POST'])
 def government():
     return render_template('pages/government.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Government Cloud Solutions | Secure and Compliant | Devtegrate',
+        meta_description='Empower your government agency with secure and compliant cloud solutions from Devtegrate. Leverage our expertise to improve public services and efficiency.',
+        url_link='https://devtegrate.com/government',
+        revised='2024-07-01'
     )
 
 @app.route('/health', methods=['GET', 'POST'])
 def health():
     return render_template('pages/health.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Healthcare Cloud Solutions | Enhance Patient Care | Devtegrate',
+        meta_description='Enhance patient care with Devtegrate’s healthcare cloud solutions. Improve efficiency, security, and compliance in your healthcare operations.',
+        url_link='https://devtegrate.com/health',
+        revised='2024-07-01'
     )
 
 @app.route('/technology', methods=['GET', 'POST'])
 def technology():
     return render_template('pages/technology.html',
-        title_tag='',
-        meta_description='',
-        url_link='',
-        revised=''
+        title_tag='Technology Solutions | Innovative and Scalable | Devtegrate',
+        meta_description='Stay ahead with Devtegrate’s innovative and scalable technology solutions. From cloud computing to cyber security, we provide comprehensive tech services.',
+        url_link='https://devtegrate.com/technology',
+        revised='2024-07-01'
     )
 
 ####################################################################################################################################################################################
