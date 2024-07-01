@@ -398,6 +398,15 @@ def technology():
         revised='2024-07-01'
     )
 
+@app.route('/privacy-policy', methods=['GET', 'POST'])
+def privacy_policy():
+    return render_template('pages/privacy-policy.html',
+        title_tag='Privacy Policy | Devtegrate',
+        meta_description='Read Devtegrates privacy policy to understand how we collect, use, and protect your personal information. Your privacy is important to us.',
+        url_link='https://devtegrate.com/privacy-policy',
+        revised='2024-07-01'
+    )
+
 ####################################################################################################################################################################################
 ####################################################################################################################################################################################
 ####################################################################################################################################################################################

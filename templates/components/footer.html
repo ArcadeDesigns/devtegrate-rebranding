@@ -26,12 +26,12 @@
 		<div class="footer-header-content-link">
 			<li><a href="{{ url_for('about') }}">About Us</a></li>
 			<li><a href="{{ url_for('security_compliance') }}">Security compliance</a></li>
-			<li><a href="">Contact Us</a></li>
+			<li><a href="mailto:tobi@devtegrate.com">Contact Us</a></li>
 			<li><a href="{{ url_for('software_development') }}">Software Development</a></li>
 			<li><a href="{{ url_for('service') }}">Our Services</a></li>
 			<li><a href="{{ url_for('cloud_service') }}">Cloud Services</a></li>
-			<li><a href="">Legal</a></li>
-			<li><a href="">Privacy Policy</a></li>
+			<li><a href="{{ url_for('static', filename='documents/devtegrate-legal-document.pdf') }}">Legal</a></li>
+			<li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
 		</div>
 	</div>
 
