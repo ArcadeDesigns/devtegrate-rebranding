@@ -34,6 +34,18 @@
   --link-span-text: 0.8em;
 }
 
+.notification-positioning {
+	position: absolute;
+	top: 20%;
+	padding: 10px;
+	z-index: 999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	width: 100%;
+}
+
 .header {
 	justify-content: center;
 	align-items: center;

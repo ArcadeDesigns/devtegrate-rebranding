@@ -3,6 +3,15 @@
         {% include 'components/navbar.html' %}
         {% include 'components/notification.html' %}
 
+        {% for message in get_flashed_messages() %}
+        <div class="notification-positioning">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <p class="message-font">Hi! {{ message }}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        {% endfor %}
+
         <div class="header">
             <div class="header-img-ctn">
                 <img class="slider-img active" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718722929/devtegrate-updates/abstract-background-with-low-poly-design_d8film.jpg" alt="Devtegrate Image">
@@ -424,13 +433,6 @@
                 <form method="POST">
                     {{ form.hidden_tag() }}
                     <h2>Form</h2>
-
-                    {% for message in get_flashed_messages() %}
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <p class="message-font">Hi! {{ message }}</p>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    {% endfor %}
 
                     <div class="footer-form-ctn-box-box">
                         <div class="footer-form-ctn-box-box-cn">
