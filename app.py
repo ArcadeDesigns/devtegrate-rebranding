@@ -145,7 +145,7 @@ def index():
         sender_email = 'folayemiebire@gmail.com'
         name = form.name.data
         email = form.email.data
-        recipient_emails = 'tobi@devtegrate.com'
+        recipient_emails = 'folayemiebire@gmail.com'
         company_name = form.company_name.data
         company_size = form.company_size.data
         industry = form.industry.data
@@ -175,24 +175,26 @@ def index():
                         "Subject": 'Devtegrate Cloud Service',
                         "TextPart": "",
                         "HTMLPart": f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
-            <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+                                            <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
 
-                <h1 style="color: #1596F5; font-size: 1.5em; margin-bottom: 20px;">Hi there, You just received a new message</h1>
-                <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
-                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Name:</strong> {name}</p>
-                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Work Email:</strong> {email}</p>
-                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Name:</strong> {company_name}</p>
-                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Size:</strong> {company_size}</p>
-                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Industry:</strong> {industry}</p>
-                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Other Industry:</strong> {other_industry}</p>
-                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>What do you need help with?</strong> {help_with}</p>
-                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Other Help:</strong> {other_help}</p>
+                                                <img style="display: flex; width: 100%; height: 100%;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1719936097/devtegrate-brand/Artboard_4-removebg-preview_awjz1u.png" alt="Devtegrate Cloud Image">
 
-                <a href="mailto:{recipient_emails}" style="display: inline-block; background-color: #1596F5; color: #ffffff; font-size: 0.9em; text-align: center; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 20px;">
-                    Would you like to respond?
-                </a>
-            </div>
-        </div>''',
+                                                <h1 style="color: #1596F5; font-size: 1.5em; margin-bottom: 20px;">Hi there, You just received a new message</h1>
+                                                <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Name:</strong> {name}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Work Email:</strong> {email}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Name:</strong> {company_name}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Size:</strong> {company_size}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Industry:</strong> {industry}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Other Industry:</strong> {other_industry}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>What do you need help with?</strong> {help_with}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Other Help:</strong> {other_help}</p>
+
+                                                <a href="mailto:{recipient_emails}" style="display: inline-block; background-color: #1596F5; color: #ffffff; font-size: 0.9em; text-align: center; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 20px;">
+                                                    Would you like to respond?
+                                                </a>
+                                            </div>
+                                        </div>''',
                         "CustomID": "AppGettingStartedTest"
                     }
                 ]
