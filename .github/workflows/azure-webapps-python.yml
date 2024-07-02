@@ -2,7 +2,7 @@ name: Build and deploy Python app to Azure Web App
 
 env:
   AZURE_WEBAPP_NAME: 'devtegrate-brand'
-  PYTHON_VERSION: '3.11'
+  PYTHON_VERSION: '3.9'
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v2
         with:
-          python-version: '3.11'
+          python-version: '3.9'
 
       - name: Create and start virtual environment
         run: |
@@ -63,9 +63,9 @@ jobs:
           path: .
 
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
+        id: deploy-to-webapp
         with:
-           app-name: 'devtegrate-brand'
-           slot-name: 'Production'
-           publish-profile: ${{ ... }}
+          app-name: 'devtegrate-llc-website'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3CFB0997113E48F089AA7053CE037FAB }}
