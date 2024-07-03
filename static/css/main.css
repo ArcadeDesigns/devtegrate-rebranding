@@ -2104,6 +2104,11 @@
         flex-direction: column;
     }
 
+    .secondary-ctn-section-header-ctn-flex {
+        flex-direction: column;
+    }
+
+
     .updated-swiper-ctn-grid {
         justify-content: center;
         align-items: center;
