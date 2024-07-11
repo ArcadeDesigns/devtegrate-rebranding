@@ -25,6 +25,33 @@ function SwiperSliderDef() {
     });
 };
 
+function SwiperSliderDefTwo() {
+    const SwiperWrapperTwo = document.querySelector('.additional-swiper-wrapper');
+    const slideTwos = document.querySelectorAll('.additional-ctn-section-two-cn-ctn-box');
+    const nextButtonTwo = document.querySelector('.additional-next');
+    const prevButtonTwo = document.querySelector('.additional-prev');
+
+    let currentIndex = 0;
+
+    function updateslideTwoPosition() {
+        SwiperWrapperTwo.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextButtonTwo.addEventListener('click', () => {
+        if (currentIndex < slideTwos.length - 1) {
+            currentIndex++;
+            updateslideTwoPosition();
+        }
+    });
+
+    prevButtonTwo.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateslideTwoPosition();
+        }
+    });
+};
+
 function toggleOtherIndustry() {
     var industry = document.getElementById("industry").value;
     var otherIndustry = document.getElementById("other-industry");

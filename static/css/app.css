@@ -21,7 +21,7 @@
   --tertiary-color: #1596F5;
   --background-color: ------;
   --text-color: #888888;
-  --reserved-color: ------;
+  --reserved-color: #011D28;
 
   /*variables Text*/
   --mega-header: 5em;
@@ -45,7 +45,7 @@ header {
   width: 100%;
   height: auto;
   padding: 10px;
-  background: rgba(100, 100, 100, .4);
+  background: var(--reserved-color);
   backdrop-filter: saturate(180%) blur(10px);
   position: absolute;
   top: 0;
@@ -137,7 +137,7 @@ footer {
   flex-direction: column;
   width: 100%;
   height: auto;
-  background-color: var(--secondary-color);
+  background-color: var(--reserved-color);
   padding: 5%;
 }
 
@@ -208,7 +208,6 @@ footer {
   height: auto;
   display: flex;
   flex-direction: column;
-  padding-right: 8%;
 }
 
 .footer-header-content-details h2 {
@@ -245,7 +244,7 @@ footer {
 }
 
 .footer-header-content-link {
-  width: 60%;
+  width: 100%;
   height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -254,16 +253,41 @@ footer {
   gap: 1em;
 }
 
-.footer-header-content-link li {
+.footer-header-content-link-ctn {
+  padding: 4% 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-header-content-link-ctn h2 {
+  font-size: var(--p-text);
+  font-weight: 500;
+  color: var(--tertiary-color);
+}
+
+.footer-header-content-link-ctn li {
   list-style: none;
   padding: 10px;
 }
 
-.footer-header-content-link li a {
+.footer-header-content-link-ctn li a {
   text-decoration: none;
   font-size: var(--span-text);
   font-weight: 500;
   color: var(--primary-color);
+}
+
+.footer-split-ctn {
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-right: 5%;
 }
 
 .footer-subscription-ctn {
@@ -273,7 +297,8 @@ footer {
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  padding-top: 2%;
 }
 
 .footer-subscription-cn {
@@ -301,16 +326,17 @@ footer {
 
 .footer-subscription-form {
   justify-content: center;
-  align-items: flex-end;
-  margin: auto;
+  align-items: flex-start;
+  margin-right: auto;
   width: 100%;
+  max-width: 600px;
   height: auto;
   display: flex;
   flex-direction: column;
 }
 
 .footer-subscription-form form {
-  width: auto;
+  width: 100%;
   height: auto;
   padding: 5px;
   display: flex;
@@ -327,6 +353,7 @@ footer {
   color: var(--secondary-color);
   font-weight: 500;
   outline: none;
+  width: 100%;
 }
 
 .footer-subscription-form form button {
@@ -336,6 +363,7 @@ footer {
   color: var(--primary-color);
   border: none;
   padding: 10px;
+  width: max-content;
   border-radius: 10px;
 }
 

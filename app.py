@@ -142,7 +142,7 @@ def google_login():
 def index():
     form = MessagesForm()
     if form.validate_on_submit():
-        sender_email = 'folayemiebire@gmail.com'
+        sender_email = 'contact@devtegrate.com'
         name = form.name.data
         email = form.email.data
         recipient_emails = 'tobi@devtegrate.com'
@@ -176,9 +176,7 @@ def index():
                         "TextPart": "",
                         "HTMLPart": f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
                                             <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
-
-                                                <img style="display: flex; width: 100%; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1719936097/devtegrate-brand/Artboard_4-removebg-preview_awjz1u.png" alt="Devtegrate Cloud Image">
-
+                                                <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
                                                 <h1 style="color: #1596F5; font-size: 1.5em; margin-bottom: 20px;">Hi there, You just received a new message</h1>
                                                 <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
                                                 <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Name:</strong> {name}</p>
@@ -203,6 +201,7 @@ def index():
             # Check if the request was successful (status code 2xx)
             if result.status_code == 200:
                 flash("Thank you for reaching out. Your message has been successfully sent. We will promptly review your inquiry and get in touch with you at our earliest convenience.")
+                send_message(form)
             else:
                 print(f"Failed to send the email. MailJet API response: {result.json()}")
                 flash("Failed to send the email.", 'danger')
@@ -217,6 +216,52 @@ def index():
         url_link='https://devtegrate.com/',
         revised='2024-07-01'
     )
+
+def send_message(messages_form):
+    sender_email = 'contact@devtegrate.com'
+    subject = 'Thank You for Contacting Devtegrate'
+    recipient_emails = messages_form.email.data
+    message = '''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
+                    <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+                        <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
+                        <h1 style="color: #1596F5; font-size: 1.5em; margin-top: 20px; margin-bottom: 20px;">Thank You for Your Message</h1>
+                        <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;">We have successfully received your message and will review it shortly. Our team will respond to you as soon as possible. We look forward to discussing innovative strategies to enhance your business growth and demonstrating how our services can support your objectives.</p>
+                    </div>
+                </div>
+            '''
+    try:
+        api_key = '7313cf6592999b69b87e0136ef2d0eea'
+        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
+
+        mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+
+        data = {
+            'Messages': [
+                {
+                    "From": {
+                        "Email": sender_email,
+                        "Name": "Devtegrate"
+                    },
+                    "To": [
+                        {
+                            "Email": recipient_emails,
+                            "Name": "Devtegrate"
+                        }
+                    ],
+                    "Subject": subject,
+                    "TextPart": "",
+                    "HTMLPart": message,
+                    "CustomID": "AppGettingStartedTest"
+                }
+            ]
+        }
+
+        result = mailjet.send.create(data=data)
+        # Check if the request was successful (status code 2xx)
+        if result.status_code != 200:
+            print(f"Failed to send the email. MailJet API response: {result.json()}")
+    except Exception as e:
+        print(f"Error occurred while sending the automated response: {e}")
 
 @app.route('/cloud-integration', methods=['GET', 'POST'])
 def cloud_integration():

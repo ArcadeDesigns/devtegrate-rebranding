@@ -1,6 +1,6 @@
 <footer>
 	<div class="footer-header">
-		<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221343/devtegrate-updates/Asset_2_pwuunu.png" alt="Devtegrate Cloud Services Image">
+		<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720531159/devtegrate-images/Asset_5_ujcfae.svg" alt="Devtegrate Cloud Services Image">
 		
 		<div class="footer-header-icon">
 			<li><a href="https://www.facebook.com/profile.php?id=100087533002431"><i class='bx bxl-facebook-square' ></i></a></li>
@@ -13,39 +13,63 @@
 	<div class="footer-header-line"></div>
 
 	<div class="footer-header-content">
-		<div class="footer-header-content-details">
-			<h2>From Brainstorming to Implementation: We're the Tech Experts Who Help You Do It.</h2>
-			<p>At Devtegrate, we're passionate about technology's power to revolutionize businesses. We were founded on the belief that every company deserves the tools to achieve its full potential. That's why we bring together a team of creative technologists and strategic thinkers dedicated to crafting cutting-edge solutions that transform how businesses operate.</p>
-			
-			<a href="{{ url_for('about') }}">
-				<span>Read About Us</span>
-				<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
-			</a>
+		<div class="footer-split-ctn">
+			<div class="footer-header-content-details">
+				<h2>From Brainstorming to Implementation: We're the Tech Experts Who Help You Do It.</h2>
+				<p>At Devtegrate, we're passionate about technology's power to revolutionize businesses. We were founded on the belief that every company deserves the tools to achieve its full potential. That's why we bring together a team of creative technologists and strategic thinkers dedicated to crafting cutting-edge solutions that transform how businesses operate.</p>
+				
+				<a href="{{ url_for('about') }}">
+					<span>Read About Us</span>
+					<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+				</a>
+			</div>
+
+			<div class="footer-subscription-ctn">
+				<div class="footer-subscription-form">
+					<form>
+						<input type="" name="" placeholder="Email Address">
+						<button>Subscribe</button>
+					</form>
+				</div>
+
+				<div class="footer-subscription-cn">
+					<h3>Stay up to date</h3>
+					<p>Get newsletters on our latest events and occasions</p>
+				</div>
+			</div>
 		</div>
 
 		<div class="footer-header-content-link">
-			<li><a href="{{ url_for('about') }}">About Us</a></li>
-			<li><a href="{{ url_for('security_compliance') }}">Security compliance</a></li>
-			<li><a href="mailto:tobi@devtegrate.com">Contact Us</a></li>
-			<li><a href="{{ url_for('software_development') }}">Software Development</a></li>
-			<li><a href="{{ url_for('service') }}">Our Services</a></li>
-			<li><a href="{{ url_for('cloud_service') }}">Cloud Services</a></li>
-			<li><a href="{{ url_for('static', filename='documents/devtegrate-legal-document.pdf') }}">Legal</a></li>
-			<li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
-		</div>
-	</div>
+			<div class="footer-header-content-link-ctn">
+				<h2>Industries</h2>
+				<li><a href="{{ url_for('financial_services') }}">Financial Services</a></li>
+				<li><a href="{{ url_for('government') }}">Government</a></li>
+				<li><a href="{{ url_for('health') }}">Health</a></li>
+				<li><a href="{{ url_for('technology') }}">Technology</a></li>
+			</div>
 
-	<div class="footer-subscription-ctn">
-		<div class="footer-subscription-cn">
-			<h3>Stay up to date</h3>
-			<p>Get newsletters on our latest events and occasions</p>
-		</div>
+			<div class="footer-header-content-link-ctn">
+				<h2>Technology</h2>
+				<li><a href="{{ url_for('cloud_service') }}">Cloud Services</a></li>
+				<li><a href="{{ url_for('security_compliance') }}">Security and Compliance</a></li>
+				<li><a href="cloud_devops">Cloud DevOps</a></li>
+				<li><a href="{{ url_for('software_development') }}">Software Development</a></li>
+				<li><a href="{{ url_for('cyber_security') }}">Cyber Security</a></li>
+				<li><a href="{{ url_for('cloud_automation') }}">Cloud Automation</a></li>
+			</div>
 
-		<div class="footer-subscription-form">
-			<form>
-				<input type="" name="" placeholder="Email Address">
-				<button>Subscribe</button>
-			</form>
+			<div class="footer-header-content-link-ctn">
+				<h2>Quick Links</h2>
+				<li><a href="{{ url_for('about') }}">About Us</a></li>
+				<li><a href="mailto:tobi@devtegrate.com">Contact Us</a></li>
+				<li><a href="{{ url_for('service') }}">Our Services</a></li>				
+			</div>
+
+			<div class="footer-header-content-link-ctn">
+				<h2>Extra</h2>
+				<li><a href="{{ url_for('static', filename='documents/devtegrate-legal-document.pdf') }}">Legal</a></li>
+				<li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+			</div>
 		</div>
 	</div>
 
