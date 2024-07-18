@@ -41,5 +41,5 @@ function AutomatedSlider() {
 
     nextPageBtn.addEventListener('click', slideToNext);
 
-    setInterval(slideToNext, 5000); // Slide every 5 seconds
+    setInterval(slideToNext, 10000); // Slide every 5 seconds
 };

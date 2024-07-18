@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% include 'components/navbar.html' %}
+        {% include 'components/notification.html' %}
+
+        {% for message in get_flashed_messages() %}
+        <div class="notification-positioning">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <p class="message-font">Hi! {{ message }}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="footer-form-ctn">
+            <img class="form-img-bg" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720526217/devtegrate-images/closeup-female-typing-laptop-keyboard_vxgvlr.jpg" alt="Devtegrate Image">
+
+            <div class="footer-form-ctn-box">
+                <div class="footer-form-ctn-box-content">
+                    <h2>Email Verification</h2>
+                    <p>To ensure the security and authenticity of your request, please verify your email address by entering the code we have sent to your inbox. Your cooperation is appreciated as we strive to provide you with the highest level of service.</p>
+                </div>
+
+                <form method="POST" action="{{ url_for('verify_otp') }}">
+                    {{ form.hidden_tag() }}
+                    <div class="footer-form-ctn-box-box">
+                        <div class="footer-form-ctn-box-box-cn">
+                            <label>Email Validation</label>
+                            <input type="text" name="otp" placeholder="Enter the OTP sent to your Mail.">
+                        </div>
+                    </div>
+
+                    <button type="submit" name="submit">
+                        <span>Verify Mail</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    {% include 'components/footer.html' %}
+{% endblock %}

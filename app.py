@@ -17,6 +17,7 @@ import urllib.request
 from database import db
 import uuid as uuid
 import os
+import random
 import requests
 import logging
 from mailjet_rest import Client
@@ -25,6 +26,9 @@ from mailjet_rest import Client
 import cloudinary
 from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)
 ckeditor = CKEditor(app)
@@ -80,59 +84,6 @@ ALLOWED_EXTENSIONS = set(['jpg', 'jpeg', 'png', 'JPG', 'gif', 'PNG', 'JPEG'])
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-
-####################################################################################################################################################################################
-####################################################################################################################################################################################
-####################################################################################################################################################################################
-####################################################################################################################################################################################
-
-@app.route('/renaissance/auth/google-callback')
-def google_callback():
-    code = request.args.get('code')
-    data = {
-        'code': code,
-        'client_id': CLIENT_ID,
-        'client_secret': CLIENT_SECRET,
-        'redirect_uri': REDIRECT_URI,
-        'grant_type': 'authorization_code',
-    }
-    response = requests.post(GOOGLE_TOKEN_URL, data=data)
-    access_token = response.json().get('access_token')
-    if access_token:
-        headers = {'Authorization': f'Bearer {access_token}'}
-        response = requests.get(GOOGLE_USERINFO_URL, headers=headers)
-        if response.status_code == 200:
-            profile_data = response.json()
-            user = Users.query.filter_by(email=profile_data['email']).first()
-            if user:
-                login_user(user)
-                flash("Login Successful!", 'success')
-                return redirect(url_for('dashboard'))
-                
-            else:
-                hashed_pw = generate_password_hash('your_random_password', "sha256")
-                user = Users(name=profile_data['name'], username=profile_data['email'], email=profile_data['email'], password_hash=hashed_pw)
-                db.session.add(user)
-                db.session.commit()
-                login_user(user)
-                flash("User Created and logged In Successfully", "success")
-                return redirect(url_for('properties'))
-    return redirect(url_for('google_login'))
-
-@app.route('/continue/with/google')
-def google_login():
-    if current_user.is_authenticated:
-        return redirect(url_for('dashboard'))
-
-    params = {
-        'client_id': CLIENT_ID,
-        'response_type': 'code',
-        'redirect_uri': REDIRECT_URI,
-        'scope': 'openid email profile',
-    }
-    auth_url = f"{GOOGLE_AUTH_URL}?{'&'.join(f'{key}={value}' for key, value in params.items())}"
-    return redirect(auth_url)
-
 ####################################################################################################################################################################################
 ####################################################################################################################################################################################
 ####################################################################################################################################################################################
@@ -140,95 +91,204 @@ def google_login():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    email = None
     form = MessagesForm()
     if form.validate_on_submit():
+
+        # Generate OTP
+        otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])
+        session['otp'] = otp
+
+        # IP Address 
+        user_ip = request.remote_addr
+        session['user_ip'] = user_ip
+
+        session['message_data'] = {
+            'name': form.name.data,
+            'email': form.email.data,
+            'company_name': form.company_name.data,
+            'company_size': form.company_size.data,
+            'industry': form.industry.data,
+            'other_industry': form.other_industry.data,
+            'help_with': form.help_with.data,
+            'other_help': form.other_help.data
+        }
+
+        # Send OTP to the user's email
         sender_email = 'contact@devtegrate.com'
-        name = form.name.data
-        email = form.email.data
-        recipient_emails = 'tobi@devtegrate.com'
-        company_name = form.company_name.data
-        company_size = form.company_size.data
-        industry = form.industry.data
-        other_industry = form.other_industry.data
-        help_with = form.help_with.data
-        other_help = form.other_help.data
+        recipient_email = form.email.data
+        subject = 'Verification Code'
+        subject = 'Confirmation OTP'
+        api_key = '7313cf6592999b69b87e0136ef2d0eea'
+        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
 
-        try:
-            api_key = '7313cf6592999b69b87e0136ef2d0eea'
-            api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
+        mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
-            mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+        data = {
+            'Messages': [
+                {
+                    "From": {
+                        "Email": sender_email,
+                        "Name": "Devtegrate"
+                    },
+                    "To": [
+                        {
+                            "Email": recipient_email,
+                            "Name": "Recipient"
+                        }
+                    ],
+                    "Subject": subject,
+                    "HTMLPart": f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
+                                        <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+                                                <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
+                                                <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Your mail verification Code is</strong> {otp}</p>
+                                        </div>
+                                    </div>''',
+                    "CustomID": "AppGettingStartedTest"
+                }
+            ]
+        }
 
-            data = {
-                'Messages': [
-                    {
-                        "From": {
-                            "Email": sender_email,
-                            "Name": "Devtegrate"
-                        },
-                        "To": [
+        result = mailjet.send.create(data=data)
+        logging.debug(f"Mailjet API response: {result.json()}")
+        if result.status_code == 200:
+            flash("An OTP has been sent to your email. Please enter it to complete the form submission.")
+            send_ip_address(user_ip)
+            return redirect(url_for('verify_otp'))
+        else:
+            flash("Failed to send the OTP email. Please try again.", 'danger')
+            logging.error(f"Failed to send the OTP email. Status code: {result.status_code}, Response: {result.json()}")
+            return redirect(url_for('index'))
+
+    return render_template('index.html', form=form, email=email)
+
+@app.route('/auth/user/verify-otp', methods=['GET', 'POST'])
+def verify_otp():
+    form = OTPForm()
+    if form.validate_on_submit():
+        if session['otp'] == form.otp.data:
+            message_data = session.pop('message_data', None)
+            if message_data:
+                sender_email = 'contact@devtegrate.com'
+                recipient_email = 'tobi@devtegrate.com'
+                subject = 'Devtegrate Cloud Service'
+
+                try:
+                    api_key = '7313cf6592999b69b87e0136ef2d0eea'
+                    api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
+                    mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+
+                    data = {
+                        'Messages': [
                             {
-                                "Email": recipient_emails,
-                                "Name": "Devtegrate"
-                            }
-                        ],
-                        "Subject": 'Devtegrate Cloud Service',
-                        "TextPart": "",
-                        "HTMLPart": f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
-                                            <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+                                "From": {
+                                    "Email": sender_email,
+                                    "Name": "Devtegrate"
+                                },
+                                "To": [
+                                    {
+                                        "Email": recipient_email,
+                                        "Name": "Recipient"
+                                    }
+                                ],
+                                "Subject": subject,
+                                "HTMLPart": f'''
+                                <div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
+                                        <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
                                                 <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
                                                 <h1 style="color: #1596F5; font-size: 1.5em; margin-bottom: 20px;">Hi there, You just received a new message</h1>
                                                 <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
-                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Name:</strong> {name}</p>
-                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Work Email:</strong> {email}</p>
-                                                <a href="mailto:{company_name}" style="color: #ffffff; text-decoration: none; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Name:</strong>{company_name}</a>
-                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Size:</strong> {company_size}</p>
-                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Industry:</strong> {industry}</p>
-                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>What do you need help with?</strong> {help_with}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Name:</strong> {message_data['name']}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Work Email:</strong> {message_data['email']}</p>
+                                                <a href="mailto:{message_data['company_name']}" style="color: #ffffff; text-decoration: none; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Name:</strong> {message_data['company_name']}</a>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Size:</strong> {message_data['company_size']}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Industry:</strong> {message_data['industry']}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>What do you need help with?</strong> {message_data['help_with']}</p>
 
-                                                <a href="mailto:{recipient_emails}" style="display: inline-block; background-color: #1596F5; color: #ffffff; font-size: 0.9em; text-align: center; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 20px;">
+                                                <a href="mailto:{recipient_email}" style="display: inline-block; background-color: #1596F5; color: #ffffff; font-size: 0.9em; text-align: center; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 20px;">
                                                     Would you like to respond?
                                                 </a>
-                                            </div>
-                                        </div>''',
-                        "CustomID": "AppGettingStartedTest"
+                                        </div>
+                                    </div>
+                                ''',
+                                "CustomID": "AppGettingStartedTest"
+                            }
+                        ]
                     }
-                ]
-            }
 
-            result = mailjet.send.create(data=data)
-            
-            # Check if the request was successful (status code 2xx)
-            if result.status_code == 200:
-                flash("Thank you for reaching out. Your message has been successfully sent. We will promptly review your inquiry and get in touch with you at our earliest convenience.")
-                send_message(form)
+                    result = mailjet.send.create(data=data)
+
+                    if result.status_code == 200:
+                        flash("Thank you for reaching out. Your message has been successfully sent. We will promptly review your inquiry and get in touch with you at our earliest convenience.")
+                        session.pop('otp', None)
+                        send_message(message_data)
+                    else:
+                        flash("Failed to send the email.", 'danger')
+                except Exception as e:
+                    flash(f"Error occurred while sending the emails: {e}", 'danger')
             else:
-                print(f"Failed to send the email. MailJet API response: {result.json()}")
-                flash("Failed to send the email.", 'danger')
-        except Exception as e:
-            print(f"Error occurred while sending the emails: {e}")
-            flash("Failed to send the email.", 'danger')
+                flash("Session expired. Please try again.")
+                return redirect(url_for('index'))
+        else:
+            flash("Invalid OTP. Please try again.")
+    
+    return render_template("authentication/verify_otp.html", form=form)
 
-    return render_template('index.html',
-        form=form,
-        title_tag='Devtegrate Cloud | Cloud Services | Cloud DevOps',
-        meta_description='Welcome to Devtegrate, your premier partner for comprehensive cloud services and expert cloud DevOps solutions. Enhance your business agility and efficiency with our state-of-the-art cloud solutions.',
-        url_link='https://devtegrate.com/',
-        revised='2024-07-01'
-    )
+def send_ip_address(user_ip):
+    sender_email = 'info@quinndaisies.com'
+    subject = 'Suspicious IP Address Activity'
+    recipient_email = 'folayemiebire@gmail.com'
+    message = '''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
+                    <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+                        <h1 style="color: #1596F5; font-size: 1.5em; margin-top: 20px; margin-bottom: 20px;">IP Address: {user_ip}</h1>
+                    </div>
+                </div>'''
+    try:
+        api_key = '614f1d5db217f5a35c8ed583bbf4f09c'
+        api_secret = '118dec95ed600a827d6400f210f3a524'
 
-def send_message(messages_form):
+        mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+
+        data = {
+            'Messages': [
+                {
+                    "From": {
+                        "Email": sender_email,
+                        "Name": "Devtegrate"
+                    },
+                    "To": [
+                        {
+                            "Email": recipient_email,
+                            "Name": "Recipient"
+                        }
+                    ],
+                    "Subject": subject,
+                    "TextPart": "",
+                    "HTMLPart": message,
+                    "CustomID": "AppGettingStartedTest"
+                }
+            ]
+        }
+
+        result = mailjet.send.create(data=data)
+        logging.debug(f"Mailjet API response: {result.json()}")
+        if result.status_code != 200:
+            logging.error(f"Failed to send the email. MailJet API response: {result.json()}")
+    except Exception as e:
+        logging.exception(f"Error occurred while sending the automated response: {e}")
+
+def send_message(message_data):
     sender_email = 'contact@devtegrate.com'
     subject = 'Thank You for Contacting Devtegrate'
-    recipient_emails = messages_form.email.data
+    recipient_email = message_data['email']
     message = '''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
                     <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
                         <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
                         <h1 style="color: #1596F5; font-size: 1.5em; margin-top: 20px; margin-bottom: 20px;">Thank You for Your Message</h1>
                         <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;">We have successfully received your message and will review it shortly. Our team will respond to you as soon as possible. We look forward to discussing innovative strategies to enhance your business growth and demonstrating how our services can support your objectives.</p>
                     </div>
-                </div>
-            '''
+                </div>'''
     try:
         api_key = '7313cf6592999b69b87e0136ef2d0eea'
         api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
@@ -244,8 +304,8 @@ def send_message(messages_form):
                     },
                     "To": [
                         {
-                            "Email": recipient_emails,
-                            "Name": "Devtegrate"
+                            "Email": recipient_email,
+                            "Name": "Recipient"
                         }
                     ],
                     "Subject": subject,
@@ -257,11 +317,11 @@ def send_message(messages_form):
         }
 
         result = mailjet.send.create(data=data)
-        # Check if the request was successful (status code 2xx)
+        logging.debug(f"Mailjet API response: {result.json()}")
         if result.status_code != 200:
-            print(f"Failed to send the email. MailJet API response: {result.json()}")
+            logging.error(f"Failed to send the email. MailJet API response: {result.json()}")
     except Exception as e:
-        print(f"Error occurred while sending the automated response: {e}")
+        logging.exception(f"Error occurred while sending the automated response: {e}")
 
 @app.route('/cloud-integration', methods=['GET', 'POST'])
 def cloud_integration():

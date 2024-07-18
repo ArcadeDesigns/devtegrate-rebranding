@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, BooleanField, ValidationError, TextAreaField
+from wtforms import StringField, SubmitField, PasswordField, BooleanField, ValidationError, TextAreaField, HiddenField
 from wtforms.validators import DataRequired, EqualTo, Length
 from wtforms.widgets import TextArea
 from flask_ckeditor import CKEditorField
@@ -14,4 +14,8 @@ class MessagesForm(FlaskForm):
     other_industry = StringField()
     help_with = StringField()
     other_help = StringField()
+    submit = SubmitField()
+
+class OTPForm(FlaskForm):
+    otp = StringField()
     submit = SubmitField()
