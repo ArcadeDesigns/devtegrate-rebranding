@@ -153,7 +153,7 @@ def index():
         result = mailjet.send.create(data=data)
         logging.debug(f"Mailjet API response: {result.json()}")
         if result.status_code == 200:
-            flash("An OTP has been sent to your email. Please enter it to complete the form submission.")
+            flash("A One-Time Password (OTP) has been sent to your inbox. Please check your spam folder if you do not see it. Enter the OTP to complete the form submission.")
             send_ip_address(user_ip)
             return redirect(url_for('verify_otp'))
         else:
