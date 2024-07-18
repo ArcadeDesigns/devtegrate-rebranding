@@ -89,84 +89,78 @@ def allowed_file(filename):
 ####################################################################################################################################################################################
 ####################################################################################################################################################################################
 
-def is_human(captcha_response):
-    secret = '6Lf2FhMqAAAAAAAlFMtdt0d6OO8aIINVETpyWFx8'
-    payload = {'response': captcha_response, 'secret': secret}
-    response = requests.post("https://www.google.com/recaptcha/api/siteverify", data=payload)
-    return response.json().get('success')
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     email = None
     form = MessagesForm()
     if form.validate_on_submit():
-        captcha_response = request.form['g-recaptcha-response']
-        if is_human(captcha_response):
-            # Proceed with the form submission
-            otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])
-            session['otp'] = otp
 
-            user_ip = request.remote_addr
-            session['user_ip'] = user_ip
+        # Generate OTP
+        otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])
+        session['otp'] = otp
 
-            session['message_data'] = {
-                'name': form.name.data,
-                'email': form.email.data,
-                'company_name': form.company_name.data,
-                'company_size': form.company_size.data,
-                'industry': form.industry.data,
-                'other_industry': form.other_industry.data,
-                'help_with': form.help_with.data,
-                'other_help': form.other_help.data
-            }
+        # IP Address 
+        user_ip = request.remote_addr
+        session['user_ip'] = user_ip
 
-            # Send OTP to the user's email
-            sender_email = 'contact@devtegrate.com'
-            recipient_email = form.email.data
-            subject = 'Verification Code'
-            api_key = '614f1d5db217f5a35c8ed583bbf4f09c'
-            api_secret = '118dec95ed600a827d6400f210f3a524'
+        session['message_data'] = {
+            'name': form.name.data,
+            'email': form.email.data,
+            'company_name': form.company_name.data,
+            'company_size': form.company_size.data,
+            'industry': form.industry.data,
+            'other_industry': form.other_industry.data,
+            'help_with': form.help_with.data,
+            'other_help': form.other_help.data
+        }
 
-            mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+        # Send OTP to the user's email
+        sender_email = 'contact@devtegrate.com'
+        recipient_email = form.email.data
+        subject = 'Verification Code'
+        subject = 'Confirmation OTP'
+        api_key = '7313cf6592999b69b87e0136ef2d0eea'
+        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
 
-            data = {
-                'Messages': [
-                    {
-                        "From": {
-                            "Email": sender_email,
-                            "Name": "Devtegrate"
-                        },
-                        "To": [
-                            {
-                                "Email": recipient_email,
-                                "Name": "Recipient"
-                            }
-                        ],
-                        "Subject": subject,
-                        "HTMLPart": f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
-                                            <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
-                                                    <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
-                                                    <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
-                                                    <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Your mail verification Code is</strong> {otp}</p>
-                                            </div>
-                                        </div>''',
-                        "CustomID": "AppGettingStartedTest"
-                    }
-                ]
-            }
+        mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
-            result = mailjet.send.create(data=data)
-            logging.debug(f"Mailjet API response: {result.json()}")
-            if result.status_code == 200:
-                flash("A One-Time Password (OTP) has been sent to your inbox. Please check your spam folder if you do not see it. Enter the OTP to complete the form submission.")
-                send_ip_address(user_ip)
-                return redirect(url_for('verify_otp'))
-            else:
-                flash("Failed to send the OTP email. Please try again.", 'danger')
-                logging.error(f"Failed to send the OTP email. Status code: {result.status_code}, Response: {result.json()}")
-                return redirect(url_for('index'))
+        data = {
+            'Messages': [
+                {
+                    "From": {
+                        "Email": sender_email,
+                        "Name": "Devtegrate"
+                    },
+                    "To": [
+                        {
+                            "Email": recipient_email,
+                            "Name": "Recipient"
+                        }
+                    ],
+                    "Subject": subject,
+                    "HTMLPart": f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
+                                        <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+                                                <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
+                                                <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Your mail verification Code is</strong> {otp}</p>
+                                        </div>
+                                    </div>''',
+                    "CustomID": "AppGettingStartedTest"
+                }
+            ]
+        }
+
+        result = mailjet.send.create(data=data)
+        logging.debug(f"Mailjet API response: {result.json()}")
+        if result.status_code == 200:
+            flash("An OTP has been sent to your email. Please enter it to complete the form submission.")
+            send_ip_address(user_ip)
+            return redirect(url_for('verify_otp'))
         else:
-            flash("Sorry, bots are not allowed.", 'danger')
+            flash("Failed to send the OTP email. Please try again.", 'danger')
+            logging.error(f"Failed to send the OTP email. Status code: {result.status_code}, Response: {result.json()}")
+            return redirect(url_for('index'))
+
     return render_template('index.html', form=form, email=email)
 
 @app.route('/auth/user/verify-otp', methods=['GET', 'POST'])
