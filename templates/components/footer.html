@@ -1,13 +1,28 @@
 <footer>
 	<div class="footer-header">
 		<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720531159/devtegrate-images/Asset_5_ujcfae.svg" alt="Devtegrate Cloud Services Image">
-		
-		<div class="footer-header-icon">
-			<li><a href="https://www.facebook.com/profile.php?id=100087533002431"><i class='bx bxl-facebook-square' ></i></a></li>
-			<li><a href="https://www.twitter.com/Devtegrate_LLC"><i class='bx bxl-twitter' ></i></a></li>
-			<li><a href="mailto:tobi@devtegrate.com"><i class='bx bxl-gmail' ></i></a></li>
-			<li><a href="https://www.instagram.com/devtegrate_llc"><i class='bx bxl-instagram' ></i></a></li>
-		</div>
+
+		<div class="socialBtnSuperCta">
+            <a href="https://www.facebook.com/profile.php?id=100087533002431" class="socialBtnCta">
+                <div class="socialIcon"><i class="bx bxl-facebook"></i></div>
+                <span>Facebook</span>
+            </a>
+
+            <a href="https://www.x.com/Devtegrate_LLC" class="socialBtnCta">
+                <div class="socialIcon"><i class="bx bxl-twitter"></i></div>
+                <span>Twiiter</span>
+            </a>
+
+            <a href="mailto:tobi@devtegrate.com" class="socialBtnCta">
+                <div class="socialIcon"><i class='bx bxl-gmail'></i></div>
+                <span>Mail</span>
+            </a>
+
+            <a href="https://www.instagram.com/devtegrate_llc" class="socialBtnCta">
+                <div class="socialIcon"><i class="bx bxl-instagram"></i></div>
+                <span>Instagram</span>
+            </a>
+        </div>
 	</div>
 
 	<div class="footer-header-line"></div>
@@ -18,9 +33,9 @@
 				<h2>From Brainstorming to Implementation: We're the Tech Experts Who Help You Do It.</h2>
 				<p>At Devtegrate, we're passionate about technology's power to revolutionize businesses. We were founded on the belief that every company deserves the tools to achieve its full potential. That's why we bring together a team of creative technologists and strategic thinkers dedicated to crafting cutting-edge solutions that transform how businesses operate.</p>
 				
-				<a href="{{ url_for('about') }}">
-					<span>Read About Us</span>
-					<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1718221708/devtegrate-updates/Right_Arrow_3_kyr0im.png" alt="Devtegrate Cloud Services">
+				<a class="footerBtn" href="{{ url_for('about') }}">
+					Read About Us
+					<i class='bx bxs-chevron-right'></i>
 				</a>
 			</div>
 
@@ -28,7 +43,10 @@
 				<div class="footer-subscription-form">
 					<form>
 						<input type="" name="" placeholder="Email Address">
-						<button>Subscribe</button>
+						<button class="subscriptionBtn">
+							Subscribe
+							<i class='bx bxs-chevron-right'></i>
+						</button>
 					</form>
 				</div>
 
@@ -42,33 +60,33 @@
 		<div class="footer-header-content-link">
 			<div class="footer-header-content-link-ctn">
 				<h2>Industries</h2>
-				<li><a href="{{ url_for('financial_services') }}">Financial Services</a></li>
-				<li><a href="{{ url_for('government') }}">Government</a></li>
-				<li><a href="{{ url_for('health') }}">Health</a></li>
-				<li><a href="{{ url_for('technology') }}">Technology</a></li>
+				<li><a href="{{ url_for('financial_services') }}">Financial Services<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="{{ url_for('government') }}">Government<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="{{ url_for('health') }}">Health<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="{{ url_for('technology') }}">Technology<i class='bx bx-up-arrow-alt'></i></a></li>
 			</div>
 
 			<div class="footer-header-content-link-ctn">
 				<h2>Technology</h2>
-				<li><a href="{{ url_for('cloud_service') }}">Cloud Services</a></li>
-				<li><a href="{{ url_for('security_compliance') }}">Security and Compliance</a></li>
-				<li><a href="cloud_devops">Cloud DevOps</a></li>
-				<li><a href="{{ url_for('software_development') }}">Software Development</a></li>
-				<li><a href="{{ url_for('cyber_security') }}">Cyber Security</a></li>
-				<li><a href="{{ url_for('cloud_automation') }}">Cloud Automation</a></li>
+				<li><a href="{{ url_for('cloud_service') }}">Cloud Services<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="{{ url_for('security_compliance') }}">Security and Compliance<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="cloud_devops">Cloud DevOps<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="{{ url_for('software_development') }}">Software Development<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="{{ url_for('cyber_security') }}">Cyber Security<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="{{ url_for('cloud_automation') }}">Cloud Automation<i class='bx bx-up-arrow-alt'></i></a></li>
 			</div>
 
 			<div class="footer-header-content-link-ctn">
 				<h2>Quick Links</h2>
-				<li><a href="{{ url_for('about') }}">About Us</a></li>
-				<li><a href="mailto:tobi@devtegrate.com">Contact Us</a></li>
-				<li><a href="{{ url_for('service') }}">Our Services</a></li>				
+				<li><a href="{{ url_for('about') }}">About Us<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="mailto:tobi@devtegrate.com">Contact Us<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="{{ url_for('service') }}">Our Services<i class='bx bx-up-arrow-alt'></i></a></li>				
 			</div>
 
 			<div class="footer-header-content-link-ctn">
 				<h2>Extra</h2>
-				<li><a href="{{ url_for('static', filename='documents/devtegrate-legal-document.pdf') }}">Legal</a></li>
-				<li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a></li>
+				<li><a href="{{ url_for('static', filename='documents/devtegrate-legal-document.pdf') }}">Legal<i class='bx bx-up-arrow-alt'></i></a></li>
+				<li><a href="{{ url_for('privacy_policy') }}">Privacy Policy<i class='bx bx-up-arrow-alt'></i></a></li>
 			</div>
 		</div>
 	</div>

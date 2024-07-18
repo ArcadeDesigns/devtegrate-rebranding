@@ -27,9 +27,9 @@
                         <h1>Maximize ROI on Your IT Budget</h1>
                         <p>Our data-driven approach to IT identifies inefficiencies and unlocks hidden potential, empowering you to invest in strategic growth initiatives.</p>
 
-                        <a href="https://calendly.com/devtegrate">
-                            <span>Get a Free IT Assessment Today</span>
-                            
+                        <a class="animationBtn" href="https://calendly.com/devtegrate">
+                            Get a Free IT Assessment Today
+                            <i class='bx bxs-chevron-right'></i>
                         </a>
                     </div>
 
@@ -37,9 +37,9 @@
                         <h1>Cybersecurity Threats are Evolving. Is Your Business Prepared?</h1>
                         <p>The digital landscape offers incredible opportunities for businesses but also exposes them to a growing number of cyber threats. Data breaches, ransomware attacks, and online scams can have devastating consequences, causing financial losses, reputational damage, and operational disruption.</p>
 
-                        <a href="https://calendly.com/devtegrate">
-                            <span>Get a Free IT Assessment Today</span>
-                            
+                        <a class="animationBtn" href="https://calendly.com/devtegrate">
+                            Get a Free IT Assessment Today
+                            <i class='bx bxs-chevron-right'></i>
                         </a>
                     </div>
 
@@ -48,9 +48,9 @@
 
                         <p>In today's fast-paced business environment, repetitive tasks can consume valuable time and resources, hindering your ability to focus on strategic initiatives and growth. Automation plays a critical role in optimizing IT operations and software development. Devtegrate's automation solutions leverage cutting-edge tools and technologies to automate repetitive tasks, streamline workflows, and minimize human error.</p>
 
-                        <a href="https://calendly.com/devtegrate">
-                            <span>Get a Free IT Assessment Today</span>
-                            
+                        <a class="animationBtn" href="https://calendly.com/devtegrate">
+                            Get a Free IT Assessment Today
+                            <i class='bx bxs-chevron-right'></i>
                         </a>
                     </div>
                 </div>
@@ -70,11 +70,10 @@
 
                     <div class="updated-ctn-grid-box-cn">
                         <h2>Struggling with IT Infrastructure Costs and Complexity?</h2>
-                        <p>Move your business to the cloud and unlock a world of scalability, flexibility, and cost savings. Our secure cloud solutions allow you to focus on your core business while we manage your IT infrastructure.</p>
 
-                        <a href="{{ url_for('cloud_service') }}">
-                            <span>Learn More About Cloud Migration</span>
-                            
+                        <a class="extraBtn" href="{{ url_for('cloud_service') }}">
+                            Learn More About Cloud Migration
+                            <i class='bx bxs-chevron-right'></i>
                         </a>
                     </div>
                 </div>
@@ -87,12 +86,12 @@
                     
                     <div class="updated-ctn-grid-box-cn">
                         <h2>Worried About Data Breaches and Cyber Attacks?</h2>
-                        <p>Protect your business-critical data and systems from evolving cyber threats. Our comprehensive cybersecurity solutions offer proactive threat detection, incident response, and ongoing security monitoring for complete peace of mind.</p>
 
-                        <a href="{{ url_for('cyber_security') }}">
-                            <span>How We Can Enhance Your Security</span>
-                            
+                        <a class="extraBtn" href="{{ url_for('cyber_security') }}">
+                            How We Can Enhance Your Security
+                            <i class='bx bxs-chevron-right'></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -104,12 +103,12 @@
 
                     <div class="updated-ctn-grid-box-cn">
                         <h2>Navigating Complex IT Compliance Requirements?</h2>
-                        <p>Stay compliant with industry regulations and data privacy laws. Our compliance experts help you navigate complex regulations and ensure your IT systems meet all necessary standards for your industry.</p>
-                        
-                        <a href="{{ url_for('security_compliance') }}">
-                            <span>Explore Our Compliance Services</span>
-                            
+
+                        <a class="extraBtn" href="{{ url_for('security_compliance') }}">
+                            Explore Our Compliance Services
+                            <i class='bx bxs-chevron-right'></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -120,12 +119,11 @@
                     </div>
 
                     <div class="updated-ctn-grid-box-cn">
-                        <h2>Feeling Slowed Down by Manual IT Processes?</h2>
-                        <p>We bridge the gap between development and operations, leading to faster deployments and higher quality software.</p>
+                        <h2>Feeling Slowed Down by Manual IT Processes? Explore DevOps</h2>
 
-                        <a href="{{ url_for('cloud_devops') }}">
-                            <span>DevOps Can Optimize Your Development</span>
-                            
+                        <a class="extraBtn" href="{{ url_for('cloud_devops') }}">
+                            Optimize Your Development
+                            <i class='bx bxs-chevron-right'></i>
                         </a>
                     </div>
                 </div>
@@ -138,11 +136,10 @@
 
                     <div class="updated-ctn-grid-box-cn">
                         <h2>Spending Too Much Time on Repetitive IT Tasks?</h2>
-                        <p>Boost your IT team's efficiency and free up valuable resources with intelligent automation solutions. We automate repetitive tasks, allowing your team to focus on strategic initiatives that drive business growth.</p>
 
-                        <a href="{{ url_for('cloud_automation') }}">
-                            <span>Unlock the Power of IT Automation</span>
-                            
+                        <a class="extraBtn" href="{{ url_for('cloud_automation') }}">
+                            Unlock the Power of IT Automation
+                            <i class='bx bxs-chevron-right'></i>
                         </a>
                     </div>
                 </div>
@@ -155,12 +152,12 @@
 
                     <div class="updated-ctn-grid-box-cn">
                         <h2>Need Custom Software Solutions to Drive Your Business Forward?</h2>
-                        <p>Our skilled developers create innovative and  tailor-made software solutions that meet your specific business needs. We leverage the latest technologies to deliver high-performance and scalable software applications.</p>
 
-                        <a href="{{ url_for('software_development') }}">
-                            <span>Custom Software Development Needs</span>
-                            
+                        <a class="extraBtn" href="{{ url_for('software_development') }}">
+                            Custom Software Development Needs
+                            <i class='bx bxs-chevron-right'></i>
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -175,17 +172,19 @@
                     <p>Please fill out the form below to get started, and our team will promptly reach out to discuss how we can best support your goals.</p>
                 </div>
 
-                <form method="POST">
+                <form method="POST" id="contact-form">
                     {{ form.hidden_tag() }}
                     <div class="footer-form-ctn-box-box">
-                        <div class="footer-form-ctn-box-box-cn">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
+                        <div class="advanceFlex">
+                            <div class="footer-form-ctn-box-box-cn">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
 
-                        <div class="footer-form-ctn-box-box-cn">
-                            <label for="work-email">Work Email</label>
-                            <input type="email" id="work-email" name="email" pattern="^[a-zA-Z0-9._%+-]+@(?!(gmail\.com|yahoo\.com|outlook\.com)).+\.[a-zA-Z]{2,}$" required>
+                            <div class="footer-form-ctn-box-box-cn">
+                                <label for="work-email">Work Email</label>
+                                <input type="email" id="work-email" name="email" pattern="^[a-zA-Z0-9._%+-]+@(?!(gmail\.com|yahoo\.com|outlook\.com)).+\.[a-zA-Z]{2,}$" required>
+                            </div>
                         </div>
 
                         <div class="footer-form-ctn-box-box-cn">
@@ -234,8 +233,9 @@
                         </div>
                     </div>
 
-                    <button type="submit" name="submit">
-                        <span>Schedule Your Free IT Assessment Call</span>
+                    <button class="g-recaptcha formBtn" data-sitekey="6Lf2FhMqAAAAANgNvahK9U6I_txWpju4zDecGcNt" data-callback='onSubmit' data-action='submit' type="submit" name="submit">
+                        Schedule Your Free IT Assessment Call
+                        <i class='bx bxs-chevron-right'></i>
                     </button>
                 </form>
             </div>

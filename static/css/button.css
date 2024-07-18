@@ -1,0 +1,674 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/*variables*/
+:root {
+  /*variables Colors*/
+  --primary-color: #FFFFFF;
+  --secondary-color: #000000;
+  --tertiary-color: #1596F5;
+  --text-color: #888888;
+  --reserved-color: #011D28;
+  --instagram: linear-gradient(45deg, #833AB4, #FD1D1D, #F77737);
+  --facebook: #1877F2;
+  --twitter: #1DA1F2;
+  --gmail: #D14836;
+
+  /*variables Text*/
+  --mega-header: 5em;
+  --mini-header: 4em;
+  --header-text: 3em;
+  --medium-text: 2em;
+  --small-text: 1.5em;
+  --p-text: 1.1em;
+  --span-text: 0.9em;
+  --link-span-text: 0.8em;
+}
+
+.animationBtn {
+    position: relative;
+    width: 350px;
+    height: 60px;
+    background-color: var(--tertiary-color);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .4);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--span-text);
+}
+
+.animationBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.animationBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 100;
+}
+
+.animationBtn:hover .bx {
+    left: calc(100% - 55px);
+    background-color: var(--tertiary-color);
+}
+
+.animationBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.animationBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.formBtn {
+    position: relative;
+    width: 400px;
+    height: 60px;
+    background-color: var(--tertiary-color);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .4);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--span-text);
+    outline: none;
+    border: 1px solid var(--tertiary-color);
+}
+
+.formBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, .55);
+    border: 1px solid var(--secondary-color);
+}
+
+.formBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 100;
+}
+
+.formBtn:hover .bx {
+    left: calc(100% - 55px);
+    background-color: var(--tertiary-color);
+}
+
+.formBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.formBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.extraBtn {
+    position: relative;
+    width: 350px;
+    height: 60px;
+    background-color: var(--tertiary-color);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .4);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--span-text);
+}
+
+.extraBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, .55);
+}
+
+.extraBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 100;
+}
+
+.extraBtn:hover .bx {
+    left: calc(100% - 55px);
+    background-color: var(--tertiary-color);
+}
+
+.extraBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.extraBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.footerBtn {
+    position: relative;
+    width: 250px;
+    height: 60px;
+    background-color: var(--tertiary-color);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .4);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--span-text);
+}
+
+.footerBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.footerBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 100;
+}
+
+.footerBtn:hover .bx {
+    left: calc(100% - 55px);
+    background-color: var(--tertiary-color);
+}
+
+.footerBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.footerBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.subscriptionBtn {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background-color: var(--tertiary-color);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .4);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--span-text);
+    outline: none;
+    border: 1px solid var(--tertiary-color);
+}
+
+.subscriptionBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.subscriptionBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 100;
+}
+
+.subscriptionBtn:hover .bx {
+    left: calc(100% - 45px);
+    background-color: var(--tertiary-color);
+}
+
+.subscriptionBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.subscriptionBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.ctaBtn {
+    position: relative;
+    width: 150px;
+    height: 50px;
+    background-color: var(--tertiary-color);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .4);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--span-text);
+}
+
+.ctaBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.ctaBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 100;
+}
+
+.ctaBtn:hover .bx {
+    left: calc(100% - 45px);
+    background-color: var(--tertiary-color);
+}
+
+.ctaBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.ctaBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.reverseBtn {
+    position: relative;
+    width: 350px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .4);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--span-text);
+}
+
+.reverseBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.reverseBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--tertiary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 100;
+}
+
+.reverseBtn:hover .bx {
+    left: calc(100% - 55px);
+    background-color: var(--tertiary-color);
+}
+
+.reverseBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.reverseBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.socialBtnSuperCta {
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    width: 100%;
+}
+
+.socialBtnCta {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 0 5px;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, .1);
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+    border: 1px solid var(--tertiary-color);
+}
+
+.socialBtnCta:hover {
+    width: 150px;
+}
+
+.socialIcon {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 40px;
+    text-align: center;
+}
+
+.socialIcon {
+    background-color: var(--facebook);
+    color: var(--primary-color);
+    border: 1px solid var(--facebook);
+}
+
+.socialIcon .bx {
+    font-size: var(--span-text);
+    line-height: 40px;
+    font-weight: 500;
+}
+
+.socialBtnCta span {
+    font-size: var(--span-text);
+    font-weight: 500;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+.lgBtn {
+    position: relative;
+    width: 400px;
+    height: 60px;
+    background-color: var(--tertiary-color);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .4);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--span-text);
+}
+
+.lgBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.lgBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 100;
+}
+
+.lgBtn:hover .bx {
+    left: calc(100% - 55px);
+    background-color: var(--tertiary-color);
+}
+
+.lgBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.lgBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 430px) {
+
+    .advanceFlex {
+        flex-direction: column;
+    }
+
+    .footer-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .socialBtnSuperCta {
+        justify-content: flex-start;
+        padding: 10px 0;
+    }
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 390px) {
+    .formBtn {
+        width: 300px;
+    }
+
+    .lgBtn {
+        width: 300px;
+    }
+
+    .animationBtn {
+        width: 320px;
+    }
+}

@@ -151,27 +151,6 @@
 	color: var(--primary-color);
 }
 
-.header-content-container a {
-	font-size: var(--span-text);
-	font-weight: 500;
-	color: var(--primary-color);
-	background-color: var(--tertiary-color);
-	color: var(--primary-color);
-	border-radius: 5px;
-	padding: 10px 50px;
-	width: auto;
-	height: auto;
-	text-decoration: none;
-	display: flex;
-}
-
-.header-content-container a img {
-	width: 25px;
-	height: auto;
-	object-fit: scale-down;
-	padding-left: 5px;
-}
-
 .header-nav {
 	left: 0;
 	right: 0;
@@ -687,29 +666,6 @@
 	padding-left: 5px;
 }
 
-.inspiration-banner-content-text a {
-	background-color: var(--tertiary-color);
-	color: var(--primary-color);
-	border-radius: 5px;
-	padding: 10px 50px;
-	width: auto;
-	height: auto;
-	text-decoration: none;
-	display: flex;
-}
-
-.inspiration-banner-content-text a span {
-	font-size: var(--span-text);
-	font-weight: 500;
-}
-
-.inspiration-banner-content-text a img {
-	width: 25px;
-	height: auto;
-	object-fit: scale-down;
-	padding-left: 5px;
-}
-
 .feature-section-platforms {
 	justify-content: center;
 	align-items: center;
@@ -1004,29 +960,6 @@
 	color: var(--primary-color);
 }
 
-.updated-ctn-grid-box-cn a {
-	background-color: var(--tertiary-color);
-	color: var(--primary-color);
-	border-radius: 5px;
-	padding: 10px 30px;
-	width: auto;
-	height: auto;
-	text-decoration: none;
-	display: flex;
-}
-
-.updated-ctn-grid-box-cn a span {
-	font-size: var(--span-text);
-	font-weight: 500;
-}
-
-.updated-ctn-grid-box-cn a img {
-	width: 25px;
-	height: auto;
-	object-fit: scale-down;
-	padding-left: 5px;
-}
-
 .footer-form-ctn {
 	justify-content: center;
 	align-items: flex-start;
@@ -1153,30 +1086,6 @@
 	border: none;
 	text-align: right;
 	border-bottom: 2px solid var(--primary-color);
-}
-
-.footer-form-ctn-box form button {
-	background-color: var(--tertiary-color);
-	color: var(--primary-color);
-	border-radius: 5px;
-	padding: 10px 30px;
-	width: auto;
-	height: auto;
-	text-decoration: none;
-	display: flex;
-	border: none;
-}
-
-.footer-form-ctn-box form button span {
-	font-size: var(--span-text);
-	font-weight: 500;
-}
-
-.footer-form-ctn-box form button img {
-	width: 25px;
-	height: auto;
-	object-fit: scale-down;
-	padding-left: 5px;
 }
 
 @media screen and (max-width: 1280px) {
@@ -1399,6 +1308,15 @@
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 540px) {
 
+	.footer-form-ctn-box form {
+		height: auto;
+		margin: 0 auto;
+	}
+
+	.footer-form-ctn-box-content p {
+		max-width: 100%;
+	}
+
 	.footer-form-ctn-box form .footer-form-ctn-box-box {
 		justify-content: center;
 		align-items: center;
@@ -1409,8 +1327,9 @@
 		flex-direction: column;
 	}
 
-	.footer-form-ctn-box form button {
+	.footer-form-ctn-box form button span {
 		width: 100%;
+		text-align: center;
 	}
 
 	.footer-form-ctn-box form .footer-form-ctn-box-box .footer-form-ctn-box-box-cn {
@@ -1670,10 +1589,6 @@
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 390px) {
-
-	.header-content-container a {
-		padding: 10px 20px;
-	}
 
 	.header-content-container h1 {
 		font-size: var(--medium-text);

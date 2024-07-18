@@ -34,6 +34,43 @@
   --link-span-text: 0.8em;
 }
 
+.calendly-badge-widget {
+    left: 20px;
+}
+
+.calendly-badge-widget .calendly-badge-content {
+    border-radius: 5px;
+}
+
+@keyframes ImageAnimationAutomation {
+    0% {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.advanceFlex {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+/*****************************************************************************************************************************/
+/*****************************************************************************************************************************/
+/*****************************************************************************************************************************/
+/*****************************************************************************************************************************/
+/*****************************************************************************************************************************/
+
 .about_section {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -1112,29 +1149,6 @@
     padding: 10px;
 }
 
-.reverse-service-ctn-position a {
-    background-color: var(--tertiary-color);
-    border-radius: 5px;
-    padding: 10px 50px;
-    width: max-content;
-    height: auto;
-    text-decoration: none;
-    display: flex;
-}
-
-.reverse-service-ctn-position a span {
-    color: var(--primary-color);
-    font-size: var(--span-text);
-    font-weight: 500;
-}
-
-.reverse-service-ctn-position a img {
-    width: 25px;
-    height: auto;
-    object-fit: scale-down;
-    padding-left: 5px;
-}
-
 .service-ctn {
     justify-content: center;
     align-items: center;
@@ -1239,29 +1253,6 @@
     color: var(--secondary-color);
     font-size: var(--span-text);
     font-weight: 500;
-}
-
-.service-ctn-header a {
-    background-color: var(--tertiary-color);
-    border-radius: 5px;
-    padding: 10px 50px;
-    width: max-content;
-    height: auto;
-    text-decoration: none;
-    display: flex;
-}
-
-.service-ctn-header a span {
-    color: var(--primary-color);
-    font-size: var(--span-text);
-    font-weight: 500;
-}
-
-.service-ctn-header a img {
-    width: 25px;
-    height: auto;
-    object-fit: scale-down;
-    padding-left: 5px;
 }
 
 .service-ctn-grid {
@@ -2105,6 +2096,7 @@
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
+    animation: 10s ImageAnimationAutomation infinite;
 } 
 
 .new-update-box-ctn {
@@ -2533,57 +2525,12 @@
     gap: .5em;
 }
 
-.secondary-ctn-section-header-ctn-flex a {
-    background-color: var(--tertiary-color);
-    color: var(--primary-color);
-    border-radius: 5px;
-    padding: 10px 30px;
-    width: auto;
-    height: auto;
-    text-decoration: none;
-    display: flex;
-}
 
 .secondary-ctn-section-header-ctn-flex a input {
     margin-right: 5px;
     border: 1px solid var(--secondary-color);
     background-color: transparent;
     outline: none;
-}
-
-.secondary-ctn-section-header-ctn-flex a span {
-    font-size: var(--span-text);
-    font-weight: 500;
-}
-
-.secondary-ctn-section-header-ctn-flex a img {
-    width: 25px;
-    height: auto;
-    object-fit: scale-down;
-    padding-left: 5px;
-}
-
-.secondary-ctn-section-header-ctn a {
-    background-color: var(--tertiary-color);
-    color: var(--primary-color);
-    border-radius: 5px;
-    padding: 10px 30px;
-    width: auto;
-    height: auto;
-    text-decoration: none;
-    display: flex;
-}
-
-.secondary-ctn-section-header-ctn a span {
-    font-size: var(--span-text);
-    font-weight: 500;
-}
-
-.secondary-ctn-section-header-ctn a img {
-    width: 25px;
-    height: auto;
-    object-fit: scale-down;
-    padding-left: 5px;
 }
 
 @media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 0.600) {
@@ -2920,11 +2867,6 @@
     .ctn-section-two-cn-ctn-box {
         min-width: 230px;
         min-height: 500px;
-    }
-
-    .inspiration-banner-content-text a {
-        padding: 10px;
-        width: auto;
     }
 
     .inspiration-banner-content-text {
