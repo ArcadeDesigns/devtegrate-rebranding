@@ -37,6 +37,28 @@
   --link-span-text: 0.8em;
 }
 
+@keyframes ButtonAnimations {
+    0% {
+        left: 5px;
+        width: 50px;
+    }
+    25% {
+        left: calc(40% - 55px);
+    }
+    50% {
+        left: 5px;
+        width: 50px;
+    }
+    75% {
+        left: calc(40% - 55px);
+    }
+    100% {
+        left: 5px;
+        width: 50px;
+    }
+
+}
+
 .animationBtn {
     position: relative;
     width: 350px;
@@ -46,7 +68,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, .4);
+    color: rgba(255, 255, 255, .6);
     text-decoration: none;
     padding-left: 40px;
     transition: .5s;
@@ -75,6 +97,7 @@
     color: var(--primary-color);
     font-size: var(--span-text);
     font-weight: 100;
+    animation: 6s ButtonAnimations;
 }
 
 .animationBtn:hover .bx {
@@ -113,7 +136,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, .4);
+    color: rgba(255, 255, 255, .6);
     text-decoration: none;
     padding-left: 40px;
     transition: .5s;
@@ -183,7 +206,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, .4);
+    color: rgba(255, 255, 255, .6);
     text-decoration: none;
     padding-left: 40px;
     transition: .5s;
@@ -250,7 +273,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, .4);
+    color: rgba(255, 255, 255, .6);
     text-decoration: none;
     padding-left: 40px;
     transition: .5s;
@@ -317,7 +340,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, .4);
+    color: rgba(255, 255, 255, .6);
     text-decoration: none;
     padding-left: 40px;
     transition: .5s;
@@ -386,7 +409,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, .4);
+    color: rgba(255, 255, 255, .6);
     text-decoration: none;
     padding-left: 40px;
     transition: .5s;
@@ -448,12 +471,12 @@
     position: relative;
     width: 350px;
     height: 60px;
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(255, 255, 255, .6);
     border-radius: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, .4);
+    color: rgba(255, 255, 255, .6);
     text-decoration: none;
     padding-left: 40px;
     transition: .5s;
@@ -584,7 +607,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, .4);
+    color: rgba(255, 255, 255, .6);
     text-decoration: none;
     padding-left: 40px;
     transition: .5s;
@@ -641,6 +664,83 @@
 /***************************************************************************************/
 /***************************************************************************************/
 /***************************************************************************************/
+
+.verifyBtn {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    background-color: var(--tertiary-color);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .6);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--span-text);
+    outline: none;
+    border: 1px solid var(--tertiary-color);
+}
+
+.verifyBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.verifyBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 100;
+}
+
+.verifyBtn:hover .bx {
+    left: calc(100% - 55px);
+    background-color: var(--tertiary-color);
+}
+
+.verifyBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.verifyBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 430px) {
 
     .advanceFlex {

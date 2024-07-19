@@ -77,3 +77,34 @@ function redirectToCloudService() {
         window.location.href = "/cloud-services";
     }
 }
+
+function ApplicationDropDown() {
+    const advanceDropDowns = document.querySelectorAll('.advanceDropDown');
+
+    advanceDropDowns.forEach(advanceDropDown => {
+        const select = advanceDropDown.querySelector('.select');
+        const caret = advanceDropDown.querySelector('.caret');
+        const menu = advanceDropDown.querySelector('.menu');
+        const options = advanceDropDown.querySelectorAll('.menu li');
+        const input = select.querySelector('input');
+
+        select.addEventListener('click', () => {
+            select.classList.toggle('select-clicked');
+            caret.classList.toggle('caret-rotate');
+            menu.classList.toggle('menu-open');
+        });
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                input.value = option.innerText;
+                select.classList.remove('select-clicked');
+                caret.classList.remove('caret-rotate');
+                menu.classList.remove('menu-open');
+                options.forEach(option => {
+                    option.classList.remove('active');
+                });
+                option.classList.add('active');
+            });
+        });
+    });
+}

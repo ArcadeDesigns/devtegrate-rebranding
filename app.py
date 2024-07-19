@@ -118,9 +118,9 @@ def index():
         sender_email = 'contact@devtegrate.com'
         recipient_email = form.email.data
         subject = 'Verification Code'
-        subject = 'Confirmation OTP'
-        api_key = '7313cf6592999b69b87e0136ef2d0eea'
-        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
+        subject = 'Verification Code'
+        api_key = '614f1d5db217f5a35c8ed583bbf4f09c'
+        api_secret = '118dec95ed600a827d6400f210f3a524'
 
         mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
@@ -223,8 +223,10 @@ def verify_otp():
                         flash("Thank you for reaching out. Your message has been successfully sent. We will promptly review your inquiry and get in touch with you at our earliest convenience.")
                         session.pop('otp', None)
                         send_message(message_data)
+                        return redirect(url_for('index'))
                     else:
                         flash("Failed to send the email.", 'danger')
+                        return redirect(url_for('index'))
                 except Exception as e:
                     flash(f"Error occurred while sending the emails: {e}", 'danger')
             else:

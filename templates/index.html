@@ -194,42 +194,63 @@
 
                         <div class="footer-form-ctn-box-box-cn">
                             <label for="company-size">Company Size</label>
-                            <select id="company-size" name="company_size" required>
-                                <option value="1-10">1-10</option>
-                                <option value="11-50">11-50</option>
-                                <option value="51-200">51-200</option>
-                                <option value="201-500">201-500</option>
-                                <option value="501-1000">501-1000</option>
-                                <option value="1001+">1001+</option>
-                            </select>
+                            <div class="advanceDropDown">
+                                <div class="select">
+                                    <input type="text" name="company_size" value="" id="company-size" name="company_size" required readonly>
+                                    <div class="caret"></div>
+                                </div>
+                                <div class="menu">
+                                    <div class="menuScroll">
+                                        <li class="active">1-10</li>
+                                        <li>11-50</li>
+                                        <li>51-200</li>
+                                        <li>201-500</li>
+                                        <li>501-1000</li>
+                                        <li>1001+</li>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="footer-form-ctn-box-box-cn">
                             <label for="industry">Industry</label>
-                            <select id="industry" name="industry" required onchange="toggleOtherIndustry()">
-                                <option value="Health">Health</option>
-                                <option value="Financial Services">Financial Services</option>
-                                <option value="Technology">Technology</option>
-                                <option value="Government">Government</option>
-                                <option value="Insurance">Insurance</option>
-                                <option value="Other">Other</option>
-                            </select>
-
-                            <input type="text" id="other-industry" name="other_industry" placeholder="Please specify your industry" style="display:none;">
+                            <div class="advanceDropDown">
+                                <div class="select">
+                                    <input type="text" name="industry" value="" id="industry" name="industry" required onchange="toggleOtherIndustry()" readonly>
+                                    <div class="caret"></div>
+                                </div>
+                                <div class="menu">
+                                    <div class="menuScroll">
+                                        <li class="active">Health</li>
+                                        <li>Insurance</li>                                        
+                                        <li>Technology</li>
+                                        <li>Government</li>
+                                        <li>Financial Services</li>
+                                        <li>Other</li>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="footer-form-ctn-box-box-cn">
                             <label for="help-with">What do you need help with?</label>
-                            <select id="help-with" name="help_with" required onchange="toggleOtherHelp()">
-                                <option value="Cloud Services">Cloud Services</option>
-                                <option value="Automation">Automation</option>
-                                <option value="Devops">Devops</option>
-                                <option value="Cybersecurity">Cybersecurity</option>
-                                <option value="Compliance">Compliance</option>
-                                <option value="Software Development">Software Development</option>
-                                <option value="Other">Other</option>
-                            </select>
-                            <input type="text" id="other_help" name="other_help" placeholder="Please specify what you need help with" style="display:none;">
+                            <div class="advanceDropDown">
+                                <div class="select">
+                                    <input type="text" name="help_with" value="" id="help-with" name="help_with" required onchange="toggleOtherHelp()" readonly>
+                                    <div class="caret"></div>
+                                </div>
+                                <div class="menu">
+                                    <div class="menuScroll">
+                                        <li class="active">Cloud Services</li>
+                                        <li>Devops</li>
+                                        <li>Compliance</li>
+                                        <li>Automation</li>
+                                        <li>Cybersecurity</li>
+                                        <li>Software Development</li>
+                                        <li>Other</li>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
