@@ -94,7 +94,7 @@
     transform: rotate(180deg);    
 }
 
-.menu {
+.advanceDropDwonmenu {
     list-style: none;
     padding: 10px;
     background-color: #323741;
@@ -136,7 +136,7 @@
     background-color: var(--text-color);
 }
 
-.menu .menuScroll li {
+.advanceDropDwonmenu .menuScroll li {
     padding: 10px;
     margin: .3em 0;
     border-radius: .5em;
@@ -145,7 +145,7 @@
     color: var(--primary-color);
 }
 
-.menu .menuScroll li:hover {
+.advanceDropDwonmenu .menuScroll li:hover {
     background-color: #2a2d35;
 }
 

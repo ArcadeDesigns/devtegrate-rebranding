@@ -84,8 +84,8 @@ function ApplicationDropDown() {
     advanceDropDowns.forEach(advanceDropDown => {
         const select = advanceDropDown.querySelector('.select');
         const caret = advanceDropDown.querySelector('.caret');
-        const menu = advanceDropDown.querySelector('.menu');
-        const options = advanceDropDown.querySelectorAll('.menu li');
+        const menu = advanceDropDown.querySelector('.advanceDropDwonmenu');
+        const options = advanceDropDown.querySelectorAll('.advanceDropDwon li');
         const input = select.querySelector('input');
 
         select.addEventListener('click', () => {

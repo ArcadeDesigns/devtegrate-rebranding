@@ -757,6 +757,10 @@
         padding: 10px 0;
     }
 
+    .formBtn {
+        width: 100%;
+    }
+
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 390px) {
