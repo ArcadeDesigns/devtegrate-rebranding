@@ -916,7 +916,8 @@
 .updated-ctn-grid-box-img span {
 	font-size: var(--primary-color);
 	color: var(--primary-color);
-	font-weight: 500;
+	font-weight: 300;
+	letter-spacing: 1px;
 }
 
 .filter-img-ctn {
