@@ -734,33 +734,6 @@
 /***************************************************************************************/
 /***************************************************************************************/
 
-#svg {
-    margin: 10px auto;
-    object-fit: scale-down;
-    height: 180px;
-    width: 180px;
-    stroke: var(--primary-color);
-    fill-opacity: 0;
-    stroke-width: 3px;
-    stroke-dasharray: 4500;
-    animation: svgAnimation 20s ease infinite;
-}
-
-.updated-ctn-grid-ctn:hover #svg{
-    stroke-dasharray: 4500;
-    animation: svgAnimation 20s ease infinite;
-}
-
-@keyframes svgAnimation {
-    0%{
-        stroke-dashoffset: 4500;
-    }
-    100%{
-        stroke-dashoffset: 0;
-    }
-}
-
-
 /***************************************************************************************/
 /***************************************************************************************/
 /***************************************************************************************/

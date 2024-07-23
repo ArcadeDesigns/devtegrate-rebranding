@@ -940,12 +940,38 @@
 	flex-direction: column;
 	padding: 10px;
 	opacity: 1;
-	background-color: var(--secondary-color);
+	background-color: rgba(0, 0, 0, .8);
 	transition: all 1s ease;
 }
 
+#svg {
+    margin: 10px auto;
+    object-fit: scale-down;
+    height: 180px;
+    width: 180px;
+    stroke: var(--primary-color);
+    fill-opacity: 0;
+    stroke-width: 3px;
+    stroke-dasharray: 4500;
+    animation: svgAnimation 20s ease infinite;
+}
+
+.updated-ctn-grid-box:hover #svg {
+	stroke-dasharray: 4500;
+    animation: svgAnimation 20s ease infinite;
+}
+
+@keyframes svgAnimation {
+    0%{
+        stroke-dashoffset: 4500;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
 .updated-ctn-grid-box:hover .updated-ctn-grid-box-img {
-	opacity: 0;
+	opacity: .6;
 	transition: all 3s ease;
 }
 
