@@ -944,6 +944,75 @@
 	transition: all 1s ease;
 }
 
+.headerCtn {
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	position: absolute;
+	z-index: 333;
+}
+
+.startUpContainer {
+	background-color: var(--secondary-color);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.startUp {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--secondary-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 555;
+}
+
+.logoTitleCtn {
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	display: flex;
+}
+
+.logoTitleContent {
+	color: var(--primary-color);
+	font-size: var(--span-text);
+	letter-spacing: 6px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+ #layerSvg {
+ 	width:3000px;
+ 	height:500px;
+ 	stroke: var(--primary-color);
+ 	fill-opacity: 0;
+ 	stroke-width: 5px;
+ 	stroke-dasharray: 4500;
+ 	animation: svgAnimation 10s ease infinite;
+ }
+
+@keyframes layerSvgAnimation {
+    0%{
+        stroke-dashoffset: 3000;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+
 #svg {
     margin: 10px auto;
     object-fit: scale-down;
@@ -1365,6 +1434,11 @@
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 540px) {
+
+	#layerSvg {
+	 	width:1500px;
+	 	height:250px;
+	 }
 
 	.footer-form-ctn-box form {
 		height: auto;
