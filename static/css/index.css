@@ -1000,7 +1000,7 @@
  	fill-opacity: 0;
  	stroke-width: 5px;
  	stroke-dasharray: 4500;
- 	animation: svgAnimation 10s ease infinite;
+ 	animation: svgAnimation 3s ease infinite;
  }
 
 @keyframes layerSvgAnimation {
@@ -1716,6 +1716,10 @@
 		height: auto;
 		display: flex;
 		flex-direction: column;
+	}
+
+	.header-content-container h1 {
+		font-size: var(--medium-text);
 	}
 
 }
