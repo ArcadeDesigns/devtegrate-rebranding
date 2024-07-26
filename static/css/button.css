@@ -33,7 +33,7 @@
   --medium-text: 2em;
   --small-text: 1.5em;
   --p-text: 1.1em;
-  --span-text: 0.9em;
+  --button-text: 0.9em;
   --link-span-text: 0.8em;
 }
 
@@ -73,7 +73,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
-    font-size: var(--span-text);
+    font-size: var(--button-text);
 }
 
 .animationBtn:hover {
@@ -95,7 +95,7 @@
     align-items: center;
     display: flex;
     color: var(--primary-color);
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 100;
     animation: 6s ButtonAnimations;
 }
@@ -141,7 +141,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     outline: none;
     border: 1px solid var(--tertiary-color);
 }
@@ -166,7 +166,7 @@
     align-items: center;
     display: flex;
     color: var(--primary-color);
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 100;
 }
 
@@ -211,7 +211,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
-    font-size: var(--span-text);
+    font-size: var(--button-text);
 }
 
 .extraBtn:hover {
@@ -233,7 +233,7 @@
     align-items: center;
     display: flex;
     color: var(--primary-color);
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 100;
 }
 
@@ -278,7 +278,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
-    font-size: var(--span-text);
+    font-size: var(--button-text);
 }
 
 .footerBtn:hover {
@@ -300,7 +300,7 @@
     align-items: center;
     display: flex;
     color: var(--primary-color);
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 100;
 }
 
@@ -345,7 +345,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     outline: none;
     border: 1px solid var(--tertiary-color);
 }
@@ -369,7 +369,7 @@
     align-items: center;
     display: flex;
     color: var(--primary-color);
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 100;
 }
 
@@ -414,7 +414,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
-    font-size: var(--span-text);
+    font-size: var(--button-text);
 }
 
 .ctaBtn:hover {
@@ -436,7 +436,7 @@
     align-items: center;
     display: flex;
     color: var(--primary-color);
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 100;
 }
 
@@ -481,7 +481,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
-    font-size: var(--span-text);
+    font-size: var(--button-text);
 }
 
 .reverseBtn:hover {
@@ -503,7 +503,7 @@
     align-items: center;
     display: flex;
     color: var(--primary-color);
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 100;
 }
 
@@ -579,13 +579,13 @@
 }
 
 .socialIcon .bx {
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     line-height: 40px;
     font-weight: 500;
 }
 
 .socialBtnCta span {
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 500;
     line-height: 40px;
     margin-left: 10px;
@@ -612,7 +612,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
-    font-size: var(--span-text);
+    font-size: var(--button-text);
 }
 
 .lgBtn:hover {
@@ -634,7 +634,7 @@
     align-items: center;
     display: flex;
     color: var(--primary-color);
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 100;
 }
 
@@ -679,7 +679,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     outline: none;
     border: 1px solid var(--tertiary-color);
 }
@@ -703,7 +703,7 @@
     align-items: center;
     display: flex;
     color: var(--primary-color);
-    font-size: var(--span-text);
+    font-size: var(--button-text);
     font-weight: 100;
 }
 
@@ -733,6 +733,28 @@
 /***************************************************************************************/
 /***************************************************************************************/
 /***************************************************************************************/
+
+#svg {
+    margin: 10px auto;
+    object-fit: scale-down;
+    height: 180px;
+    width: 180px;
+    stroke: var(--primary-color);
+    fill-opacity: 0;
+    stroke-width: 3px;
+    stroke-dasharray: 4500;
+    animation: svgAnimation 20s ease infinite;
+}
+
+@keyframes svgAnimation {
+    0%{
+        stroke-dashoffset: 4500;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
 
 /***************************************************************************************/
 /***************************************************************************************/

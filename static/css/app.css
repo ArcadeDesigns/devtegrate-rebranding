@@ -30,7 +30,7 @@
   --medium-text: 2em;
   --small-text: 1.5em;
   --p-text: 1.1em;
-  --span-text: 0.9em;
+  --span-text: 1em;
   --link-span-text: 0.8em;
 }
 
@@ -106,7 +106,7 @@ header nav ul li a {
   text-decoration: none;
   color: var(--primary-color);
   font-size: var(--span-text);
-  font-weight: 500;
+  font-weight: 300;
 }
 
 header nav ul li a:hover {
@@ -159,7 +159,7 @@ footer {
   text-decoration: none;
   color: var(--primary-color);
   font-size: var(--p-text);
-  font-weight: 500;
+  font-weight: 300;
   padding: 5px;
 }
 
@@ -196,13 +196,13 @@ footer {
 
 .footer-header-content-details h2 {
   font-size: var(--medium-text);
-  font-weight: 700;
+  font-weight: 300;
   color: var(--tertiary-color);
 }
 
 .footer-header-content-details p {
   font-size: var(--span-text);
-  font-weight: 500;
+  font-weight: 300;
   color: var(--primary-color);
 }
 
@@ -226,7 +226,7 @@ footer {
 
 .footer-header-content-link-ctn h2 {
   font-size: var(--p-text);
-  font-weight: 500;
+  font-weight: 300;
   color: var(--tertiary-color);
 }
 
@@ -238,7 +238,7 @@ footer {
 .footer-header-content-link-ctn li a {
   text-decoration: none;
   font-size: var(--span-text);
-  font-weight: 500;
+  font-weight: 300;
   color: var(--primary-color);
 }
 
@@ -290,13 +290,13 @@ footer {
 
 .footer-subscription-cn h3 {
   font-size: var(--p-text);
-  font-weight: 700;
+  font-weight: 300;
   color: var(--tertiary-color);
 }
 
 .footer-subscription-cn p {
   font-size: var(--span-text);
-  font-weight: 500;
+  font-weight: 300;
   color: var(--primary-color);
 }
 
@@ -327,7 +327,7 @@ footer {
   padding: 10px;
   font-size: var(--span-text);
   color: var(--secondary-color);
-  font-weight: 500;
+  font-weight: 300;
   outline: none;
   width: 100%;
 }
@@ -335,7 +335,7 @@ footer {
 footer .span-text {
   font-size: var(--span-text);
   color: var(--primary-color);
-  font-weight: 500;
+  font-weight: 300;
   justify-content: center;
   align-items: center;
   margin: auto;
@@ -348,7 +348,7 @@ footer .span-text {
 .drop-down span {
   color: var(--primary-color);
   font-size: var(--span-text);
-  font-weight: 500;
+  font-weight: 300;
   cursor: pointer;
 }
 
@@ -450,13 +450,13 @@ footer .span-text {
 
 .drop-down .drop-down-navbar li a {
   font-size: var(--span-text);
-  font-weight: 500;
+  font-weight: 300;
   color: var(--secondary-color);
 }
 
 .img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex h2 {
   font-size: var(--small-text);
-  font-weight: 500;
+  font-weight: 300;
   color: var(--secondary-color);
 }
 
@@ -468,7 +468,7 @@ footer .span-text {
 
 .img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li a {
   font-size: var(--span-text);
-  font-weight: 500;
+  font-weight: 300;
   color: var(--secondary-color);
 }
 
@@ -639,7 +639,7 @@ footer .span-text {
   .responsive-menu ul .responsive-drop-down span {
     color: var(--primary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
   }
 
   .responsive-menu ul .responsive-drop-down .responsive-list.active {
@@ -661,7 +661,7 @@ footer .span-text {
     text-decoration: none;
     color: var(--primary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
   }
 
   .responsive-menu ul li {
@@ -673,7 +673,7 @@ footer .span-text {
     text-decoration: none;
     color: var(--primary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
   }
 
   .responsive-menu .responsive-ctn-cta {
@@ -695,7 +695,7 @@ footer .span-text {
     text-decoration: none;
     color: var(--primary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     border-radius: 5px;
     padding: 10px 30px;
     background-color: var(--tertiary-color);

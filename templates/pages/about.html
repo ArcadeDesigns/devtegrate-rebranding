@@ -7,8 +7,8 @@
             <img class="ctn-img" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720525998/devtegrate-images/pexels-pixabay-256381_rkpvyx.jpg" alt="Devtegrate Image">
 
             <div class="secondary-ctn-section-header-ctn">
-                <h2>About Us</h2>
-                <p>Do you need a summary or description of your services?</p>
+                <h2 class="reveal__top">About Us</h2>
+                <p class="reveal__bottom">Do you need a summary or description of your services?</p>
 
                 <a class="lgBtn" href="{{ url_for('service') }}">
                     Check out this page
@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <div class="service-ctn">
+        <div class="service-ctn reveal__bottom">
             <div class="service-ctn-header">
                 <div class="service-ctn-position">
                     <h2>From Brainstorming to Implementation: We're the Tech Experts Who Help You Do It.</h2>
@@ -120,7 +120,7 @@
 
         <div class="updated-ctn-grid-ctn">
             <div class="updated-ctn-grid">
-                <div class="updated-ctn-grid-box">
+                <div class="updated-ctn-grid-box reveal__left">
                     <div class="updated-ctn-grid-box-img">
                         <span>Cloud Services</span>
 
@@ -149,7 +149,7 @@
                     </div>
                 </div>
 
-                <div class="updated-ctn-grid-box">
+                <div class="updated-ctn-grid-box reveal__top">
                     <div class="updated-ctn-grid-box-img">
                         <span>Cyber Security</span>
                         <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 550 550" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -171,9 +171,10 @@
                     </div>
                 </div>
 
-                <div class="updated-ctn-grid-box">
+                <div class="updated-ctn-grid-box reveal__right">
                     <div class="updated-ctn-grid-box-img">
                         <span>Security and Compliance</span>
+                        
                         <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g><path style="opacity:0.959" fill="#000000" d="M 74.5,31.5 C 136.501,31.3333 198.501,31.5 260.5,32C 269.768,34.1349 278.102,38.1349 285.5,44C 317,76.1667 348.5,108.333 380,140.5C 387.596,148.693 392.263,158.36 394,169.5C 394.167,196.839 394.667,224.173 395.5,251.5C 419.508,264.114 444.508,274.28 470.5,282C 474.488,284.987 477.321,288.82 479,293.5C 485.134,349.108 468.634,396.608 429.5,436C 411.722,449.777 393.389,462.777 374.5,475C 368.812,478.279 362.812,479.113 356.5,477.5C 354.885,478.154 353.218,478.654 351.5,479C 259.167,479.667 166.833,479.667 74.5,479C 51.6311,473.464 37.4644,459.298 32,436.5C 31.3333,315.833 31.3333,195.167 32,74.5C 37.6815,51.6524 51.8481,37.3191 74.5,31.5 Z M 78.5,53.5 C 137.5,53.5 196.5,53.5 255.5,53.5C 255.333,78.1689 255.5,102.836 256,127.5C 261.732,151.232 276.565,165.399 300.5,170C 324.164,170.5 347.831,170.667 371.5,170.5C 372.624,192.809 372.79,215.143 372,237.5C 365.934,235.038 359.767,234.871 353.5,237C 323.772,256.194 291.772,270.527 257.5,280C 251.18,282.986 247.013,287.819 245,294.5C 239.06,355.415 259.226,405.582 305.5,445C 311.5,449 317.5,453 323.5,457C 241.833,457.667 160.167,457.667 78.5,457C 65.6667,453.5 57.5,445.333 54,432.5C 53.3333,314.5 53.3333,196.5 54,78.5C 57.6829,65.6514 65.8496,57.3181 78.5,53.5 Z M 277.5,68.5 C 303.633,94.7999 329.633,121.3 355.5,148C 338.5,148.667 321.5,148.667 304.5,148C 290.079,145.245 281.246,136.745 278,122.5C 277.5,104.503 277.333,86.5031 277.5,68.5 Z M 361.5,257.5 C 390.978,276.401 422.645,290.734 456.5,300.5C 461.23,350.508 444.896,392.008 407.5,425C 392.595,435.574 377.429,445.74 362,455.5C 346.237,445.406 330.737,434.906 315.5,424C 278.78,391.024 262.78,349.857 267.5,300.5C 301.28,291.146 332.613,276.813 361.5,257.5 Z"/></g>
                             <g><path style="opacity:0.958" fill="#000000" d="M 102.5,116.5 C 133.502,116.333 164.502,116.5 195.5,117C 201.603,120.04 203.769,124.874 202,131.5C 200.5,134.333 198.333,136.5 195.5,138C 164.5,138.667 133.5,138.667 102.5,138C 97.2961,136.428 94.9627,132.928 95.5,127.5C 95.0827,121.986 97.416,118.32 102.5,116.5 Z"/></g>
@@ -183,6 +184,7 @@
                             <g><path style="opacity:0.936" fill="#000000" d="M 389.5,319.5 C 401.615,318.442 406.449,323.776 404,335.5C 389.196,351.305 374.029,366.805 358.5,382C 353.833,384 349.167,384 344.5,382C 336.667,374.167 328.833,366.333 321,358.5C 317.304,344.531 322.47,339.031 336.5,342C 341.167,346.667 345.833,351.333 350.5,356C 351.167,356.667 351.833,356.667 352.5,356C 364.728,343.604 377.062,331.437 389.5,319.5 Z"/></g>
                             <g><path style="opacity:0.96" fill="#000000" d="M 102.5,372.5 C 140.501,372.333 178.501,372.5 216.5,373C 223.132,376.097 225.299,381.264 223,388.5C 221.749,391.381 219.583,393.214 216.5,394C 178.5,394.667 140.5,394.667 102.5,394C 97.2961,392.428 94.9627,388.928 95.5,383.5C 95.0827,377.986 97.416,374.32 102.5,372.5 Z"/></g>
                         </svg>
+
                     </div>
 
                     <div class="updated-ctn-grid-box-cn">
@@ -196,7 +198,7 @@
                     </div>
                 </div>
 
-                <div class="updated-ctn-grid-box">
+                <div class="updated-ctn-grid-box reveal__left">
                     <div class="updated-ctn-grid-box-img">
                         <span>DevOps</span>
                         <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -215,7 +217,7 @@
                     </div>
                 </div>
 
-                <div class="updated-ctn-grid-box">
+                <div class="updated-ctn-grid-box reveal__bottom">
                     <div class="updated-ctn-grid-box-img">
                         <span>Automation</span>
                         <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -237,7 +239,7 @@
                     </div>
                 </div>
 
-                <div class="updated-ctn-grid-box">
+                <div class="updated-ctn-grid-box reveal__right">
                     <div class="updated-ctn-grid-box-img">
                         <span>Software Development</span>
                         

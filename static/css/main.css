@@ -30,9 +30,13 @@
   --medium-text: 2em;
   --small-text: 1.5em;
   --p-text: 1.1em;
-  --span-text: 0.9em;
+  --span-text: 1em;
   --link-span-text: 0.8em;
 }
+
+/**.spacer {
+    padding: 12% 0 !important;
+}**/
 
 .calendly-badge-widget {
     left: 20px;
@@ -113,7 +117,7 @@
 
 .about_content span {
     font-size: 0.9em;
-    font-weight: 700;
+    font-weight: 300;
     padding-bottom: 10px;
     color: #35A6FF;
 }
@@ -131,7 +135,7 @@
 
 .message-font {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     text-align: center;
     color: var(--secondary_color);
 }
@@ -169,7 +173,7 @@
 
 .secondary-ctn-section-header-ctn h2 {
     font-size: var(--header-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
@@ -184,7 +188,7 @@
     text-align: center;
     width: 50%;
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
@@ -203,7 +207,7 @@
 
 .ctn-section-header-ctn h2 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
@@ -216,7 +220,7 @@
 
 .ctn-section-header-ctn h4 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
     padding-bottom: 2%;
 }
@@ -254,7 +258,7 @@
 
 .btn-ctn a {
   font-size: var(--span-text);
-  font-weight: 500;
+  font-weight: 300;
   color: var(--primary-color);
   background-color: var(--tertiary-color);
   color: var(--primary-color);
@@ -300,25 +304,25 @@
 
 .ctn-section-two-cn h2 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .ctn-section-two-cn h3 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .ctn-section-two-cn p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .ctn-section-two-cn span {
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
@@ -349,25 +353,25 @@
 
 .ctn-section-three-cn h2 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .ctn-section-three-cn h3 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .ctn-section-three-cn p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .ctn-section-three-cn span {
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
@@ -420,19 +424,19 @@
 
 .about-ctn-cn-grid-details span {
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .about-ctn-cn-grid-details h2 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .about-ctn-cn-grid-details p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
@@ -460,13 +464,13 @@
 
 .about-footer-ctn-header span {
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .about-footer-ctn-header h2 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
@@ -504,21 +508,21 @@
 .about-footer-ctn-grid-box h2 {
     padding-top: 2%;
     font-size: var(--small-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
     padding-bottom: 4%;
 }
 
 .about-footer-ctn-grid-box span {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
     padding-bottom: 4%;
 }
 
 .about-footer-ctn-grid-box p {
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
     padding-bottom: 4%;
 }
@@ -527,7 +531,7 @@
     text-decoration: none;
     color: var(--primary-color);
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
     padding-bottom: 4%;
 }
@@ -544,7 +548,7 @@
 
 .about-ctn-footer-btn a {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
     background-color: var(--tertiary-color);
     color: var(--primary-color);
@@ -597,25 +601,25 @@
 
 .footer-banner-content h3 {
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
 .footer-banner-content h2 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .footer-banner-content p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
 .footer-banner-content a {
   font-size: var(--span-text);
-  font-weight: 500;
+  font-weight: 300;
   color: var(--primary-color);
   background-color: var(--tertiary-color);
   color: var(--primary-color);
@@ -680,13 +684,13 @@
 
 .grid-ctn-content-text-details h2 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .grid-ctn-content-text-details h3 {
     font-size: var(--medium-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
@@ -711,19 +715,19 @@
 
 .grid-ctn-content-box h4 {
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .grid-ctn-content-box p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .grid-ctn-content-box span {
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
@@ -754,13 +758,13 @@
 .inspiration-banner-content-text h2 {
     font-size: var(--medium-text);
     color: var(--tertiary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .inspiration-banner-content-text p {
     font-size: var(--span-text);
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .inspiration-banner-content-img {
@@ -819,19 +823,19 @@
 .inspiration-content-log-text span {
     font-size: var(--link-span-text);
     color: var(--tertiary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .inspiration-content-log-text h2 {
     font-size: var(--medium-text);
     color: var(--tertiary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .inspiration-content-log-text p {
     font-size: var(--span-text);
     color: var(--secondary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .inspiration-content-log-img {
@@ -876,25 +880,25 @@
 .team-ctn-header span {
     font-size: var(--link-span-text);
     color: var(--primary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .team-ctn-header h2 {
     font-size: var(--medium-text);
     color: var(--tertiary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .team-ctn-header h3 {
     font-size: var(--medium-text);
     color: var(--tertiary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .team-ctn-header p {
     font-size: var(--span-text);
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .team-folder-section {
@@ -931,7 +935,7 @@
 .team-sauce p {
     font-size: var(--span-text);
     color: var(--secondary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .team-footer-button {
@@ -948,7 +952,7 @@
 
 .team-footer-button a {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
     background-color: var(--tertiary-color);
     color: var(--primary-color);
@@ -969,7 +973,7 @@
 
 .about-btn {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
     background-color: var(--tertiary-color);
     color: var(--primary-color);
@@ -1002,7 +1006,7 @@
     border-radius: 10px;
     padding: 20px;
     font-size: var(--small-text);
-    font-weight: 500;
+    font-weight: 300;
     height: 100%;
     width: 100%;
     display: flex;
@@ -1028,13 +1032,13 @@
 .team-folder-section-header span {
     font-size: var(--link-span-text);
     color: var(--tertiary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .team-folder-section-header h2 {
     font-size: var(--medium-text);
     color: var(--tertiary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .team-folder-section-flex-content {
@@ -1050,13 +1054,13 @@
 .team-folder-section-flex-content h3 {
     font-size: var(--p-text);
     color: var(--tertiary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .team-folder-section-flex-content p {
     font-size: var(--span-text);
     color: var(--secondary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .team-folder-section-flex-content img {
@@ -1090,7 +1094,7 @@
 .reverse-service-ctn-header .service-header-span {
     color: var(--secondary-color);
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .reverse-service-ctn-position {
@@ -1121,31 +1125,31 @@
 .reverse-service-ctn-position h2 {
     color: var(--secondary-color);
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .reverse-service-ctn-position h3 {
     color: var(--secondary-color);
     font-size: var(--small-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .reverse-service-ctn-position h4 {
     color: var(--tertiary-color);
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .reverse-service-ctn-position p {
     color: var(--secondary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .reverse-service-ctn-position li {
     color: var(--secondary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     padding: 10px;
 }
 
@@ -1185,7 +1189,7 @@
 .service-ctn-header .service-header-span {
     color: var(--secondary-color);
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-ctn-position {
@@ -1206,6 +1210,24 @@
     padding: 20px;
 }
 
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/**********New Font Displayed*************/
+
+.service-ctn-position-content h5 {
+    font-size: var(--header-text);
+    color: var(--tertiary-color);
+    font-weight: 300;
+}
+
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+
 .service-ctn-position-content-img {
     width: 100%;
     height: 100%;
@@ -1220,19 +1242,19 @@
 .service-ctn-position h2 {
     color: var(--secondary-color);
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-ctn-position h3 {
     color: var(--secondary-color);
     font-size: var(--small-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-ctn-position li {
     color: var(--secondary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     padding: 10px;
 }
 
@@ -1240,19 +1262,19 @@
 .service-ctn-header h2 {
     color: var(--secondary-color);
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-ctn-header h3 {
     color: var(--secondary-color);
     font-size: var(--small-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-ctn-header p {
     color: var(--secondary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .service-ctn-grid {
@@ -1267,7 +1289,7 @@
 
 .service-ctn-grid li {
     color: var(--secondary-color);
-    font-weight: 500;
+    font-weight: 300;
     font-size: var(--span-text);
     padding: 10px;
 }
@@ -1289,7 +1311,7 @@
 .service-ctn-grid-box h3 {
     color: var(--primary-color);
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-ctn-grid-box p {
@@ -1349,19 +1371,19 @@
 .service-position-content-ctn-flex-cn span {
     font-size: var(--link-span-text);
     color: var(--primary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-position-content-ctn-flex-cn h2 {
     font-size: var(--medium-text);
     color: var(--primary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-position-content-ctn-flex-cn p {
     font-size: var(--span-text);
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .service-position-content-ctn-flex-cn-img {
@@ -1407,19 +1429,19 @@
 .service-extra-ctn span {
     color: var(--primary-color);
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-extra-ctn h2 {
     color: var(--tertiary-color);
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-extra-ctn p {
     color: var(--primary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .service-extra-ctn a {
@@ -1435,7 +1457,7 @@
 .service-extra-ctn a span {
     color: var(--primary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .service-extra-ctn a img {
@@ -1467,19 +1489,19 @@
 .service-position-two-content-ctn-flex-cn span {
     font-size: var(--link-span-text);
     color: var(--primary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-position-two-content-ctn-flex-cn h2 {
     font-size: var(--medium-text);
     color: var(--tertiary-color);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .service-position-two-content-ctn-flex-cn p {
     font-size: var(--span-text);
     color: var(--primary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .service-position-two-content-ctn-flex-cn-img {
@@ -1565,7 +1587,7 @@
 
 .about-ctn-img-background-ctn-box p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
     margin-bottom: 0;
     padding-bottom: 0;
@@ -1609,13 +1631,13 @@
 
 .about-ctn-img-background-ctn-text  h2 {
     font-size: var(--small-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .about-ctn-img-background-ctn-text  p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
@@ -1631,7 +1653,7 @@
 
 .about-ctn-img-background-ctn-box-ctn-header  h3 {
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
@@ -1647,7 +1669,7 @@
 
 .about-ctn-cn-grid-img-ctn  h3 {
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
@@ -1695,25 +1717,25 @@
 .about-service-grid-section-ctn h2 {
     font-size: var(--small-text);
     color: var(--secondary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .about-service-grid-section-ctn p {
     font-size: var(--span-text);
     color: var(--secondary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .about-service-grid-section-ctn h3 {
     font-size: var(--p-text);
     color: var(--secondary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .about-service-grid-section-ctn li {
     font-size: var(--span-text);
     color: var(--secondary-color);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .about-service-grid-section-ctn-grid {
@@ -1743,7 +1765,7 @@
 
 .about-service-grid-section-ctn-grid-box span {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
     padding: 10px;
 }
@@ -1761,13 +1783,13 @@
 
 .additional-ctn-section-two-cn-ctn-box h2 {
     font-size: var(--span-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
 .additional-ctn-section-two-cn-ctn-box p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
@@ -1835,13 +1857,13 @@
 
 .ctn-section-two-cn-ctn-box-content h2 {
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .ctn-section-two-cn-ctn-box-content p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
@@ -1905,13 +1927,13 @@
 
 .updated-swiper-ctn-header span {
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .updated-swiper-ctn-header h2 {
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
@@ -1963,13 +1985,13 @@
 
 .updated-swiper-ctn-grid-box h2 {
     font-size: var(--span-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
 .updated-swiper-ctn-grid-box p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
@@ -2000,7 +2022,7 @@
 .updated-swiper-identifier.active span {
     transition: all 1s ease;
     font-size: var(--span-text);
-    font-weight: 700;
+    font-weight: 300;
     padding: 5px 10px;
     border-radius: 5px;
     box-shadow: 0 5px 10px hsl(0 10% 25% / 50%);
@@ -2011,7 +2033,7 @@
 .updated-swiper-identifier span {
     transition: all 1s ease;
     font-size: var(--span-text);
-    font-weight: 700;
+    font-weight: 300;
     padding: 5px 10px;
     border-radius: 5px;
     color: var(--primary-color);
@@ -2145,45 +2167,45 @@
 
 .post-box-ctn-content h2 {
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .post-box-ctn-content li {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .new-update-box-ctn .service-header-span {
     color: var(--primary-color);
     font-size: var(--link-span-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .new-update-box-ctn h2 {
     color: var(--primary-color);
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .new-update-box-ctn h3 {
     color: var(--primary-color);
     font-size: var(--small-text);
-    font-weight: 700;
+    font-weight: 300;
 }
 
 .new-update-box-ctn p {
     color: var(--primary-color);
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .extra-paragraph {
     width: 100%;
     height: auto;
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
@@ -2214,13 +2236,13 @@
 
 .updated-asset-ctn h2 {
     font-size: var(--p-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
 .updated-asset-ctn p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
     margin-bottom: 0;
 }
@@ -2256,14 +2278,14 @@
 
 .faq-title h2 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--primary-color);
     padding: 10px;
 }
 
 .faq-title p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
 }
 
@@ -2286,7 +2308,7 @@
 
 .accordion__question p {
     font-size: var(--p-text);
-    font-weight: 500;
+    font-weight: 300;
     text-decoration: none;
     color: var(--tertiary-color);
     width: 100%;
@@ -2442,7 +2464,7 @@
 
 .team-banner-container-grid-content h3{
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
@@ -2455,13 +2477,13 @@
 
 .team-banner-container-grid-content p{
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .team-banner-container-grid-content span{
     font-size: var(--link-span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary_color);
 }
 
@@ -2503,14 +2525,14 @@
 
 .team-banner-container-grid-digit-update li{
     font-size: var(--small-text);
-    font-weight: 700;
+    font-weight: 300;
     list-style: none;
     color: var(--primary-color);
 }
 
 .team-banner-container-grid-digit-update p{
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--primary-color);
 }
 

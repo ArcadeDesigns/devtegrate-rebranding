@@ -30,7 +30,7 @@
   --medium-text: 2em;
   --small-text: 1.5em;
   --p-text: 1.1em;
-  --span-text: 0.9em;
+  --span-text: 1em;
   --link-span-text: 0.8em;
 }
 
@@ -140,13 +140,13 @@
 
 .header-content-container h1 {
 	font-size: var(--mini-header);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
 .header-content-container p {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	width: 70%;
 	color: var(--primary-color);
 }
@@ -172,7 +172,7 @@
 	padding: 0 5px;
 	color: var(--primary-color);
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 }
 
 .header-nav span:nth-child(2) {
@@ -203,19 +203,19 @@
 
 .container-header span {
     font-size: var(--link-span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
 .container-header h2 {
     font-size: var(--medium-text);
-    font-weight: 700;
+    font-weight: 300;
     color: var(--tertiary-color);
 }
 
 .container-header p {
     font-size: var(--span-text);
-    font-weight: 500;
+    font-weight: 300;
     color: var(--secondary-color);
 }
 
@@ -397,26 +397,26 @@
 
 .page-grid-layout-box h2 {
 	font-size: var(--medium-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--secondary-color);
 }
 
 .page-grid-layout-box h3 {
 	font-size: var(--p-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--tertiary-color);
 	padding-bottom: 10px;
 }
 
 .page-grid-layout-box p {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	color: var(--secondary-color);
 }
 
 .page-grid-layout-box a {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	background-color: var(--tertiary-color);
 	color: var(--primary-color);
 	border-radius: 5px;
@@ -437,7 +437,7 @@
 
 .page-grid-layout-box .span-header {
 	font-size: var(--link-span-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--tertiary-color);
 }
 
@@ -512,25 +512,25 @@
 .feature-section-grid-box-icon-box span {
 	font-size: var(--span-text);
 	color: var(--primary-color);
-	font-weight: 500;
+	font-weight: 300;
 	padding: 10px 0;
 }
 
 .feature-section-grid-box h2 {
 	font-size: var(--medium-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--tertiary-color);
 }
 
 .feature-section-grid-box h3 {
 	font-size: var(--p-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
 .feature-section-grid-box p {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
@@ -543,13 +543,13 @@
 	height: auto;
 	padding: 10px;
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
 .feature-section-grid-box span {
 	font-size: var(--link-span-text);
-	font-weight: 500;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
@@ -656,7 +656,7 @@
 
 .feature-section-grid-box-link a span {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 }
 
 .feature-section-grid-box-link a img {
@@ -691,13 +691,13 @@
 .feature-section-header span {
 	font-size: var(--link-span-text);
 	color: var(--primary-color);
-	font-weight: 500;
+	font-weight: 300;
 }
 
 .feature-section-header h2 {
 	font-size: var(--medium-text);
 	color: var(--primary-color);
-	font-weight: 500;
+	font-weight: 300;
 	width: 70%;
 }
 
@@ -726,13 +726,13 @@
 
 .feature-footer-main h2 {
 	font-size: var(--medium-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--tertiary-color);
 }
 
 .feature-footer-main p {
 	font-size: var(--medium-text);
-	font-weight: 500;
+	font-weight: 300;
 	color: var(--secondary-color);
 }
 
@@ -762,25 +762,25 @@
 
 .feature-footer-main-container-box span {
 	font-size: var(--link-span-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--secondary-color);
 }
 
 .feature-footer-main-container-box h3 {
 	font-size: var(--p-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--tertiary-color);
 }
 
 .feature-footer-main-container-box p {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	color: var(--secondary-color);
 }
 
 .feature-footer-main-container-box a {
 	font-size: var(--span-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--tertiary-color);
 }
 
@@ -797,13 +797,13 @@
 
 .updated-ctn-grid-ctn-header h2 {
 	font-size: var(--medium-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
 .updated-ctn-grid-ctn-header span {
 	font-size: var(--link-span-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
@@ -1046,13 +1046,13 @@
 
 .updated-ctn-grid-box-cn h2 {
 	font-size: var(--p-text);
-	font-weight: 700;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
 .updated-ctn-grid-box-cn p {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
@@ -1108,13 +1108,13 @@
 .footer-form-ctn-box-content h2 {
 	font-size: var(--medium-text);
 	color: var(--primary-color);
-	font-weight: 700;
+	font-weight: 300;
 }
 
 .footer-form-ctn-box-content p {
 	font-size: var(--span-text);
 	color: var(--primary-color);
-	font-weight: 500;
+	font-weight: 300;
 	text-align: center;
 	max-width: 80%;
 	width: 100%;
@@ -1152,13 +1152,13 @@
 
 .footer-form-ctn-box form .footer-form-ctn-box-box .footer-form-ctn-box-box-cn label {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	color: var(--primary-color);
 }
 
 .footer-form-ctn-box form .footer-form-ctn-box-box .footer-form-ctn-box-box-cn input {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	width: 100%;
 	height: auto;
 	min-height: 50px;
@@ -1172,7 +1172,7 @@
 
 .footer-form-ctn-box form .footer-form-ctn-box-box .footer-form-ctn-box-box-cn select {
 	font-size: var(--span-text);
-	font-weight: 500;
+	font-weight: 300;
 	width: 100%;
 	height: auto;
 	min-height: 50px;
