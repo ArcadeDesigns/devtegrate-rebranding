@@ -376,38 +376,18 @@ footer .span-text {
 }
 
 .img-navbar-ctn-img-ctn-flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   width: 100%;
   height: auto;
-  padding: 10px;
+  gap: .5em;
 }
 
 .navbar-liner {
-  width: 100%;
+  width: 50%;
   padding: 1px;
   background-color: var(--secondary-color);
-}
-
-.img-navbar-ctn-img-ctn {
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 10px;
-  position: relative;
-  display: flex;
-}
-
-.img-navbar-ctn-img-ctn img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
 }
 
 .drop-down .img-navbar:hover {
@@ -418,7 +398,7 @@ footer .span-text {
   background: var(--primary-color);
   border-radius: 10px;
   width: 100%;
-  max-width: 60%;
+  max-width: 80%;
   justify-content: center;
   align-items: flex-start;
   margin: auto;
@@ -455,45 +435,105 @@ footer .span-text {
 }
 
 .img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex h2 {
-  font-size: var(--small-text);
-  font-weight: 300;
+  font-size: var(--p-text);
+  font-weight: 500;
   color: var(--secondary-color);
 }
 
 .img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li {
+  background-color: transparent;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   transition: all 1s ease;
+  border-radius: 5px;
 }
 
 .img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li a {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li a h5 {
   font-size: var(--span-text);
-  font-weight: 300;
+  font-weight: 500;
+  color: var(--tertiary-color);
+}
+
+.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li a p {
+  font-size: var(--link-span-text);
+  font-weight: 500;
   color: var(--secondary-color);
 }
 
-.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li a img {
-  width: 25px;
+.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li img {
+  width: 40px;
   height: auto;
   object-fit: scale-down;
   filter: invert(100%);
-  padding-right: 5px;
+  padding-right: 10px;
 }
 
-.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li:hover {
-  background-color: var(--tertiary-color);
-  color: var(--primary-color);
-  border-radius: 5px;
-  width: 100%;
-  padding: 10px;
-  transition: all 1s ease;
+.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li #imgsvg {
+    margin: auto;
+    object-fit: scale-down;
+    height: 50px;
+    width: 50px;
+    stroke: var(--tertiary-color);
+    fill-opacity: 0;
+    stroke-width: 10px;
+    stroke-dasharray: 4500;
+    animation: svgAnimation 20s ease infinite;
+}
+
+#Layer_2 {
+    margin: auto;
+    stroke: var(--primary-color);
+    fill-opacity: 0;
+    stroke-width: 10px;
+    stroke-dasharray: 4500;
+    animation: svgAnimation 20s ease infinite;
+}
+
+.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li:hover #imgsvg {
+    margin: auto;
+    object-fit: scale-down;
+    height: 50px;
+    width: 50px;
+    stroke: var(--primary-color);
+    fill-opacity: 0;
+    stroke-width: 10px;
+    stroke-dasharray: 4500;
+    animation: svgAnimation 20s ease infinite;
 }
 
 .img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li:hover a {
   color: var(--primary-color);
+  border-radius: 5px;
+  padding: 0 10px;
+  width: 100%;
+  transition: all 1s ease;
 }
 
-.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li:hover a img {
+.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li:hover {
+  background-color: var(--tertiary-color);
+}
+
+.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li:hover a h5 {
+  color: var(--primary-color);
+}
+
+.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li:hover a p {
+  color: var(--primary-color);
+}
+
+.img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li:hover img {
   filter: invert(0);
   transition: all 1s ease;
 }

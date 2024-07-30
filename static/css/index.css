@@ -1012,12 +1012,23 @@
     }
 }
 
-
 #svg {
     margin: 10px auto;
     object-fit: scale-down;
     height: 180px;
     width: 180px;
+    stroke: var(--primary-color);
+    fill-opacity: 0;
+    stroke-width: 3px;
+    stroke-dasharray: 4500;
+    animation: svgAnimation 20s ease infinite;
+}
+
+#imgsvg {
+    margin: 10px auto;
+    object-fit: scale-down;
+    height: 40px;
+    width: 40px;
     stroke: var(--primary-color);
     fill-opacity: 0;
     stroke-width: 3px;
