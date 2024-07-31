@@ -2700,6 +2700,10 @@
         min-width: 100%;
         min-height: 150px;
     }
+
+    .service-ctn-position-content h5 {
+        font-size: var(--small-text);
+      }
 }
 
 @media screen and (max-width: 540px) and (-webkit-min-device-pixel-ratio: 0.720) {
