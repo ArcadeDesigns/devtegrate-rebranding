@@ -33,7 +33,7 @@
   --medium-text: 2em;
   --small-text: 1.5em;
   --p-text: 1.1em;
-  --span-text: 1em;
+  --span-text: 0.9em;
   --link-span-text: 0.8em;
 }
 
@@ -41,7 +41,6 @@
     box-sizing: border-box;
     position: relative;
     width: 100%;
-    border-bottom: 2px solid var(--primary-color);
 }
 
 .select {
