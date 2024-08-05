@@ -993,14 +993,29 @@
 	text-align: center;
 }
 
+.devtegrateImage {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    width: auto;
+    max-width: 10%;
+    height: 350px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
  #layerSvg {
- 	width:3000px;
- 	height:500px;
+ 	width: 2000px;
+ 	height: 50px;
  	stroke: var(--primary-color);
  	fill-opacity: 0;
  	stroke-width: 5px;
  	stroke-dasharray: 4500;
  	animation: svgAnimation 3s ease infinite;
+ 	transform: rotate(90deg);
  }
 
 @keyframes layerSvgAnimation {

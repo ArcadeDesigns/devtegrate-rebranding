@@ -477,6 +477,7 @@ footer .span-text {
 .drop-down .img-navbar .img-navbar-ctn {
   background: var(--primary-color);
   border-radius: 10px;
+  overflow: hidden;
   width: 100%;
   max-width: 80%;
   justify-content: center;
