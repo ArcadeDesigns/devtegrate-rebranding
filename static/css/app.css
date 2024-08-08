@@ -675,7 +675,7 @@ footer .span-text {
   }
 
   .responsive-navbar .menu.active {
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
     width: 100%;
@@ -688,9 +688,32 @@ footer .span-text {
     display: none;
   }
 
+  .responsive-menu {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+  }
 
-  .responsive-navbar .menu img {
+  .responsive-navbar .responsive-navbar-header .menu .imgOpen {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .responsive-navbar .menu .imgClose {
     width: auto;
+    height: auto;
+    object-fit: scale-down;
+    cursor: pointer;
+  }
+
+  .responsive-navbar .menu .CompanyLogo {
+    width: 100px;
     height: auto;
     object-fit: scale-down;
     cursor: pointer;
@@ -711,6 +734,7 @@ footer .span-text {
     align-items: center;
     margin: auto;
     padding: 10px;
+    transition: all 2s ease;
   }
 
   .responsive-menu {
@@ -721,8 +745,9 @@ footer .span-text {
     background-color: var(--secondary-color);
     z-index: 999;
     top: 0;
-    right: 0;
-    display: none;
+    right: -100%;
+    transition: all 2s ease;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -739,6 +764,21 @@ footer .span-text {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    gap: .5em;
+    overflow-y: scroll;
+  }
+
+  .responsive-menu::-webkit-scrollbar {
+      width: 5px;
+  }
+
+  .responsive-menu::-webkit-scrollbar-thumb {
+      background-color: var(--tertiary-color);
+      border-radius: 10px;
+  }
+
+  .responsive-menu::-webkit-scrollbar-track {
+      background-color: var(--text-color);
   }
 
   .responsive-menu ul .responsive-drop-down {
@@ -746,27 +786,50 @@ footer .span-text {
     height: auto;
     text-align: right;
     padding: 10px;
+    border-radius: 5px;
+    background-color: var(--reserved-color);
+    transition: all 2s ease;
   }
 
   .responsive-menu ul .responsive-drop-down span {
     color: var(--primary-color);
     font-size: var(--span-text);
     font-weight: 300;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .responsive-menu ul .responsive-drop-down .responsive-list.active {
-    display: block;
     padding: 10px;
+    gap: .2em;
+    display: flex;
+    height: auto;
+    overflow: visible;
+    transition: all 2s ease;
   }
 
   .responsive-menu ul .responsive-drop-down .responsive-list {
-    display: none;
-    padding: 10px;
+    display: block;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 2s ease;
   }
 
   .responsive-menu ul .responsive-drop-down ul li {
     list-style: none;
     padding-right: 15px;
+    transition: all 1s ease;
+  }
+
+  .responsive-menu ul .responsive-drop-down ul li:hover {
+    list-style: none;
+    padding-right: 15px;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    transition: all 1s ease;
   }
 
   .responsive-menu ul .responsive-drop-down ul li a {
@@ -774,11 +837,16 @@ footer .span-text {
     color: var(--primary-color);
     font-size: var(--span-text);
     font-weight: 300;
+    width: 100%;
+    display: block;
   }
 
   .responsive-menu ul li {
     list-style: none;
-    padding: 10px
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--reserved-color);
   }
 
   .responsive-menu ul .decorated-responsiveness a {
@@ -798,7 +866,7 @@ footer .span-text {
   }
 
   .responsive-menu .responsive-ctn-cta .cta {
-    width: max-content;
+    width: 100%;
     height: auto;
     justify-content: center;
     align-items: center;
@@ -809,7 +877,7 @@ footer .span-text {
     font-size: var(--span-text);
     font-weight: 300;
     border-radius: 5px;
-    padding: 10px 30px;
+    padding: 10px;
     background-color: var(--tertiary-color);
   }
 }
@@ -826,7 +894,7 @@ footer .span-text {
     display: none;
   }
 
-  .responsive-menu {
+  .responsive-menu.active {
     max-width: 60%;
   }
   
@@ -834,7 +902,7 @@ footer .span-text {
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 430px) {
   
-  .responsive-menu {
+  .responsive-menu.active {
     max-width: 80%;
   }
 

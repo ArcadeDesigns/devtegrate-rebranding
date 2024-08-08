@@ -6,11 +6,11 @@ function ResponsiveMenuNavigation() {
 
     // Toggle responsive menu
     menuToggle.addEventListener("click", function() {
-        responsiveMenu.style.display = "flex";
+        responsiveMenu.classList.add("active")
     });
 
     closeMenuToggle.addEventListener("click", function() {
-        responsiveMenu.style.display = "none";
+        responsiveMenu.classList.remove("active")
     });
 
     // Toggle dropdown menus
@@ -41,5 +41,5 @@ function AutomatedSlider() {
 
     nextPageBtn.addEventListener('click', slideToNext);
 
-    setInterval(slideToNext, 10000); // Slide every 5 seconds
+    setInterval(slideToNext, 10000);
 };

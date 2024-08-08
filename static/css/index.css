@@ -165,7 +165,7 @@
 	height: auto;
 	padding: 40px;
 	cursor: pointer;
-	z-index: 999;
+	z-index: 888;
 }
 
 .header-nav span:nth-child(1) {

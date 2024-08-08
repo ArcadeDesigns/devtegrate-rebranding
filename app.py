@@ -161,7 +161,14 @@ def index():
             logging.error(f"Failed to send the OTP email. Status code: {result.status_code}, Response: {result.json()}")
             return redirect(url_for('index'))
 
-    return render_template('index.html', form=form, email=email)
+    return render_template('index.html',
+        form=form,
+        email=email,
+        title_tag='Cloud Services | Managed IT Services | Cyber security | Security and Compliance',
+        meta_description='Devtegrate offers expert cloud services, managed IT solutions, cyber security, and comprehensive security and compliance solutions. Discover how our innovative services can enhance your businesss IT infrastructure.',
+        url_link='https://devtegrate.com',
+        revised='2024-07-01'
+        )
 
 @app.route('/auth/user/verify-otp', methods=['GET', 'POST'])
 def verify_otp():
