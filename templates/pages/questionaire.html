@@ -7,7 +7,7 @@
     loop
   ></video>
 
-  <div class="questionaireSlide active">
+  <!--<div class="questionaireSlide">
     <div class="questionaireCtnBoxHeader">
       <a class="smBtn" href="{{ url_for('index') }}">
         Home
@@ -28,9 +28,9 @@
         <i class="bx bxs-chevron-right"></i>
       </div>
     </div>
-  </div>
+  </div>-->
 
-  <div class="questionaireSlide">
+  <div class="questionaireSlide active">
     <div class="questionaireCtn">
       <form
         method="POST"
@@ -53,12 +53,7 @@
           <ol class="orderedList">
             <div class="questionaireCtnBoxCtn active">
               <span
-                >Thank you for taking the time to participate in our survey.
-                Your input is valuable to us. Please fill out the following
-                details to help us better understand your background and
-                position. Rest assured, your information will be kept
-                confidential and used solely for the purpose of this
-                questionnaire.</span
+                >Thank you for taking the time to participate in our free assessment. Your input is valuable to us and will help us understand your vulnerabilities and recommend tailored solutions. Please provide the following details to help us better assess your situation. Rest assured, your information will be kept confidential and used solely for the purpose of this assessment.</span
               >
 
               <input
@@ -120,12 +115,12 @@
               <div class="formInputLines">
                 <div class="inputBoxQuestionaire">
                   <p>Paper records:</p>
-                  <input type="text" required name="answerOne" />
+                  <input type="text" required readonly name="answerOne" />
                 </div>
 
                 <div class="inputBoxQuestionaire">
                   <p>Electronic records:</p>
-                  <input type="text" required name="answerTwo" />
+                  <input type="text" required readonly name="answerTwo" />
                 </div>
               </div>
 
@@ -140,7 +135,7 @@
               >
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerThree" />
+                <input type="text" required readonly name="answerThree" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -169,7 +164,7 @@
               </h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerFour" />
+                <input type="text" required readonly name="answerFour" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -189,7 +184,7 @@
               <h6>If “Yes”, are you PCI-DSS Compliant?</h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerFive" />
+                <input type="text" required readonly name="answerFive" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -215,7 +210,7 @@
               </h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerSix" />
+                <input type="text" required readonly name="answerSix" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -240,7 +235,7 @@
               </h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerSeven" />
+                <input type="text" required readonly name="answerSeven" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -295,7 +290,7 @@
               </h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerNine" />
+                <input type="text" required readonly name="answerNine" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -316,7 +311,7 @@
               </h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTen" />
+                <input type="text" required readonly name="answerTen" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -341,7 +336,7 @@
               </h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerEleven" />
+                <input type="text" required readonly name="answerEleven" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -361,7 +356,7 @@
               </li>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTwelve" />
+                <input type="text" required readonly name="answerTwelve" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -391,7 +386,7 @@
               </ul>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerThirteen" />
+                <input type="text" required readonly name="answerThirteen" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -416,7 +411,7 @@
               <h6>If MFA is used, please select your MFA provider:</h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerFourteen" />
+                <input type="text" required readonly name="answerFourteen" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -437,7 +432,7 @@
               <h6>If “Yes”, please select your NGAV provider:</h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerFifteen" />
+                <input type="text" required readonly name="answerFifteen" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -459,7 +454,7 @@
               <h6>If “Yes”, please select your EDR provider:</h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerSixteen" />
+                <input type="text" required readonly name="answerSixteen" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -477,7 +472,7 @@
                 Do you use MFA to protect access to privileged user accounts?
               </li>
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerSeventeen" />
+                <input type="text" required readonly name="answerSeventeen" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -498,7 +493,7 @@
               <h6>If “Yes”, please provide the name of your provider:</h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerEighteen" />
+                <input type="text" required readonly name="answerEighteen" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -521,7 +516,7 @@
               </h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerNineteen" />
+                <input type="text" required readonly name="answerNineteen" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -540,7 +535,7 @@
                 servers, laptops, desktops, and managed mobile devices?
               </li>
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTwenty" />
+                <input type="text" required readonly name="answerTwenty" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -564,7 +559,7 @@
               </h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTwentyOne" />
+                <input type="text" required readonly name="answerTwentyOne" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -584,7 +579,7 @@
               </li>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTwentyTwo" />
+                <input type="text" required readonly name="answerTwentyTwo" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -631,7 +626,7 @@
               <h6>If “Yes”, is it segregated from the rest of your network?</h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTwentyFour" />
+                <input type="text" required readonly name="answerTwentyFour" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -652,7 +647,7 @@
               <h6>If “Yes”, please provide the name of your DNS provider:</h6>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTwentyFive" />
+                <input type="text" required readonly name="answerTwentyFive" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -672,7 +667,7 @@
               </li>
               <h6>If “Yes”, please select your provider:</h6>
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTwentySix" />
+                <input type="text" required readonly name="answerTwentySix" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -692,7 +687,7 @@
               </li>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTwentySeven" />
+                <input type="text" required readonly name="answerTwentySeven" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -712,7 +707,7 @@
               </li>
 
               <div class="FlexBtnCtn">
-                <input type="text" required name="answerTwentyEight" />
+                <input type="text" required readonly name="answerTwentyEight" />
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -733,8 +728,8 @@
 
               <div class="FlexBtnCtn">
 
-                <input type="text" required name="answerTwentyNine" />
-                
+                <input type="text" required readonly name="answerTwentyNine" />
+
                 <div class="smBtn">
                   Yes
                   <i class="bx bxs-chevron-right"></i>
@@ -753,7 +748,7 @@
 
               <div class="FlexBtnCtn">
 
-                <input type="text" required name="answerThirty" />
+                <input type="text" required readonly name="answerThirty" />
 
                 <div class="smBtn">
                   Yes
@@ -773,7 +768,7 @@
 
               <div class="FlexBtnCtn">
 
-                <input type="text" required name="answerThirtyOne" />
+                <input type="text" required readonly name="answerThirtyOne" />
 
                 <div class="smBtn">
                   Yes
@@ -923,7 +918,7 @@
 
               <div class="FlexBtnCtn">
                 
-                <input type="text" required name="answerThirtyFive" />
+                <input type="text" required readonly name="answerThirtyFive" />
 
                 <div class="smBtn">
                   Yes
@@ -971,7 +966,7 @@
 
               <div class="FlexBtnCtn">
 
-                <input type="text" required name="answerThirtySix" />
+                <input type="text" required readonly name="answerThirtySix" />
                 
                 <div class="smBtn">
                   Yes
@@ -1030,7 +1025,7 @@
 
               <div class="FlexBtnCtn">
 
-                <input type="text" required name="answerThirtySeven" />
+                <input type="text" required readonly name="answerThirtySeven" />
 
                 <div class="smBtn">
                   Yes
