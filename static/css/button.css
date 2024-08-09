@@ -598,6 +598,73 @@
 /***************************************************************************************/
 /***************************************************************************************/
 
+.smBtn {
+    position: relative;
+    width: 150px;
+    height: 60px;
+    background-color: var(--tertiary-color);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, .6);
+    text-decoration: none;
+    padding-left: 40px;
+    transition: .5s;
+    overflow: hidden;
+    font-size: var(--button-text);
+}
+
+.smBtn:hover {
+    padding-left: 0px;
+    padding-right: 40px;
+    color: var(--primary-color);
+    background-color: var(--reserved-color);
+}
+
+.smBtn .bx {
+    position: absolute;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    font-size: var(--button-text);
+    font-weight: 100;
+}
+
+.smBtn:hover .bx {
+    left: calc(100% - 55px);
+    background-color: var(--tertiary-color);
+}
+
+.smBtn:after {
+    contain: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 0, 200, .9);
+    transform: translateX(-170px) skewX(30deg);
+    transition: 3s ease-in-out;
+}
+
+.smBtn:hover:after {
+    transform: translateX(170px) skewX(30deg);
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
 .lgBtn {
     position: relative;
     width: 400px;
@@ -613,6 +680,7 @@
     transition: .5s;
     overflow: hidden;
     font-size: var(--button-text);
+    cursor: pointer;
 }
 
 .lgBtn:hover {

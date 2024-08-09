@@ -1,0 +1,1058 @@
+{% extends 'base.html' %} {% block content %}
+<div class="questionaireVideoHeader">
+  <video
+    src="https://res.cloudinary.com/quinn-daisies/video/upload/v1723173708/devtegrate-images/6035606_Person_People_1280x720_ntrkfw.mp4"
+    autoplay
+    muted
+    loop
+  ></video>
+
+  <div class="questionaireSlide active">
+    <div class="questionaireCtnBoxHeader">
+      <a class="smBtn" href="{{ url_for('index') }}">
+        Home
+        <i class="bx bxs-chevron-right"></i>
+      </a>
+
+      <h2>Cyber Liability Insurance</h2>
+      <h4>
+        Our Cyber Liability Insurance is designed to protect your organization
+        against the financial impact of cyber threats, data breaches, and other
+        digital risks. Complete the following application to help us assess your
+        coverage needs and provide a tailored insurance solution that safeguards
+        your business in the ever-evolving landscape of cyber threats.
+      </h4>
+
+      <div class="extraBtn GetStarted">
+        Get Started
+        <i class="bx bxs-chevron-right"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="questionaireSlide">
+    <div class="questionaireCtn">
+      <form
+        method="POST"
+        type="file"
+        name="file"
+        action=""
+        class="questionaireCtnBox"
+        enctype="multipart/form-data"
+      >
+        {{ form.hidden_tag() }}
+        <div class="questionaireContainer">
+          <div class="indicatorCtn">
+            <div class="indicatorCtnContent">
+              <div class="previousBtn">Previous Question</div>
+              <div class="nextBtn">Next Question</div>
+            </div>
+            <div class="indicator">1/37&nbsp;&nbsp;Questions</div>
+          </div>
+
+          <ol class="orderedList">
+            <div class="questionaireCtnBoxCtn active">
+              <span
+                >Thank you for taking the time to participate in our survey.
+                Your input is valuable to us. Please fill out the following
+                details to help us better understand your background and
+                position. Rest assured, your information will be kept
+                confidential and used solely for the purpose of this
+                questionnaire.</span
+              >
+
+              <input
+                class="contactInput"
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+              />
+
+              <input
+                class="contactInput"
+                type="text"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+
+              <input
+                class="contactInput"
+                type="text"
+                name="phone"
+                placeholder="Contact Number"
+                required
+              />
+
+              <input
+                class="contactInput"
+                type="text"
+                name="company"
+                placeholder="Company Name"
+                required
+              />
+
+              <input
+                class="contactInput"
+                type="text"
+                name="position"
+                placeholder="Position Held"
+                required
+              />
+
+              <div class="extraBtn StartQuestionaire">
+                Start The Questionnaire
+                <i class="bx bxs-chevron-right"></i>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you collect, store, host, process, control, use or share any
+                private or sensitive information* in either paper or electronic
+                form?
+              </li>
+              <h6>
+                If “Yes”, please provide the approximate number of unique
+                records:
+              </h6>
+              <div class="formInputLines">
+                <div class="inputBoxQuestionaire">
+                  <p>Paper records:</p>
+                  <input type="text" required name="answerOne" />
+                </div>
+
+                <div class="inputBoxQuestionaire">
+                  <p>Electronic records:</p>
+                  <input type="text" required name="answerTwo" />
+                </div>
+              </div>
+
+              <span
+                >*Private or sensitive information includes any information or
+                data that can be used to uniquely identify a person, including,
+                but not limited to, social security numbers or other government
+                identification numbers, payment card information, drivers’
+                license numbers, financial account numbers, personal
+                identification numbers (PINs), usernames, passwords, healthcare
+                records, and email addresses.</span
+              >
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerThree" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you collect, store, host, process, control, use or share any
+                biometric information or data, such as fingerprints,
+                voiceprints, facial, hand, iris or retinal scans, DNA, or any
+                other biological, physical or behavioral characteristics that
+                can be used to uniquely identify a person?
+              </li>
+              <h6>
+                If “Yes”, have you reviewed your policies relating to the
+                collection, storage, and destruction of such information or data
+                with a qualified attorney and confirmed compliance with
+                applicable federal, state, local, and foreign laws?
+              </h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerFour" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you process, store, or handle credit card transactions?
+              </li>
+              <h6>If “Yes”, are you PCI-DSS Compliant?</h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerFive" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you tag external emails to alert employees that the message
+                originated from outside the organization?
+              </li>
+              <h6>
+                If “Yes”, have you reviewed your policies relating to the
+                collection, storage, and destruction of such information or data
+                with a qualified attorney and confirmed compliance with
+                applicable federal, state, local, and foreign laws?
+              </h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerSix" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you pre-screen emails for potentially malicious attachments
+                and links?
+              </li>
+              <h6>
+                If “Yes”, do you have the capability to automatically detonate
+                and evaluate attachments in a sandbox to determine if they are
+                malicious prior to delivery to the end-user?
+              </h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerSeven" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Have you implemented any of the following to protect against
+                phishing messages?
+              </li>
+              
+              <input class="ReadOnlyInput" type="text" name="answerEight" readonly />
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>Sender Policy Framework (SPF)</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>DomainKeys Identified Mail (DKIM)</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>
+                  Domain-based Message Authentication, Reporting & Conformance
+                  (DMARC)
+                </p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>None of the above</p>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Can your users access email through a web application or a
+                non-corporate device?
+              </li>
+              <h6>
+                If “Yes”, do you enforce Multi-Factor Authentication (MFA)?
+              </h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerNine" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>Do you use Office 365 in your organization?</li>
+              <h6>
+                If “Yes”, do you use the Office 365 Advanced Threat Protection
+                add-on?
+              </h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTen" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you use a cloud provider to store data or host applications?
+              </li>
+              <h6>If “Yes”, please provide the name of the cloud provider:</h6>
+              <h6>
+                If you use more than one cloud provider to store data, please
+                specify the cloud provider storing the largest quantity of
+                sensitive customer and/or employee records.
+              </h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerEleven" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you use MFA to secure all cloud provider services that you
+                utilize?
+              </li>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTwelve" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you encrypt all sensitive and confidential information stored
+                on your organization’s systems and networks?
+              </li>
+              <h6>
+                If “No”, are the following compensating controls in place:
+              </h6>
+              <ul>
+                <li>
+                  Segregation of servers that store sensitive and confidential
+                  information?
+                </li>
+                <li>Access control with role-based assignments?</li>
+              </ul>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerThirteen" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>Do you allow remote access to your network?</li>
+              <h6>If “Yes”:</h6>
+              <ul>
+                <li>
+                  Do you use MFA to secure all remote access to your network,
+                  including any remote desktop protocol (RDP) connections?
+                </li>
+              </ul>
+              <h6>If MFA is used, please select your MFA provider:</h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerFourteen" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you use a next-generation antivirus (NGAV) product to protect
+                all endpoints across your enterprise?
+              </li>
+              <h6>If “Yes”, please select your NGAV provider:</h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerFifteen" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you use an endpoint detection and response (EDR) tool that
+                includes centralized monitoring and logging of all endpoint
+                activity across your enterprise?
+              </li>
+              <h6>If “Yes”, please select your EDR provider:</h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerSixteen" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you use MFA to protect access to privileged user accounts?
+              </li>
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerSeventeen" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you manage privileged accounts using privileged account
+                management software((e.g., CyberArk, BeyondTrust, etc.)?
+              </li>
+              <h6>If “Yes”, please provide the name of your provider:</h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerEighteen" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you actively monitor all administrator access for unusual
+                behavior patterns?
+              </li>
+              <h6>
+                If “Yes”, please provide the name of your monitoring tool:
+              </h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerNineteen" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you roll out a hardened baseline configuration across
+                servers, laptops, desktops, and managed mobile devices?
+              </li>
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTwenty" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you record and track all software and hardware assets
+                deployed across your organization?
+              </li>
+              <h6>
+                If “Yes”, please provide the name of the tool used for this
+                purpose (if any):
+              </h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTwentyOne" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do non-IT users have local administration rights on their
+                laptop/desktop?
+              </li>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTwentyTwo" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                How frequently do you install critical and high severity patches
+                across your enterprise?
+              </li>
+
+              <input class="ReadOnlyInput" type="text" name="answerTwentyThree" readonly />
+
+              <div class="checkboxCtn">
+                <input type="checkbox" />
+                <p>1-3 days</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox" />
+                <p>4-7 days</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox" />
+                <p>8-30 days</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox" />
+                <p>One month or longer</p>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>Do you have any end-of-life or end-of-support software?</li>
+              <h6>If “Yes”, is it segregated from the rest of your network?</h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTwentyFour" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you use a protective DNS service to block access to known
+                malicious websites?
+              </li>
+              <h6>If “Yes”, please provide the name of your DNS provider:</h6>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTwentyFive" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you use endpoint application isolation and containment
+                technology on all endpoints?
+              </li>
+              <h6>If “Yes”, please select your provider:</h6>
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTwentySix" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Can users run Microsoft Office Macro enabled documents on their
+                system by default?
+              </li>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTwentySeven" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you implement PowerShell best practices as outlined in the
+                Environment Recommendations by Microsoft?
+              </li>
+
+              <div class="FlexBtnCtn">
+                <input type="text" required name="answerTwentyEight" />
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do you utilize a Security Information and Event Management
+                (SIEM) system?
+              </li>
+
+              <div class="FlexBtnCtn">
+
+                <input type="text" required name="answerTwentyNine" />
+                
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>Do you utilize a Security Operations Center (SOC)?</li>
+              <h6>If “Yes”, is it monitored 24 hours a day, 7 days a week?</h6>
+
+              <div class="FlexBtnCtn">
+
+                <input type="text" required name="answerThirty" />
+
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>Do you use a vulnerability management tool?</li>
+              <h6>If “Yes”, please select your provider:</h6>
+
+              <div class="FlexBtnCtn">
+
+                <input type="text" required name="answerThirtyOne" />
+
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>Do you use a data backup solution?</li>
+              <h6>If “Yes”</h6>
+              <span>How frequently does it run?</span>
+
+              <input class="ReadOnlyInput" type="text" name="answerThirtyTwo" readonly />
+
+              <div class="checkboxCtn">
+                <input type="checkbox" />
+                <p>Daily</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox" />
+                <p>Weekly</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox" />
+                <p>Monthly</p>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Estimated amount of time it will take to restore essential
+                functions in the event of a widespread malware or ransomware
+                attack within your network?
+              </li>
+
+              <input class="ReadOnlyInput" type="text" name="answerThirtyThree" readonly />
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>0-24 hours</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>1-3 days</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>4-6 days</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>1 week or longer</p>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>Please check all that apply:</li>
+
+              <input class="ReadOnlyInput" type="text" name="answerThirtyFour" readonly />
+
+              <div class="checkboxCtn">
+                <input type="checkbox" />
+                <p>Backups are encrypted.</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>
+                  Backups are kept separate from your network
+                  (offline/air-gapped), or in a cloud service designed for this
+                  purpose.
+                </p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>
+                  Backups are secured with different access credentials from
+                  other administrator credentials.
+                </p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>You utilize MFA to restrict access to your backups.</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>
+                  You use a cloud-syncing service (e.g., Dropbox, OneDrive,
+                  SharePoint, Google Drive) for backups.
+                </p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>Your cloud-syncing service is protected by MFA.</p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>
+                  You have tested the successful restoration and recovery of key
+                  server configurations and data from backups in the last 6
+                  months.
+                </p>
+              </div>
+
+              <div class="checkboxCtn">
+                <input type="checkbox"/>
+                <p>
+                  You are able to test the integrity of backups prior to
+                  restoration to ensure that they are free of malware.
+                </p>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Do any of the following employees at your company complete
+                social engineering training:
+              </li>
+              <ul>
+                <li>
+                  Employees with financial or accounting responsibilities?
+                </li>
+                <li>
+                  Employees without financial or accounting responsibilities?
+                </li>
+              </ul>
+              <h6>
+                If “Yes” to question 9.a.(1) or 9.a.(2) above, does your social
+                engineering training include phishing simulation?
+              </h6>
+
+              <div class="FlexBtnCtn">
+                
+                <input type="text" required name="answerThirtyFive" />
+
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                Does your organization send and/or receive wire transfers?
+              </li>
+              <h6>
+                If “Yes”, does your wire transfer authorization process include
+                the following:
+              </h6>
+              <ul>
+                <li>A wire request documentation form?</li>
+                <li>
+                  A protocol for obtaining proper written authorization for wire
+                  transfers?
+                </li>
+                <li>A separation of authority protocol?</li>
+                <li>
+                  A protocol for confirming all payment or funds transfer
+                  instructions/requests from a new vendor, client, or customer
+                  via direct call to that vendor, client, or customer using only
+                  the telephone number provided by the vendor, client, or
+                  customer before the payment or funds transfer
+                  instruction/request was received?
+                </li>
+                <li>
+                  A protocol for confirming any vendor, client, or customer
+                  account information change requests via direct call to that
+                  vendor, client, or customer using only the telephone number
+                  provided by the vendor, client, or customer before the change
+                  request was received?
+                </li>
+              </ul>
+
+              <div class="FlexBtnCtn">
+
+                <input type="text" required name="answerThirtySix" />
+                
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="questionaireCtnBoxCtn">
+              <li>
+                In the past 3 years, has the Applicant or any other person or
+                organization proposed for this insurance:
+              </li>
+              <ul>
+                <li>
+                  Received any complaints or written demands or been a subject
+                  in litigation involving matters of privacy injury, breach of
+                  private information, network security, defamation, content
+                  infringement, identity theft, denial of service attacks,
+                  computer virus infections, cyber extortion, or other
+                  cyber-related incidents?
+                </li>
+                <li>
+                  Sustained any system intrusions, tampering, virus or malicious
+                  code attacks, loss of data, loss of portable media, hacking
+                  incidents, extortion attempts, or theft of information?
+                </li>
+                <li>
+                  Sustained any unscheduled network outages or interruptions?
+                </li>
+                <li>
+                  Notified customers or any other third party of a data breach
+                  incident?
+                </li>
+                <li>
+                  Been the subject of a government action, investigation, or
+                  subpoena regarding any alleged violation of a privacy law or
+                  regulation?
+                </li>
+                <li>
+                  Received any complaints, claims, or been subject to litigation
+                  involving sexual harassment, invasion of privacy, wrongful
+                  collection of private information, discrimination, or wrongful
+                  employment practices?
+                </li>
+              </ul>
+
+              <h6>
+                If “Yes” to any part of question 10.a., please provide details:
+              </h6>
+
+              <div class="FlexBtnCtn">
+
+                <input type="text" required name="answerThirtySeven" />
+
+                <div class="smBtn">
+                  Yes
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+
+                <div class="smBtn">
+                  No
+                  <i class="bx bxs-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+          </ol>
+        </div>
+
+        <button class="formBtn" type="submit" name="submit">
+          Submit Answers
+          <i class="bx bxs-chevron-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% include 'components/footer.html' %} {% endblock %}

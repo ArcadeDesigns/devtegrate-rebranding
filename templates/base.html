@@ -56,6 +56,8 @@
 
   <link href="{{ url_for('static', filename='css/dropdown.css') }}" rel="stylesheet" />
 
+  <link href="{{ url_for('static', filename='css/questionaire.css') }}" rel="stylesheet" />
+
   <!-------------------------------------------------------------------
     ---------------------------------------------------------------------
     -------------------------------------------------------------------->
@@ -103,6 +105,8 @@
   <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
   <script src="{{ url_for('static', filename='js/secure.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='js/questionaire.js') }}"></script>
 
   <script src="https://www.google.com/recaptcha/api.js"></script>
 
@@ -152,6 +156,18 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", ApplicationDropDown);
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", SelectNextQuestion);
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", PickOption);
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", SwitchQuestionnaireScreen);
     </script>
 
     <script>

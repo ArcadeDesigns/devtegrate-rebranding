@@ -1,6 +1,7 @@
 from flask import *
 from forms import *
 from models import *
+from fpdf import FPDF
 from sqlalchemy.orm.exc import NoResultFound
 from datetime import datetime, timedelta
 from flask_sqlalchemy import SQLAlchemy
@@ -20,6 +21,7 @@ import os
 import random
 import requests
 import logging
+import base64
 from mailjet_rest import Client
 
 # Cloudinary CDN Service
@@ -35,7 +37,7 @@ ckeditor = CKEditor(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///devtegrate.db'
 #app.config['SQLALCHEMY_DATABASE_URI'] = '...'
-app.config['SECRET_KEY'] = "cairocoders-ednalan"
+app.config['SECRET_KEY'] = "AlexandraMicayo19980626"
 app.config['FLASK_DEBUG'] = True
 
 '''cloudinary.config(
@@ -331,6 +333,149 @@ def send_message(message_data):
             logging.error(f"Failed to send the email. MailJet API response: {result.json()}")
     except Exception as e:
         logging.exception(f"Error occurred while sending the automated response: {e}")
+
+def safe_text(text):
+    if isinstance(text, str):
+        return text.replace('’', "'").replace('“', '"').replace('”', '"')
+    elif isinstance(text, dict):
+        return str(text)  # Convert dict to string representation
+    return str(text)  # Convert other non-string types to string
+
+def join_if_iterable(data):
+    if isinstance(data, (list, tuple)):  # Check if data is a list or tuple
+        return ", ".join(data)
+    return str(data)  # Convert non-iterables to string
+
+@app.route('/devtegrate-assessment', methods=['GET', 'POST'])
+def questionaire():
+    form = QuestionnaireForm()
+    if form.validate_on_submit():
+        data = {
+            'Do you collect, store, host, process, control, use or share any private or sensitive information* in either paper or electronic form?': {
+                'Paper records': form.answerOne.data,
+                'Electronic records': form.answerTwo.data,
+                'Answer': form.answerThree.data,
+            },
+            'Do you collect, store, host, process, control, use or share any biometric information or data, such as fingerprints, voiceprints, facial, hand, iris or retinal scans, DNA, or any other biological, physical or behavioral characteristics that can be used to uniquely identify a person?': form.answerFour.data,
+            'Do you process, store, or handle credit card transactions?': form.answerFive.data,
+            'Do you tag external emails to alert employees that the message originated from outside the organization?': form.answerSix.data,
+            'Do you pre-screen emails for potentially malicious attachments and links?': form.answerSeven.data,
+            'Have you implemented any of the following to protect against phishing messages?': join_if_iterable(form.answerEight.data),
+            'Can your users access email through a web application or a non-corporate device?': form.answerNine.data,
+            'Do you use Office 365 in your organization?': form.answerTen.data,
+            'Do you use a cloud provider to store data or host applications?': form.answerEleven.data,
+            'Do you use MFA to secure all cloud provider services that you utilize?': form.answerTwelve.data,
+            'Do you encrypt all sensitive and confidential information stored on your organization’s systems and networks?': form.answerThirteen.data,
+            'Do you allow remote access to your network?': form.answerFourteen.data,
+            'Do you use a next-generation antivirus (NGAV) product to protect all endpoints across your enterprise?': form.answerFifteen.data,
+            'Do you use an endpoint detection and response (EDR) tool that includes centralized monitoring and logging of all endpoint activity across your enterprise?': form.answerSixteen.data,
+            'Do you use MFA to protect access to privileged user accounts?': form.answerSeventeen.data,
+            'Do you manage privileged accounts using privileged account management software?': form.answerEighteen.data,
+            'Do you actively monitor all administrator access for unusual behavior patterns?': form.answerNineteen.data,
+            'Do you roll out a hardened baseline configuration across servers, laptops, desktops, and managed mobile devices?': form.answerTwenty.data,
+            'Do you record and track all software and hardware assets deployed across your organization?': form.answerTwentyOne.data,
+            'Do non-IT users have local administration rights on their laptop/desktop?': form.answerTwentyTwo.data,
+            'How frequently do you install critical and high severity patches across your enterprise?': join_if_iterable(form.answerTwentyThree.data),
+            'Do you have any end-of-life or end-of-support software?': form.answerTwentyFour.data,
+            'Do you use a protective DNS service to block access to known malicious websites?': form.answerTwentyFive.data,
+            'Do you use endpoint application isolation and containment technology on all endpoints?': form.answerTwentySix.data,
+            'Can users run Microsoft Office Macro enabled documents on their system by default?': form.answerTwentySeven.data,
+            'Do you implement PowerShell best practices as outlined in the Environment Recommendations by Microsoft?': form.answerTwentyEight.data,
+            'Do you utilize a Security Information and Event Management (SIEM) system?': form.answerTwentyNine.data,
+            'Do you utilize a Security Operations Center (SOC)?': form.answerThirty.data,
+            'Do you use a vulnerability management tool?': form.answerThirtyOne.data,
+            'Do you use a data backup solution?': join_if_iterable(form.answerThirtyTwo.data),
+            'Estimated amount of time it will take to restore essential functions in the event of a widespread malware or ransomware attack within your network?': join_if_iterable(form.answerThirtyThree.data),
+            'Please check all that apply:': join_if_iterable(form.answerThirtyFour.data),
+            'Do any of the following employees at your company complete social engineering training:': form.answerThirtyFive.data,
+            'Does your organization send and/or receive wire transfers?': form.answerThirtySix.data,
+            'In the past 3 years, has the Applicant or any other person or organization proposed for this insurance:': form.answerThirtySeven.data,
+        }
+        
+        # Generate PDF
+        pdf_path = 'DevtegrateQuestionnaire.pdf'
+        create_pdf(data, pdf_path)
+        
+        # Generate TXT
+        txt_path = 'DevtegrateQuestionnaire.txt'
+        create_txt(data, txt_path)
+        
+        # Send email with attachment
+        try:
+            api_key = '614f1d5db217f5a35c8ed583bbf4f09c'
+            api_secret = '118dec95ed600a827d6400f210f3a524'
+            recipient_email = form.email.data
+            mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+            
+            with open(pdf_path, "rb") as pdf_file:
+                pdf_base64 = base64.b64encode(pdf_file.read()).decode('utf-8')
+            
+            with open(txt_path, "rb") as txt_file:
+                txt_base64 = base64.b64encode(txt_file.read()).decode('utf-8')
+            
+            email_data = {
+                'Messages': [
+                    {
+                        "From": {
+                            "Email": "contact@devtegrate.com",
+                            "Name": "Devtegrate"
+                        },
+                        "To": [
+                            {
+                                "Email": recipient_email,
+                                "Name": "Recipient"
+                            }
+                        ],
+                        "Subject": "Assessment Result",
+                        "TextPart": f"Please find the attached questionnaire result. This Assessment is for '{form.email.data}', from '{form.name.data}' who occupies the position of '{form.position.data}' at '{form.company.data}', you can reach out to them via '{form.phone.data}'.",
+                        "Attachments": [
+                            {
+                                "ContentType": "application/pdf",
+                                "Filename": "questionnaire.pdf",
+                                "Base64Content": pdf_base64
+                            },
+                            {
+                                "ContentType": "text/plain",
+                                "Filename": "questionnaire.txt",
+                                "Base64Content": txt_base64
+                            }
+                        ]
+                    }
+                ]
+            }
+            
+            result = mailjet.send.create(data=email_data)
+            print(f"Mailjet Response Status: {result.status_code}")
+            print(f"Mailjet Response: {result.json()}")
+
+        except Exception as e:
+            print(f"An error occurred while sending the email: {e}")
+        
+    return render_template('pages/questionaire.html', form=form)
+
+def create_pdf(data, file_path):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+    
+    for key, value in data.items():
+        if isinstance(value, dict):
+            for sub_key, sub_value in value.items():
+                pdf.cell(200, 10, txt=f"{safe_text(sub_key)}: {safe_text(sub_value)}", ln=True)
+        else:
+            pdf.cell(200, 10, txt=f"{safe_text(key)}: {safe_text(value)}", ln=True)
+    
+    pdf.output(file_path)
+
+def create_txt(data, file_path):
+    with open(file_path, 'w') as file:
+        for key, value in data.items():
+            if isinstance(value, dict):
+                file.write(f"{key}:\n")
+                for sub_key, sub_value in value.items():
+                    file.write(f"  {sub_key}: {safe_text(sub_value)}\n")
+            else:
+                file.write(f"{key}: {safe_text(value)}\n")
 
 @app.route('/cloud-integration', methods=['GET', 'POST'])
 def cloud_integration():
