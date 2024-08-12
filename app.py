@@ -342,7 +342,7 @@ def safe_text(text):
     return str(text)  # Convert other non-string types to string
 
 def join_if_iterable(data):
-    if isinstance(data, (list, tuple)):  # Check if data is a list or tuple
+    if isinstance(data, (list, tuple)): # Check if data is a list or tuple
         return ", ".join(data)
     return str(data)  # Convert non-iterables to string
 

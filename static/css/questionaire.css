@@ -223,7 +223,9 @@
     font-weight: 500;
     color: var(--tertiary-color);
     width: 100%;
-    max-width: 70%;
+    display: flex;
+    flex-direction: row;
+    display: none;
 }
 
 .questionaireCtnBox li {
@@ -253,6 +255,22 @@
 }
 
 .questionaireCtnBox .formInputLines input {
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    width: auto;
+    background: transparent;
+    font-size: var(--link-span-text);
+    font-weight: 500;
+    color: var(--primary-color);
+    padding: 0 10px;
+    outline: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    display: flex;
+}
+
+.uniqueContent {
     border: none;
     border-bottom: 1px solid var(--primary-color);
     width: auto;

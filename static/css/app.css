@@ -585,6 +585,18 @@ footer .span-text {
     animation: svgAnimation 20s ease infinite;
 }
 
+#ResponsiveNavImgsvg {
+    margin: 0;
+    object-fit: scale-down;
+    height: 50px;
+    width: 50px;
+    stroke: var(--primary-color);
+    fill-opacity: 0;
+    stroke-width: 10px;
+    stroke-dasharray: 4500;
+    animation: svgAnimation 20s ease infinite;
+}
+
 .img-navbar .img-navbar-ctn .img-navbar-ctn-img-ctn-flex li:hover a {
   color: var(--primary-color);
   border-radius: 5px;
@@ -721,7 +733,6 @@ footer .span-text {
 
   .responsive-menu.active {
     width: 100%;
-    max-width: 40%;
     height: 100%;
     position: fixed;
     background-color: var(--secondary-color);
@@ -739,7 +750,6 @@ footer .span-text {
 
   .responsive-menu {
     width: 100%;
-    max-width: 40%;
     height: 100%;
     position: fixed;
     background-color: var(--secondary-color);
@@ -838,7 +848,11 @@ footer .span-text {
     font-size: var(--span-text);
     font-weight: 300;
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    flex-direction: row;
   }
 
   .responsive-menu ul li {
@@ -894,16 +908,5 @@ footer .span-text {
     display: none;
   }
 
-  .responsive-menu.active {
-    max-width: 60%;
-  }
-  
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 430px) {
-  
-  .responsive-menu.active {
-    max-width: 80%;
-  }
 
 }
