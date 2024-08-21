@@ -470,7 +470,7 @@ def questionaire():
                             }
                         ],
                         "Subject": "Assessment Result",
-                        "TextPart": f"Please find the attached questionnaire result. This Assessment is for '{form.email.data}', from '{form.name.data}' who occupies the position of '{form.position.data}' at '{form.company.data}', you can reach out to them via '{form.phone.data}'.",
+                        "TextPart": f"Please find the attached questionnaire result. This Assessment is for {form.company.data} from {form.name.data} who occupies the position of {form.position.data} at {form.company.data}, you can reach out to them via telephone at; {form.phone.data}, and email via {form.email.data}.",
                         "Attachments": [
                             {
                                 "ContentType": "application/pdf",
@@ -503,17 +503,22 @@ def create_pdf(data, file_path):
     pdf.add_page()
     pdf.set_font("Arial", size=10)
     
+    def wrap_text(text, width):
+        pdf.set_font("Arial", size=10)
+        pdf.multi_cell(width, 10, txt=safe_text(text))
+
     for key, value in data.items():
         if isinstance(value, dict):
-            pdf.cell(200, 10, txt=safe_text(key), ln=True)
+            wrap_text(key, 190)  # Adjust width as needed
             for sub_key, sub_value in value.items():
-                pdf.cell(200, 10, txt=f"  {safe_text(sub_key)}: {safe_text(sub_value)}", ln=True)
-            pdf.cell(200, 10, txt=" ", ln=True)
+                wrap_text(f"  {sub_key}: {safe_text(sub_value)}", 190)  # Adjust width as needed
+            pdf.ln()  # Add a line break
         else:
-            pdf.cell(200, 10, txt=f"{safe_text(key)}: {safe_text(value)}", ln=True)
-            pdf.cell(200, 10, txt=" ", ln=True)
+            wrap_text(f"{key}: {safe_text(value)}", 190)  # Adjust width as needed
+        pdf.ln()  # Add a line break
     
     pdf.output(file_path)
+
 
 def create_txt(data, file_path):
     with open(file_path, 'w') as file:

@@ -1,7 +1,7 @@
 Do you collect, store, host, process, control, use or share any private or sensitive information* in either paper or electronic form?:
   Paper records: 
   Electronic records: 
-  Answer: Yes
+  Answer: 
   If “Yes”, please provide the approximate number of unique records: 
 Do you collect, store, host, process, control, use or share any biometric information or data, such as fingerprints, voiceprints, facial, hand, iris or retinal scans, DNA, or any other biological, physical or behavioral characteristics that can be used to uniquely identify a person?: 
 If “Yes”, have you reviewed your policies relating to the collection, storage, and destruction of such information or data with a qualified attorney and confirmed compliance with applicable federal, state, local, and foreign laws?: 
