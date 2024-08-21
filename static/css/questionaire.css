@@ -116,6 +116,7 @@
     height: auto;
     display: flex;
     flex-direction: row;
+    padding: 10px 0;
 }
 
 .indicatorCtnContent {
@@ -564,6 +565,12 @@
     .questionaireCtnBoxCtn h6 {
         width: 100%;
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .uniqueContent {
+        padding: 10px;
     }
 
     .questionaireCtnBoxCtn .contactInput {

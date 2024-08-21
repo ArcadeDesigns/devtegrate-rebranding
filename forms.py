@@ -21,11 +21,11 @@ class OTPForm(FlaskForm):
     submit = SubmitField()
 
 class QuestionnaireForm(FlaskForm):
-    name = StringField()
-    email = StringField()
-    phone = StringField()
-    company = StringField()
-    position = StringField()
+    name = StringField(validators=[DataRequired()])
+    email = StringField(validators=[DataRequired()])
+    phone = StringField(validators=[DataRequired()])
+    company = StringField(validators=[DataRequired()])
+    position = StringField(validators=[DataRequired()])
     answerOne = StringField()
     answerTwo = StringField()
     answerThree = StringField()
