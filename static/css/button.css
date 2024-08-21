@@ -211,6 +211,7 @@
     padding-left: 40px;
     transition: .5s;
     overflow: hidden;
+    cursor: pointer;
     font-size: var(--button-text);
 }
 

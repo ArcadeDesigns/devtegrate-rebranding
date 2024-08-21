@@ -52,14 +52,6 @@
       >
         {{ form.hidden_tag() }}
         <div class="questionaireContainer">
-          <div class="indicatorCtn">
-            <div class="indicatorCtnContent">
-              <div class="previousBtn">Previous Question</div>
-              <div class="nextBtn">Next Question</div>
-            </div>
-            <div class="indicator">1/37&nbsp;&nbsp;Questions</div>
-          </div>
-
           <ol class="orderedList">
             <div class="questionaireCtnBoxCtn active">
               <!--<span
@@ -121,7 +113,7 @@
               <h6>
                 If “Yes”, please provide the approximate number of unique
                 records:
-                <input class="uniqueContent" type="text" />
+                <input class="uniqueContent" type="text" name="inputOne" />
               </h6>
               <div class="formInputLines">
                 <div class="inputBoxQuestionaire">
@@ -159,6 +151,7 @@
               </div>
             </div>
 
+            <!--Attention Needed-->
             <div class="questionaireCtnBoxCtn">
               <li>
                 Do you collect, store, host, process, control, use or share any
@@ -171,7 +164,7 @@
                 If “Yes”, have you reviewed your policies relating to the
                 collection, storage, and destruction of such information or data
                 with a qualified attorney and confirmed compliance with
-                applicable federal, state, local, and foreign laws?<input class="uniqueContent" type="text" />
+                applicable federal, state, local, and foreign laws?<input class="uniqueContent" type="text" name="inputTwo" />
               </h6>
 
               <div class="FlexBtnCtn">
@@ -192,7 +185,7 @@
               <li>
                 Do you process, store, or handle credit card transactions?
               </li>
-              <h6>If “Yes”, are you PCI-DSS Compliant?<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, are you PCI-DSS Compliant?<input class="uniqueContent" type="text" name="inputThree" /></h6>
 
               <div class="FlexBtnCtn">
                 <input type="text"  readonly name="answerFive" />
@@ -217,7 +210,7 @@
                 If “Yes”, have you reviewed your policies relating to the
                 collection, storage, and destruction of such information or data
                 with a qualified attorney and confirmed compliance with
-                applicable federal, state, local, and foreign laws?<input class="uniqueContent" type="text" />
+                applicable federal, state, local, and foreign laws?<input class="uniqueContent" type="text" name="inputFour" />
               </h6>
 
               <div class="FlexBtnCtn">
@@ -242,7 +235,7 @@
               <h6>
                 If “Yes”, do you have the capability to automatically detonate
                 and evaluate attachments in a sandbox to determine if they are
-                malicious prior to delivery to the end-user?<input class="uniqueContent" type="text" />
+                malicious prior to delivery to the end-user?<input class="uniqueContent" type="text" name="inputFive" />
               </h6>
 
               <div class="FlexBtnCtn">
@@ -261,7 +254,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Have you implemented any of the following to protect against
+                Which of the following have you implemented to protect against
                 phishing messages?
               </li>
               
@@ -280,8 +273,7 @@
               <div class="checkboxCtn">
                 <input type="checkbox"/>
                 <p>
-                  Domain-based Message Authentication, Reporting & Conformance
-                  (DMARC)
+                  Domain-based Message Authentication, Reporting & Conformance (DMARC)
                 </p>
               </div>
 
@@ -293,11 +285,11 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Can your users access email through a web application or a
+                Can your users access their email through a web application or a
                 non-corporate device?
               </li>
               <h6>
-                If “Yes”, do you enforce Multi-Factor Authentication (MFA)?<input class="uniqueContent" type="text" />
+                If “Yes”, do you enforce Multi-Factor Authentication (MFA)?<input class="uniqueContent" type="text" name="inputSix" />
               </h6>
 
               <div class="FlexBtnCtn">
@@ -314,11 +306,12 @@
               </div>
             </div>
 
+            <!--Attention Needed-->
             <div class="questionaireCtnBoxCtn">
               <li>Do you use Office 365 in your organization?</li>
               <h6>
                 If “Yes”, do you use the Office 365 Advanced Threat Protection
-                add-on?<input class="uniqueContent" type="text" />
+                add-on?<input class="uniqueContent" type="text" name="inputSeven" />
               </h6>
 
               <div class="FlexBtnCtn">
@@ -335,15 +328,17 @@
               </div>
             </div>
 
+            <!--Attention Needed-->
             <div class="questionaireCtnBoxCtn">
               <li>
                 Do you use a cloud provider to store data or host applications?
               </li>
-              <h6>If “Yes”, please provide the name of the cloud provider:<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, please provide the name of the cloud provider:<input class="uniqueContent" type="text" name="inputEight" /></h6>
               <h6>
                 If you use more than one cloud provider to store data, please
                 specify the cloud provider storing the largest quantity of
                 sensitive customer and/or employee records.
+                <input class="uniqueContent" type="text" name="inputNine" />
               </h6>
 
               <div class="FlexBtnCtn">
@@ -387,12 +382,12 @@
 
               <div class="checkboxCtn">
                 <input type="checkbox" />
-                <p>Segregation of servers that store sensitive and confidential information?</p>
+                <p>Segregation of servers that store sensitive and confidential information</p>
               </div>
 
               <div class="checkboxCtn">
                 <input type="checkbox"/>
-                <p>Access control with role-based assignments?</p>
+                <p>Access control with role-based assignments</p>
               </div>
 
               <div class="checkboxCtn">
@@ -401,16 +396,16 @@
               </div>
             </div>
 
+            <!--Attention Needed-->
             <div class="questionaireCtnBoxCtn">
               <li>Do you allow remote access to your network?</li>
               <h6>If “Yes”:</h6>
               <ul>
                 <li>
-                  Do you use MFA to secure all remote access to your network,
-                  including any remote desktop protocol (RDP) connections?
+                  Do you use MFA to secure all remote access to your network, including any remote desktop protocol (RDP) connections?
                 </li>
               </ul>
-              <h6>If MFA is used, please select your MFA provider:<input class="uniqueContent" type="text" /></h6>
+              <h6>If MFA is used, please select your MFA provider:<input class="uniqueContent" type="text" name="inputTen" /></h6>
 
               <div class="FlexBtnCtn">
                 <input type="text"  readonly name="answerFourteen" />
@@ -426,12 +421,12 @@
               </div>
             </div>
 
+            <!--Attention Needed-->
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you use a next-generation antivirus (NGAV) product to protect
-                all endpoints across your enterprise?
+                Do you use a next-generation antivirus (NGAV) product to protect all endpoints across your enterprise?
               </li>
-              <h6>If “Yes”, please select your NGAV provider:<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, please select your NGAV provider:<input class="uniqueContent" type="text" name="inputEleven"/></h6>
 
               <div class="FlexBtnCtn">
                 <input type="text"  readonly name="answerFifteen" />
@@ -449,11 +444,9 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you use an endpoint detection and response (EDR) tool that
-                includes centralized monitoring and logging of all endpoint
-                activity across your enterprise?
+                Do you use an endpoint detection and response (EDR) tool that includes centralized monitoring and logging of all endpoint activity across your enterprise?
               </li>
-              <h6>If “Yes”, please select your EDR provider:<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, please select your EDR provider:<input class="uniqueContent" type="text" name="inputTwelve" /></h6>
 
               <div class="FlexBtnCtn">
                 <input type="text"  readonly name="answerSixteen" />
@@ -489,10 +482,9 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you manage privileged accounts using privileged account
-                management software((e.g., CyberArk, BeyondTrust, etc.)?
+                Do you manage privileged accounts using privileged account management software((e.g., CyberArk, BeyondTrust, etc.)?
               </li>
-              <h6>If “Yes”, please provide the name of your provider:<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, please provide the name of your provider:<input class="uniqueContent" type="text" name="inputThirteen" /></h6>
 
               <div class="FlexBtnCtn">
                 <input type="text"  readonly name="answerEighteen" />
@@ -510,11 +502,10 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you actively monitor all administrator access for unusual
-                behavior patterns?
+                Do you actively monitor all administrator access for unusual behavior patterns?
               </li>
               <h6>
-                If “Yes”, please provide the name of your monitoring tool:<input class="uniqueContent" type="text" />
+                If “Yes”, please provide the name of your monitoring tool:<input class="uniqueContent" type="text" name="inputFourteen" />
               </h6>
 
               <div class="FlexBtnCtn">
@@ -533,8 +524,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you roll out a hardened baseline configuration across
-                servers, laptops, desktops, and managed mobile devices?
+                Do you roll out a hardened baseline configuration across servers, laptops, desktops, and managed mobile devices?
               </li>
               <div class="FlexBtnCtn">
                 <input type="text"  readonly name="answerTwenty" />
@@ -552,12 +542,10 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you record and track all software and hardware assets
-                deployed across your organization?
+                Do you record and track all software and hardware assets deployed across your organization?
               </li>
               <h6>
-                If “Yes”, please provide the name of the tool used for this
-                purpose (if any):<input class="uniqueContent" type="text" />
+                If “Yes”, please provide the name of the tool used for this purpose (if any):<input class="uniqueContent" type="text" name="inputFifteen" />
               </h6>
 
               <div class="FlexBtnCtn">
@@ -576,8 +564,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do non-IT users have local administration rights on their
-                laptop/desktop?
+                Do non-IT users have local administration rights on their laptop/desktop?
               </li>
 
               <div class="FlexBtnCtn">
@@ -596,8 +583,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                How frequently do you install critical and high severity patches
-                across your enterprise?
+                How frequently do you install critical and high severity patches across your enterprise?
               </li>
 
               <input class="ReadOnlyInput" type="text" name="answerTwentyThree" readonly />
@@ -625,7 +611,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>Do you have any end-of-life or end-of-support software?</li>
-              <h6>If “Yes”, is it segregated from the rest of your network?<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, is it segregated from the rest of your network?<input class="uniqueContent" type="text" name="inputSixteen" /></h6>
 
               <div class="FlexBtnCtn">
                 <input type="text"  readonly name="answerTwentyFour" />
@@ -643,10 +629,9 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you use a protective DNS service to block access to known
-                malicious websites?
+                Do you use a protective DNS service to block access to known malicious websites?
               </li>
-              <h6>If “Yes”, please provide the name of your DNS provider:<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, please provide the name of your DNS provider:<input class="uniqueContent" type="text" name="inputSeventeen" /></h6>
 
               <div class="FlexBtnCtn">
                 <input type="text"  readonly name="answerTwentyFive" />
@@ -664,10 +649,9 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you use endpoint application isolation and containment
-                technology on all endpoints?
+                Do you use endpoint application isolation and containment technology on all endpoints?
               </li>
-              <h6>If “Yes”, please select your provider:<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, please select your provider:<input class="uniqueContent" type="text" name="inputEighteen" /></h6>
               <div class="FlexBtnCtn">
                 <input type="text"  readonly name="answerTwentySix" />
                 <div class="smBtn">
@@ -684,8 +668,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Can users run Microsoft Office Macro enabled documents on their
-                system by default?
+                Can users run Microsoft Office Macro enabled documents on their system by default?
               </li>
 
               <div class="FlexBtnCtn">
@@ -704,8 +687,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you implement PowerShell best practices as outlined in the
-                Environment Recommendations by Microsoft?
+                Do you implement PowerShell best practices as outlined in the Environment Recommendations by Microsoft?
               </li>
 
               <div class="FlexBtnCtn">
@@ -724,8 +706,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do you utilize a Security Information and Event Management
-                (SIEM) system?
+                Do you utilize a Security Information and Event Management (SIEM) system?
               </li>
 
               <div class="FlexBtnCtn">
@@ -746,7 +727,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>Do you utilize a Security Operations Center (SOC)?</li>
-              <h6>If “Yes”, is it monitored 24 hours a day, 7 days a week?<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, is it monitored 24 hours a day, 7 days a week?<input class="uniqueContent" type="text" name="inputNineteen" /></h6>
 
               <div class="FlexBtnCtn">
 
@@ -766,7 +747,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>Do you use a vulnerability management tool?</li>
-              <h6>If “Yes”, please select your provider:<input class="uniqueContent" type="text" /></h6>
+              <h6>If “Yes”, please select your provider:<input class="uniqueContent" type="text" name="inputTwenty" /></h6>
 
               <div class="FlexBtnCtn">
 
@@ -809,9 +790,7 @@
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Estimated amount of time it will take to restore essential
-                functions in the event of a widespread malware or ransomware
-                attack within your network?
+                Estimated amount of time it will take to restore essential functions in the event of a widespread malware or ransomware attack within your network?
               </li>
 
               <input class="ReadOnlyInput" type="text" name="answerThirtyThree" readonly />
@@ -850,17 +829,14 @@
               <div class="checkboxCtn">
                 <input type="checkbox"/>
                 <p>
-                  Backups are kept separate from your network
-                  (offline/air-gapped), or in a cloud service designed for this
-                  purpose.
+                  Backups are kept separate from your network (offline/air-gapped), or in a cloud service designed for this purpose.
                 </p>
               </div>
 
               <div class="checkboxCtn">
                 <input type="checkbox"/>
                 <p>
-                  Backups are secured with different access credentials from
-                  other administrator credentials.
+                  Backups are secured with different access credentials from other administrator credentials.
                 </p>
               </div>
 
@@ -872,8 +848,7 @@
               <div class="checkboxCtn">
                 <input type="checkbox"/>
                 <p>
-                  You use a cloud-syncing service (e.g., Dropbox, OneDrive,
-                  SharePoint, Google Drive) for backups.
+                  You use a cloud-syncing service (e.g., Dropbox, OneDrive, SharePoint, Google Drive) for backups.
                 </p>
               </div>
 
@@ -885,25 +860,21 @@
               <div class="checkboxCtn">
                 <input type="checkbox"/>
                 <p>
-                  You have tested the successful restoration and recovery of key
-                  server configurations and data from backups in the last 6
-                  months.
+                  You have tested the successful restoration and recovery of key server configurations and data from backups in the last 6 months.
                 </p>
               </div>
 
               <div class="checkboxCtn">
                 <input type="checkbox"/>
                 <p>
-                  You are able to test the integrity of backups prior to
-                  restoration to ensure that they are free of malware.
+                  You are able to test the integrity of backups prior to restoration to ensure that they are free of malware.
                 </p>
               </div>
             </div>
 
             <div class="questionaireCtnBoxCtn">
               <li>
-                Do any of the following employees at your company complete
-                social engineering training:
+                Do any of the following employees at your company complete social engineering training:
               </li>
               <ul>
                 <li>
@@ -914,8 +885,7 @@
                 </li>
               </ul>
               <h6>
-                If “Yes” to question 9.a.(1) or 9.a.(2) above, does your social
-                engineering training include phishing simulation?<input class="uniqueContent" type="text" />
+                If “Yes” to question 9.a.(1) or 9.a.(2) above, does your social engineering training include phishing simulation?<input class="uniqueContent" type="text" name="inputTwenty" />
               </h6>
 
               <div class="FlexBtnCtn">
@@ -946,8 +916,7 @@
 
               <div class="checkboxCtn">
                 <input type="checkbox"/>
-                <p>A protocol for obtaining proper written authorization for wire
-                  transfers?</p>
+                <p>A protocol for obtaining proper written authorization for wire transfers?</p>
               </div>
 
               <div class="checkboxCtn">
@@ -973,8 +942,7 @@
             </div>
 
             <div class="questionaireCtnBoxCtn">
-              <li>In the past 3 years, has the Applicant or any other person or
-                organization proposed for this insurance:</li>
+              <li>In the past 3 years, has the Applicant or any other person or organization proposed for this insurance:</li>
 
               <input class="ReadOnlyInput" type="text" name="answerThirtySeven" readonly />
 
@@ -1014,15 +982,21 @@
                 <p>Received any complaints, claims, or been subject to litigation involving sexual harassment, invasion of privacy, wrongful collection of private information, discrimination, or wrongful employment practices</p>
               </div>
             </div>
-
           </ol>
+          <div class="indicatorCtn">
+            <div class="indicatorCtnContent">
+              <div class="previousBtn">Previous Question</div>
+              <div class="nextBtn">Next Question</div>
+            </div>
+
+            <div class="indicator">1/37&nbsp;&nbsp;Questions</div>
+          </div>
         </div>
 
         <button class="formBtn" type="submit" name="submit">
           Submit Answers
           <i class="bx bxs-chevron-right"></i>
         </button>
-
       </form>
     </div>
   </div>

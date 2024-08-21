@@ -354,39 +354,83 @@ def questionaire():
                 'Paper records': form.answerOne.data,
                 'Electronic records': form.answerTwo.data,
                 'Answer': form.answerThree.data,
+                'If “Yes”, please provide the approximate number of unique records': form.inputOne.data,
             },
+            
             'Do you collect, store, host, process, control, use or share any biometric information or data, such as fingerprints, voiceprints, facial, hand, iris or retinal scans, DNA, or any other biological, physical or behavioral characteristics that can be used to uniquely identify a person?': form.answerFour.data,
+            'If “Yes”, have you reviewed your policies relating to the collection, storage, and destruction of such information or data with a qualified attorney and confirmed compliance with applicable federal, state, local, and foreign laws?': form.inputTwo.data,
+
             'Do you process, store, or handle credit card transactions?': form.answerFive.data,
+            'If “Yes”, are you PCI-DSS Compliant?': form.inputThree.data,
+
             'Do you tag external emails to alert employees that the message originated from outside the organization?': form.answerSix.data,
+            'If “Yes”, have you reviewed your policies relating to the collection, storage, and destruction of such information or data with a qualified attorney and confirmed compliance with applicable federal, state, local, and foreign laws?': form.inputFour.data,
+
             'Do you pre-screen emails for potentially malicious attachments and links?': form.answerSeven.data,
+            'If “Yes”, do you have the capability to automatically detonate and evaluate attachments in a sandbox to determine if they are malicious prior to delivery to the end-user?': form.inputFive.data,
+
             'Have you implemented any of the following to protect against phishing messages?': join_if_iterable(form.answerEight.data),
+
             'Can your users access email through a web application or a non-corporate device?': form.answerNine.data,
+            'If “Yes”, do you enforce Multi-Factor Authentication (MFA)?': form.inputSix.data,
+
             'Do you use Office 365 in your organization?': form.answerTen.data,
+            'If “Yes”, do you use the Office 365 Advanced Threat Protection add-on?': form.inputSeven.data,
+
             'Do you use a cloud provider to store data or host applications?': form.answerEleven.data,
+            'If “Yes”, please provide the name of the cloud provider:': form.inputEight.data,
+            'If you use more than one cloud provider to store data, please specify the cloud provider storing the largest quantity of sensitive customer and/or employee records.': form.inputNine.data,
+
             'Do you use MFA to secure all cloud provider services that you utilize?': form.answerTwelve.data,
             'Do you encrypt all sensitive and confidential information stored on your organization’s systems and networks?': form.answerThirteen.data,
+
             'Do you allow remote access to your network?': form.answerFourteen.data,
+            'If MFA is used, please select your MFA provider:': form.inputTen.data,
+
             'Do you use a next-generation antivirus (NGAV) product to protect all endpoints across your enterprise?': form.answerFifteen.data,
+            'If “Yes”, please select your NGAV provider:': form.inputEleven.data,
+
             'Do you use an endpoint detection and response (EDR) tool that includes centralized monitoring and logging of all endpoint activity across your enterprise?': form.answerSixteen.data,
+            'If “Yes”, please select your EDR provider:': form.inputTwelve.data,
+
             'Do you use MFA to protect access to privileged user accounts?': form.answerSeventeen.data,
             'Do you manage privileged accounts using privileged account management software?': form.answerEighteen.data,
+            'If “Yes”, please provide the name of your provider:' : form.inputThirteen.data,
+
             'Do you actively monitor all administrator access for unusual behavior patterns?': form.answerNineteen.data,
+            'If “Yes”, please provide the name of your monitoring tool:' : form.inputFourteen.data,
             'Do you roll out a hardened baseline configuration across servers, laptops, desktops, and managed mobile devices?': form.answerTwenty.data,
+
             'Do you record and track all software and hardware assets deployed across your organization?': form.answerTwentyOne.data,
+            'If “Yes”, please provide the name of the tool used for this purpose (if any):': form.inputFifteen.data,
+
             'Do non-IT users have local administration rights on their laptop/desktop?': form.answerTwentyTwo.data,
             'How frequently do you install critical and high severity patches across your enterprise?': join_if_iterable(form.answerTwentyThree.data),
+
             'Do you have any end-of-life or end-of-support software?': form.answerTwentyFour.data,
-            'Do you use a protective DNS service to block access to known malicious websites?': form.answerTwentyFive.data,
+            'If “Yes”, is it segregated from the rest of your network?': form.inputSixteen.data,
+
+            'Do you use a protective DNS service to block access to known malicious websites?': form.inputSeventeen.data,
+            'If “Yes”, please provide the name of your DNS provider:': form.inputSeventeen.data,
+
             'Do you use endpoint application isolation and containment technology on all endpoints?': form.answerTwentySix.data,
+            'If “Yes”, please select your provider:': form.inputEighteen.data,
+
             'Can users run Microsoft Office Macro enabled documents on their system by default?': form.answerTwentySeven.data,
             'Do you implement PowerShell best practices as outlined in the Environment Recommendations by Microsoft?': form.answerTwentyEight.data,
             'Do you utilize a Security Information and Event Management (SIEM) system?': form.answerTwentyNine.data,
             'Do you utilize a Security Operations Center (SOC)?': form.answerThirty.data,
+            'If “Yes”, is it monitored 24 hours a day, 7 days a week?': form.inputNineteen.data,
+
             'Do you use a vulnerability management tool?': form.answerThirtyOne.data,
+            'If “Yes”, please select your provider:': form.inputTwenty.data,
+
             'Do you use a data backup solution?': join_if_iterable(form.answerThirtyTwo.data),
             'Estimated amount of time it will take to restore essential functions in the event of a widespread malware or ransomware attack within your network?': join_if_iterable(form.answerThirtyThree.data),
             'Please check all that apply:': join_if_iterable(form.answerThirtyFour.data),
             'Do any of the following employees at your company complete social engineering training:': form.answerThirtyFive.data,
+            'If “Yes” to question 9.a.(1) or 9.a.(2) above, does your social engineering training include phishing simulation?': form.inputTwentyOne.data,
+
             'Does your organization send and/or receive wire transfers?': form.answerThirtySix.data,
             'In the past 3 years, has the Applicant or any other person or organization proposed for this insurance:': form.answerThirtySeven.data,
         }
@@ -446,24 +490,28 @@ def questionaire():
             result = mailjet.send.create(data=email_data)
             print(f"Mailjet Response Status: {result.status_code}")
             print(f"Mailjet Response: {result.json()}")
-            flash('Thank you for taking the time to complete our free assessment. Your input is valuable to us and will help us understand your vulnerabilities and recommend tailored solutions. Please provide the following details to help us better assess your situation. Rest assured, your information will be kept confidential and used solely for the purpose of this assessment.')
+            flash("Thank you for completing our complimentary assessment. Your insights are invaluable and will enable us to better understand your specific vulnerabilities, allowing us to offer customized solutions. To further enhance our evaluation, please provide the following details. We assure you that all information shared will remain confidential and be used exclusively for this assessment. A member of our team or your dedicated account manager will be in touch shortly. Thank you once again for your participation.")
 
         except Exception as e:
             print(f"An error occurred while sending the email: {e}")
+            flash('Seems like there was an error! Please reach out to us via mail: contact@devtegrate.com')
         
     return render_template('pages/questionaire.html', form=form)
 
 def create_pdf(data, file_path):
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font("Arial", size=12)
+    pdf.set_font("Arial", size=10)
     
     for key, value in data.items():
         if isinstance(value, dict):
+            pdf.cell(200, 10, txt=safe_text(key), ln=True)
             for sub_key, sub_value in value.items():
-                pdf.cell(200, 10, txt=f"{safe_text(sub_key)}: {safe_text(sub_value)}", ln=True)
+                pdf.cell(200, 10, txt=f"  {safe_text(sub_key)}: {safe_text(sub_value)}", ln=True)
+            pdf.cell(200, 10, txt=" ", ln=True)
         else:
             pdf.cell(200, 10, txt=f"{safe_text(key)}: {safe_text(value)}", ln=True)
+            pdf.cell(200, 10, txt=" ", ln=True)
     
     pdf.output(file_path)
 
