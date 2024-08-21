@@ -82,22 +82,30 @@ function PickOption() {
 PickOption();
 
 function SwitchQuestionnaireScreen() {
-    const ActionSwitch = document.querySelector('.GetStarted');
-    const ChangePageWithActionSwitch = document.querySelector('.questionaireSlide:not(.active)');
-
-    ActionSwitch.addEventListener("click", function() {
-        document.querySelector('.questionaireSlide.active').classList.remove('active');
-        ChangePageWithActionSwitch.classList.add("active");
-    });
+    const actionSwitch = document.querySelector('.GetStarted');
+    
+    if (actionSwitch) {
+        actionSwitch.addEventListener("click", function() {
+            const activeSlide = document.querySelector('.questionaireSlide.active');
+            const nextSlide = document.querySelector('.questionaireSlide:not(.active)');
+            
+            if (activeSlide && nextSlide) {
+                activeSlide.classList.remove('active');
+                nextSlide.classList.add("active");
+            }
+        });
+    }
 }
 
 function StartQuestionnaire() {
     const startBtn = document.querySelector('.StartQuestionaire');
     const moveToQuestion = SelectNextQuestion();
 
-    startBtn.addEventListener('click', function() {
-        moveToQuestion(1);
-    });
+    if (startBtn && moveToQuestion) {
+        startBtn.addEventListener('click', function() {
+            moveToQuestion(1); // Moves to the first question
+        });
+    }
 }
 
 SwitchQuestionnaireScreen();

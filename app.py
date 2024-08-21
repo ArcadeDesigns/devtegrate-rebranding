@@ -120,9 +120,8 @@ def index():
         sender_email = 'contact@devtegrate.com'
         recipient_email = form.email.data
         subject = 'Verification Code'
-        subject = 'Verification Code'
-        api_key = '614f1d5db217f5a35c8ed583bbf4f09c'
-        api_secret = '118dec95ed600a827d6400f210f3a524'
+        api_key = '7313cf6592999b69b87e0136ef2d0eea'
+        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
 
         mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
@@ -184,8 +183,8 @@ def verify_otp():
                 subject = 'Devtegrate Cloud Service'
 
                 try:
-                    api_key = '614f1d5db217f5a35c8ed583bbf4f09c'
-                    api_secret = '118dec95ed600a827d6400f210f3a524'
+                    api_key = '7313cf6592999b69b87e0136ef2d0eea'
+                    api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
                     mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
                     data = {
@@ -247,7 +246,7 @@ def verify_otp():
     return render_template("authentication/verify_otp.html", form=form)
 
 def send_ip_address(user_ip):
-    sender_email = 'info@quinndaisies.com'
+    sender_email = 'contact@devtegrate.com'
     subject = 'Suspicious IP Address Activity'
     recipient_email = 'folayemiebire@gmail.com'
     message = f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
@@ -256,8 +255,8 @@ def send_ip_address(user_ip):
                     </div>
                 </div>'''
     try:
-        api_key = '614f1d5db217f5a35c8ed583bbf4f09c'
-        api_secret = '118dec95ed600a827d6400f210f3a524'
+        api_key = '7313cf6592999b69b87e0136ef2d0eea'
+        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
 
         mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
@@ -301,8 +300,8 @@ def send_message(message_data):
                     </div>
                 </div>'''
     try:
-        api_key = '614f1d5db217f5a35c8ed583bbf4f09c'
-        api_secret = '118dec95ed600a827d6400f210f3a524'
+        api_key = '7313cf6592999b69b87e0136ef2d0eea'
+        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
 
         mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
@@ -402,8 +401,8 @@ def questionaire():
         
         # Send email with attachment
         try:
-            api_key = '614f1d5db217f5a35c8ed583bbf4f09c'
-            api_secret = '118dec95ed600a827d6400f210f3a524'
+            api_key = '7313cf6592999b69b87e0136ef2d0eea'
+            api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
             recipient_email = form.email.data
             mailjet = Client(auth=(api_key, api_secret), version='v3.1')
             
@@ -422,7 +421,7 @@ def questionaire():
                         },
                         "To": [
                             {
-                                "Email": recipient_email,
+                                "Email": 'contact@devtegrate.com',
                                 "Name": "Recipient"
                             }
                         ],
@@ -447,6 +446,7 @@ def questionaire():
             result = mailjet.send.create(data=email_data)
             print(f"Mailjet Response Status: {result.status_code}")
             print(f"Mailjet Response: {result.json()}")
+            flash('Thank you for taking the time to complete our free assessment. Your input is valuable to us and will help us understand your vulnerabilities and recommend tailored solutions. Please provide the following details to help us better assess your situation. Rest assured, your information will be kept confidential and used solely for the purpose of this assessment.')
 
         except Exception as e:
             print(f"An error occurred while sending the email: {e}")

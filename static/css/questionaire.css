@@ -158,6 +158,12 @@
     padding: 10px;
 }
 
+.message-font {
+    font-size: var(--link-span-text);
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
 .questionaireCtnBoxCtn {
     justify-content: flex-start;
     align-items: flex-start;
@@ -165,6 +171,8 @@
     padding: 10px 50px;
     border-radius: 10px;
     position: absolute;
+    display: flex;
+    flex-direction: column;
     background-color: var(--secondary-color);
     z-index: 222;
     width: 100%;

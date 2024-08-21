@@ -1,0 +1,38 @@
+Do you collect, store, host, process, control, use or share any private or sensitive information* in either paper or electronic form?:
+  Paper records: 
+  Electronic records: 
+  Answer: 
+Do you collect, store, host, process, control, use or share any biometric information or data, such as fingerprints, voiceprints, facial, hand, iris or retinal scans, DNA, or any other biological, physical or behavioral characteristics that can be used to uniquely identify a person?: 
+Do you process, store, or handle credit card transactions?: 
+Do you tag external emails to alert employees that the message originated from outside the organization?: 
+Do you pre-screen emails for potentially malicious attachments and links?: 
+Have you implemented any of the following to protect against phishing messages?: 
+Can your users access email through a web application or a non-corporate device?: 
+Do you use Office 365 in your organization?: 
+Do you use a cloud provider to store data or host applications?: 
+Do you use MFA to secure all cloud provider services that you utilize?: 
+Do you encrypt all sensitive and confidential information stored on your organization’s systems and networks?: None
+Do you allow remote access to your network?: 
+Do you use a next-generation antivirus (NGAV) product to protect all endpoints across your enterprise?: 
+Do you use an endpoint detection and response (EDR) tool that includes centralized monitoring and logging of all endpoint activity across your enterprise?: 
+Do you use MFA to protect access to privileged user accounts?: 
+Do you manage privileged accounts using privileged account management software?: 
+Do you actively monitor all administrator access for unusual behavior patterns?: 
+Do you roll out a hardened baseline configuration across servers, laptops, desktops, and managed mobile devices?: 
+Do you record and track all software and hardware assets deployed across your organization?: 
+Do non-IT users have local administration rights on their laptop/desktop?: 
+How frequently do you install critical and high severity patches across your enterprise?: 
+Do you have any end-of-life or end-of-support software?: 
+Do you use a protective DNS service to block access to known malicious websites?: 
+Do you use endpoint application isolation and containment technology on all endpoints?: 
+Can users run Microsoft Office Macro enabled documents on their system by default?: 
+Do you implement PowerShell best practices as outlined in the Environment Recommendations by Microsoft?: 
+Do you utilize a Security Information and Event Management (SIEM) system?: 
+Do you utilize a Security Operations Center (SOC)?: 
+Do you use a vulnerability management tool?: 
+Do you use a data backup solution?: 
+Estimated amount of time it will take to restore essential functions in the event of a widespread malware or ransomware attack within your network?: 
+Please check all that apply:: 
+Do any of the following employees at your company complete social engineering training:: 
+Does your organization send and/or receive wire transfers?: 
+In the past 3 years, has the Applicant or any other person or organization proposed for this insurance:: 

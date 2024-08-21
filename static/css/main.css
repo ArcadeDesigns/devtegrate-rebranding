@@ -38,6 +38,31 @@
     padding: 12% 0 !important;
 }**/
 
+.flexBasisDesign {
+    width: 100%;
+    height: calc(100vh - 400px);
+    display: flex;
+}
+
+.flexBasisBox {
+    flex-grow: 1;
+    transition: .5s;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.flexBasisBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flexBasisBox:hover {
+    flex-grow: 4;
+
+}
+
 .calendly-badge-widget {
     right: 20px;
 }
