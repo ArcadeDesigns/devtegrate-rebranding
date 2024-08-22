@@ -37,7 +37,7 @@ ckeditor = CKEditor(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///devtegrate.db'
 #app.config['SQLALCHEMY_DATABASE_URI'] = '...'
-app.config['SECRET_KEY'] = "GoodDeedsAlexandraMicayo19980626"
+app.config['SECRET_KEY'] = "AlexandraMicayo19980626"
 app.config['FLASK_DEBUG'] = True
 
 '''cloudinary.config(
@@ -96,17 +96,16 @@ def index():
     email = None
     form = MessagesForm()
     if form.validate_on_submit():
-        secret_response = request.form['g-recaptcha-response']
-        verify_response = requests.post(
-            url=f'https://www.google.com/recaptcha/api/siteverify?secret=6Lfe1CwqAAAAAJxa-YGYQ01JvqSKyc78h22rIFbC&response={secret_response}'
-        ).json()
-        print(verify_response)
-        
-        if not verify_response.get('success') or verify_response.get('score', 0) < 0.5:
-            flash("reCAPTCHA verification failed. Please try again.", 'danger')
-            return redirect(url_for('index'))
 
-        message_data = {
+        # Generate OTP
+        otp = ''.join([str(random.randint(0, 9)) for _ in range(6)])
+        session['otp'] = otp
+
+        # IP Address 
+        user_ip = request.remote_addr
+        session['user_ip'] = user_ip
+
+        session['message_data'] = {
             'name': form.name.data,
             'email': form.email.data,
             'company_name': form.company_name.data,
@@ -117,72 +116,177 @@ def index():
             'other_help': form.other_help.data
         }
 
+        # Send OTP to the user's email
         sender_email = 'contact@devtegrate.com'
-        recipient_email = 'contact@devtegrate.com'
-        subject = 'Devtegrate Cloud Service'
+        recipient_email = form.email.data
+        subject = 'Verification Code'
+        api_key = '7313cf6592999b69b87e0136ef2d0eea'
+        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
 
-        try:
-            api_key = '7313cf6592999b69b87e0136ef2d0eea'
-            api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
-            mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+        mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
-            data = {
-                'Messages': [
-                    {
-                        "From": {
-                            "Email": sender_email,
-                            "Name": "Devtegrate"
-                        },
-                        "To": [
-                            {
-                                "Email": recipient_email,
-                                "Name": "Recipient"
-                            }
-                        ],
-                        "Subject": subject,
-                        "HTMLPart": f'''
-                        <div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
-                            <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
-                                <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
-                                <h1 style="color: #1596F5; font-size: 1.5em; margin-bottom: 20px;">Hi there, You just received a new message</h1>
-                                <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
-                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Name:</strong> {message_data['name']}</p>
-                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Work Email:</strong> {message_data['email']}</p>
-                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Name:</strong> {message_data['company_name']}</p>
-                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Size:</strong> {message_data['company_size']}</p>
-                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Industry:</strong> {message_data['industry']}</p>
-                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>What do you need help with?</strong> {message_data['help_with']}</p>
-                                <a href="mailto:{recipient_email}" style="display: inline-block; background-color: #1596F5; color: #ffffff; font-size: 0.9em; text-align: center; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 20px;">
-                                    Would you like to respond?
-                                </a>
-                            </div>
-                        </div>
-                        ''',
-                        "CustomID": "AppGettingStartedTest"
-                    }
-                ]
-            }
+        data = {
+            'Messages': [
+                {
+                    "From": {
+                        "Email": sender_email,
+                        "Name": "Devtegrate"
+                    },
+                    "To": [
+                        {
+                            "Email": recipient_email,
+                            "Name": "Recipient"
+                        }
+                    ],
+                    "Subject": subject,
+                    "HTMLPart": f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
+                                        <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+                                                <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
+                                                <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Your mail verification Code is</strong> {otp}</p>
+                                        </div>
+                                    </div>''',
+                    "CustomID": "AppGettingStartedTest"
+                }
+            ]
+        }
 
-            result = mailjet.send.create(data=data)
-            if result.status_code == 200:
-                flash("Thank you for reaching out. Your message has been successfully sent. We will promptly review your inquiry and get in touch with you at our earliest convenience.")
-                send_message(message_data)
-                return redirect(url_for('index'))
-            else:
-                flash("Failed to send the email.", 'danger')
-                return redirect(url_for('index'))
-        except Exception as e:
-            flash(f"Error occurred while sending the email: {e}", 'danger')
+        result = mailjet.send.create(data=data)
+        logging.debug(f"Mailjet API response: {result.json()}")
+        if result.status_code == 200:
+            flash("A One-Time Password (OTP) has been sent to your inbox. Please check your spam folder if you do not see it. Enter the OTP to complete the form submission.")
+            send_ip_address(user_ip)
+            return redirect(url_for('verify_otp'))
+        else:
+            flash("Failed to send the OTP email. Please try again.", 'danger')
+            logging.error(f"Failed to send the OTP email. Status code: {result.status_code}, Response: {result.json()}")
             return redirect(url_for('index'))
 
     return render_template('index.html',
         form=form,
         email=email,
         title_tag='Cloud Services | Managed IT Services | Cyber security | Security and Compliance',
-        meta_description='Devtegrate offers expert cloud services, managed IT solutions, cyber security, and comprehensive security and compliance solutions. Discover how our innovative services can enhance your business IT infrastructure.',
+        meta_description='Devtegrate offers expert cloud services, managed IT solutions, cyber security, and comprehensive security and compliance solutions. Discover how our innovative services can enhance your businesss IT infrastructure.',
         url_link='https://devtegrate.com',
         revised='2024-07-01'
-    )
+        )
+
+@app.route('/auth/user/verify-otp', methods=['GET', 'POST'])
+def verify_otp():
+    form = OTPForm()
+    if form.validate_on_submit():
+        if session['otp'] == form.otp.data:
+            message_data = session.pop('message_data', None)
+            if message_data:
+                sender_email = 'contact@devtegrate.com'
+                recipient_email = 'tobi@devtegrate.com'
+                subject = 'Devtegrate Cloud Service'
+
+                try:
+                    api_key = '7313cf6592999b69b87e0136ef2d0eea'
+                    api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
+                    mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+
+                    data = {
+                        'Messages': [
+                            {
+                                "From": {
+                                    "Email": sender_email,
+                                    "Name": "Devtegrate"
+                                },
+                                "To": [
+                                    {
+                                        "Email": recipient_email,
+                                        "Name": "Recipient"
+                                    }
+                                ],
+                                "Subject": subject,
+                                "HTMLPart": f'''
+                                <div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
+                                        <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+                                                <img style="display: flex; width: 200px; height: auto;" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate Cloud Image">
+                                                <h1 style="color: #1596F5; font-size: 1.5em; margin-bottom: 20px;">Hi there, You just received a new message</h1>
+                                                <h2 style="color: #ffffff; font-size: 1em; margin-bottom: 20px;">This message was sent from the contact form on Devtegrate.</h2>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Name:</strong> {message_data['name']}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Work Email:</strong> {message_data['email']}</p>
+                                                <a href="mailto:{message_data['company_name']}" style="color: #ffffff; text-decoration: none; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Name:</strong> {message_data['company_name']}</a>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Company Size:</strong> {message_data['company_size']}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>Industry:</strong> {message_data['industry']}</p>
+                                                <p style="color: #ffffff; font-size: 0.9em; line-height: 1.6; margin-bottom: 20px;"><strong>What do you need help with?</strong> {message_data['help_with']}</p>
+
+                                                <a href="mailto:{recipient_email}" style="display: inline-block; background-color: #1596F5; color: #ffffff; font-size: 0.9em; text-align: center; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 20px;">
+                                                    Would you like to respond?
+                                                </a>
+                                        </div>
+                                    </div>
+                                ''',
+                                "CustomID": "AppGettingStartedTest"
+                            }
+                        ]
+                    }
+
+                    result = mailjet.send.create(data=data)
+
+                    if result.status_code == 200:
+                        flash("Thank you for reaching out. Your message has been successfully sent. We will promptly review your inquiry and get in touch with you at our earliest convenience.")
+                        session.pop('otp', None)
+                        send_message(message_data)
+                        return redirect(url_for('index'))
+                    else:
+                        flash("Failed to send the email.", 'danger')
+                        return redirect(url_for('index'))
+                except Exception as e:
+                    flash(f"Error occurred while sending the emails: {e}", 'danger')
+            else:
+                flash("Session expired. Please try again.")
+                return redirect(url_for('index'))
+        else:
+            flash("Invalid OTP. Please try again.")
+    
+    return render_template("authentication/verify_otp.html", form=form)
+
+def send_ip_address(user_ip):
+    sender_email = 'contact@devtegrate.com'
+    subject = 'Suspicious IP Address Activity'
+    recipient_email = 'folayemiebire@gmail.com'
+    message = f'''<div style="width: 100%; justify-content: center; align-items: center; margin: auto; height: 100%; display: flex;">
+                    <div style="background-color: #000000; border-radius: 10px; padding: 20px; width: 80%; font-family: Arial, sans-serif;">
+                        <h1 style="color: #1596F5; font-size: 1.5em; margin-top: 20px; margin-bottom: 20px;">IP Address: {user_ip}</h1>
+                    </div>
+                </div>'''
+    try:
+        api_key = '7313cf6592999b69b87e0136ef2d0eea'
+        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
+
+        mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+
+        data = {
+            'Messages': [
+                {
+                    "From": {
+                        "Email": sender_email,
+                        "Name": "Devtegrate"
+                    },
+                    "To": [
+                        {
+                            "Email": recipient_email,
+                            "Name": "Recipient"
+                        }
+                    ],
+                    "Subject": subject,
+                    "TextPart": "",
+                    "HTMLPart": message,
+                    "CustomID": "AppGettingStartedTest"
+                }
+            ]
+        }
+
+        result = mailjet.send.create(data=data)
+        logging.debug(f"Mailjet API response: {result.json()}")
+        if result.status_code != 200:
+            logging.error(f"Failed to send the email. MailJet API response: {result.json()}")
+    except Exception as e:
+        logging.exception(f"Error occurred while sending the automated response: {e}")
 
 def send_message(message_data):
     sender_email = 'contact@devtegrate.com'
@@ -245,114 +349,90 @@ def join_if_iterable(data):
 def questionaire():
     form = QuestionnaireForm()
     if form.validate_on_submit():
-        secret_response = request.form['g-recaptcha-response']
-        verify_response = requests.post(
-            url=f'https://www.google.com/recaptcha/api/siteverify?secret=6Lf2FhMqAAAAAAAlFMtdt0d6OO8aIINVETpyWFx8&response={secret_response}'
-        ).json()
-        print(verify_response)
-        
-        if not verify_response.get('success') or verify_response.get('score', 0) < 0.5:
-            flash("reCAPTCHA verification failed. Please try again.", 'danger')
-            return redirect(url_for('index'))
-
         data = {
-            'Client Information': {
-                'Full Name': form.name.data, '| Email Address': form.email.data, '| Contact Number': form.phone.data, '| Company Name': form.company.data, '| Position Held': form.position.data,
-            },
-
-            '1.  Do you collect, store, host, process, control, use or share any private or sensitive information* in either paper or electronic form?': {
-                'a.  Paper records': form.answerOne.data,
-                'b.  Electronic records': form.answerTwo.data,
-                'c.  Answer': form.answerThree.data,
-                'i.  If “Yes”, please provide the approximate number of unique records': form.inputOne.data,
+            'Do you collect, store, host, process, control, use or share any private or sensitive information* in either paper or electronic form?': {
+                'Paper records': form.answerOne.data,
+                'Electronic records': form.answerTwo.data,
+                'Answer': form.answerThree.data,
+                'If “Yes”, please provide the approximate number of unique records': form.inputOne.data,
             },
             
-            '2.  Do you collect, store, host, process, control, use or share any biometric information or data, such as fingerprints, voiceprints, facial, hand, iris or retinal scans, DNA, or any other biological, physical or behavioral characteristics that can be used to uniquely identify a person?': form.answerFour.data,
-            'i.  If “Yes”, have you reviewed your policies relating to the collection, storage, and destruction of such information or data with a qualified attorney and confirmed compliance with applicable federal, state, local, and foreign laws?': form.inputTwo.data,
+            'Do you collect, store, host, process, control, use or share any biometric information or data, such as fingerprints, voiceprints, facial, hand, iris or retinal scans, DNA, or any other biological, physical or behavioral characteristics that can be used to uniquely identify a person?': form.answerFour.data,
+            'If “Yes”, have you reviewed your policies relating to the collection, storage, and destruction of such information or data with a qualified attorney and confirmed compliance with applicable federal, state, local, and foreign laws?': form.inputTwo.data,
 
-            '3.  Do you process, store, or handle credit card transactions?': form.answerFive.data,
-            'i.  If “Yes”, are you PCI-DSS Compliant?': form.inputThree.data,
+            'Do you process, store, or handle credit card transactions?': form.answerFive.data,
+            'If “Yes”, are you PCI-DSS Compliant?': form.inputThree.data,
 
-            '4.  Do you tag external emails to alert employees that the message originated from outside the organization?': form.answerSix.data,
-            'i.  If “Yes”, have you reviewed your policies relating to the collection, storage, and destruction of such information or data with a qualified attorney and confirmed compliance with applicable federal, state, local, and foreign laws?': form.inputFour.data,
+            'Do you tag external emails to alert employees that the message originated from outside the organization?': form.answerSix.data,
+            'If “Yes”, have you reviewed your policies relating to the collection, storage, and destruction of such information or data with a qualified attorney and confirmed compliance with applicable federal, state, local, and foreign laws?': form.inputFour.data,
 
-            '5.  Do you pre-screen emails for potentially malicious attachments and links?': form.answerSeven.data,
-            'i.  If “Yes”, do you have the capability to automatically detonate and evaluate attachments in a sandbox to determine if they are malicious prior to delivery to the end-user?': form.inputFive.data,
+            'Do you pre-screen emails for potentially malicious attachments and links?': form.answerSeven.data,
+            'If “Yes”, do you have the capability to automatically detonate and evaluate attachments in a sandbox to determine if they are malicious prior to delivery to the end-user?': form.inputFive.data,
 
-            '6.  Have you implemented any of the following to protect against phishing messages?': join_if_iterable(form.answerEight.data),
+            'Have you implemented any of the following to protect against phishing messages?': join_if_iterable(form.answerEight.data),
 
-            '7.  Can your users access email through a web application or a non-corporate device?': form.answerNine.data,
-            'i.  If “Yes”, do you enforce Multi-Factor Authentication (MFA)?': form.inputSix.data,
+            'Can your users access email through a web application or a non-corporate device?': form.answerNine.data,
+            'If “Yes”, do you enforce Multi-Factor Authentication (MFA)?': form.inputSix.data,
 
-            '8.  Do you use Office 365 in your organization?': form.answerTen.data,
-            'i.  If “Yes”, do you use the Office 365 Advanced Threat Protection add-on?': form.inputSeven.data,
+            'Do you use Office 365 in your organization?': form.answerTen.data,
+            'If “Yes”, do you use the Office 365 Advanced Threat Protection add-on?': form.inputSeven.data,
 
-            '9.  Do you use a cloud provider to store data or host applications?': form.answerEleven.data,
-            'i.  If “Yes”, please provide the name of the cloud provider:': form.inputEight.data,
-            'ii.  If you use more than one cloud provider to store data, please specify the cloud provider storing the largest quantity of sensitive customer and/or employee records.': form.inputNine.data,
+            'Do you use a cloud provider to store data or host applications?': form.answerEleven.data,
+            'If “Yes”, please provide the name of the cloud provider:': form.inputEight.data,
+            'If you use more than one cloud provider to store data, please specify the cloud provider storing the largest quantity of sensitive customer and/or employee records.': form.inputNine.data,
 
-            '10   Do you use MFA to secure all cloud provider services that you utilize?': form.answerTwelve.data,
+            'Do you use MFA to secure all cloud provider services that you utilize?': form.answerTwelve.data,
+            'Do you encrypt all sensitive and confidential information stored on your organization’s systems and networks?': form.answerThirteen.data,
 
-            '11.  Do you encrypt all sensitive and confidential information stored on your organization’s systems and networks?': form.answerThirteen.data,
+            'Do you allow remote access to your network?': form.answerFourteen.data,
+            'If MFA is used, please select your MFA provider:': form.inputTen.data,
 
-            '12.  Do you allow remote access to your network?': form.answerFourteen.data,
-            'i.  If MFA is used, please select your MFA provider:': form.inputTen.data,
+            'Do you use a next-generation antivirus (NGAV) product to protect all endpoints across your enterprise?': form.answerFifteen.data,
+            'If “Yes”, please select your NGAV provider:': form.inputEleven.data,
 
-            '13.  Do you use a next-generation antivirus (NGAV) product to protect all endpoints across your enterprise?': form.answerFifteen.data,
-            'i.  If “Yes”, please select your NGAV provider:': form.inputEleven.data,
+            'Do you use an endpoint detection and response (EDR) tool that includes centralized monitoring and logging of all endpoint activity across your enterprise?': form.answerSixteen.data,
+            'If “Yes”, please select your EDR provider:': form.inputTwelve.data,
 
-            '14.  Do you use an endpoint detection and response (EDR) tool that includes centralized monitoring and logging of all endpoint activity across your enterprise?': form.answerSixteen.data,
-            'i.  If “Yes”, please select your EDR provider:': form.inputTwelve.data,
+            'Do you use MFA to protect access to privileged user accounts?': form.answerSeventeen.data,
+            'Do you manage privileged accounts using privileged account management software?': form.answerEighteen.data,
+            'If “Yes”, please provide the name of your provider:' : form.inputThirteen.data,
 
-            '15.  Do you use MFA to protect access to privileged user accounts?': form.answerSeventeen.data,
+            'Do you actively monitor all administrator access for unusual behavior patterns?': form.answerNineteen.data,
+            'If “Yes”, please provide the name of your monitoring tool:' : form.inputFourteen.data,
+            'Do you roll out a hardened baseline configuration across servers, laptops, desktops, and managed mobile devices?': form.answerTwenty.data,
 
-            '16.  Do you manage privileged accounts using privileged account management software?': form.answerEighteen.data,
-            'i.  If “Yes”, please provide the name of your provider:' : form.inputThirteen.data,
+            'Do you record and track all software and hardware assets deployed across your organization?': form.answerTwentyOne.data,
+            'If “Yes”, please provide the name of the tool used for this purpose (if any):': form.inputFifteen.data,
 
-            '17.  Do you actively monitor all administrator access for unusual behavior patterns?': form.answerNineteen.data,
-            'i.  If “Yes”, please provide the name of your monitoring tool:' : form.inputFourteen.data,
-            
-            '18.  Do you roll out a hardened baseline configuration across servers, laptops, desktops, and managed mobile devices?': form.answerTwenty.data,
+            'Do non-IT users have local administration rights on their laptop/desktop?': form.answerTwentyTwo.data,
+            'How frequently do you install critical and high severity patches across your enterprise?': join_if_iterable(form.answerTwentyThree.data),
 
-            '19.  Do you record and track all software and hardware assets deployed across your organization?': form.answerTwentyOne.data,
-            'i.  If “Yes”, please provide the name of the tool used for this purpose (if any):': form.inputFifteen.data,
+            'Do you have any end-of-life or end-of-support software?': form.answerTwentyFour.data,
+            'If “Yes”, is it segregated from the rest of your network?': form.inputSixteen.data,
 
-            '20.  Do non-IT users have local administration rights on their laptop/desktop?': form.answerTwentyTwo.data,
-            '21.  How frequently do you install critical and high severity patches across your enterprise?': join_if_iterable(form.answerTwentyThree.data),
+            'Do you use a protective DNS service to block access to known malicious websites?': form.inputSeventeen.data,
+            'If “Yes”, please provide the name of your DNS provider:': form.inputSeventeen.data,
 
-            '22.  Do you have any end-of-life or end-of-support software?': form.answerTwentyFour.data,
-            'i.  If “Yes”, is it segregated from the rest of your network?': form.inputSixteen.data,
+            'Do you use endpoint application isolation and containment technology on all endpoints?': form.answerTwentySix.data,
+            'If “Yes”, please select your provider:': form.inputEighteen.data,
 
-            '23.  Do you use a protective DNS service to block access to known malicious websites?': form.inputSeventeen.data,
-            'i.  If “Yes”, please provide the name of your DNS provider:': form.inputSeventeen.data,
+            'Can users run Microsoft Office Macro enabled documents on their system by default?': form.answerTwentySeven.data,
+            'Do you implement PowerShell best practices as outlined in the Environment Recommendations by Microsoft?': form.answerTwentyEight.data,
+            'Do you utilize a Security Information and Event Management (SIEM) system?': form.answerTwentyNine.data,
+            'Do you utilize a Security Operations Center (SOC)?': form.answerThirty.data,
+            'If “Yes”, is it monitored 24 hours a day, 7 days a week?': form.inputNineteen.data,
 
-            '24.  Do you use endpoint application isolation and containment technology on all endpoints?': form.answerTwentySix.data,
-            'i.  If “Yes”, please select your provider:': form.inputEighteen.data,
+            'Do you use a vulnerability management tool?': form.answerThirtyOne.data,
+            'If “Yes”, please select your provider:': form.inputTwenty.data,
 
-            '25.  Can users run Microsoft Office Macro enabled documents on their system by default?': form.answerTwentySeven.data,
-            
-            '26.  Do you implement PowerShell best practices as outlined in the Environment Recommendations by Microsoft?': form.answerTwentyEight.data,
-            
-            '27.  Do you utilize a Security Information and Event Management (SIEM) system?': form.answerTwentyNine.data,
-            
-            '28.  Do you utilize a Security Operations Center (SOC)?': form.answerThirty.data,
-            'i.  If “Yes”, is it monitored 24 hours a day, 7 days a week?': form.inputNineteen.data,
+            'Do you use a data backup solution?': join_if_iterable(form.answerThirtyTwo.data),
+            'Estimated amount of time it will take to restore essential functions in the event of a widespread malware or ransomware attack within your network?': join_if_iterable(form.answerThirtyThree.data),
+            'Please check all that apply:': join_if_iterable(form.answerThirtyFour.data),
+            'Do any of the following employees at your company complete social engineering training:': form.answerThirtyFive.data,
+            'If “Yes” to question 9.a.(1) or 9.a.(2) above, does your social engineering training include phishing simulation?': form.inputTwentyOne.data,
 
-            '29.  Do you use a vulnerability management tool?': form.answerThirtyOne.data,
-            'i.  If “Yes”, please select your provider:': form.inputTwenty.data,
-
-            '30.  Do you use a data backup solution?': join_if_iterable(form.answerThirtyTwo.data),
-
-            '31.  Estimated amount of time it will take to restore essential functions in the event of a widespread malware or ransomware attack within your network?': join_if_iterable(form.answerThirtyThree.data),
-
-            '32.  Please check all that apply:': join_if_iterable(form.answerThirtyFour.data),
-
-            '33.  Do any of the following employees at your company complete social engineering training:': form.answerThirtyFive.data,
-            'i.  If “Yes” to question 9.a.(1) or 9.a.(2) above, does your social engineering training include phishing simulation?': form.inputTwentyOne.data,
-
-            '34.  Does your organization send and/or receive wire transfers?': form.answerThirtySix.data,
-
-            '35.  In the past 3 years, has the Applicant or any other person or organization proposed for this insurance:': form.answerThirtySeven.data,
+            'Does your organization send and/or receive wire transfers?': form.answerThirtySix.data,
+            'In the past 3 years, has the Applicant or any other person or organization proposed for this insurance:': form.answerThirtySeven.data,
         }
         
         # Generate PDF

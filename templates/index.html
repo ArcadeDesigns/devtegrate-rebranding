@@ -226,13 +226,13 @@
             <img class="form-img-bg" src="https://res.cloudinary.com/quinn-daisies/image/upload/v1722596020/devtegrate-updates/mouse-mousepad-headset-with-copy-space_1001450-5606_dudal0.jpg" alt="Devtegrate Image">
 
             <div class="footer-form-ctn-box">
-                <form method="POST" class="reveal__bottom">
+                <form method="POST" class="reveal__bottom" id="contact-form">
                     <div class="footer-form-ctn-box-content">
                         <h2>Form Field</h2>
                         <p>Please fill out the form to get started, and our team will promptly reach out to discuss how we can best support your goals.</p>
                     </div>
 
-                    {{ form.hidden_tag() }}
+                    {{ form.csrf_token() }}
                     <div class="footer-form-ctn-box-box">
                         <div class="advanceFlex">
                             <div class="footer-form-ctn-box-box-cn">
@@ -318,13 +318,21 @@
                         </div>
                     </div>
 
-                    <button class="formBtn" type="submit" name="submit">
+                    <button class="g-recaptcha formBtn" data-sitekey="6Lfe1CwqAAAAAOKO5hLa6QQ7odPPy40m3k4iSiBv" data-callback='onSubmit' data-action='submit'>
                         Schedule Your Free IT Assessment Call
                         <i class='bx bxs-chevron-right'></i>
                     </button>
+                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
                 </form>
             </div>
         </div>
+
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script>
+            function onSubmit(token) {
+                document.getElementById("contact-form").submit();
+            }
+        </script>
 
         <div class="page-container">
             <div class="container-header">

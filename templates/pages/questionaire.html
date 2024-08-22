@@ -49,6 +49,7 @@
         action=""
         class="questionaireCtnBox"
         enctype="multipart/form-data"
+        id="questionaire-form"
       >
         {{ form.hidden_tag() }}
         <div class="questionaireContainer">
@@ -988,14 +989,21 @@
           </div>
         </div>
 
-        <button class="formBtn" type="submit" name="submit">
+        <button class="g-recaptcha formBtn" data-sitekey="6Lf2FhMqAAAAANgNvahK9U6I_txWpju4zDecGcNt" data-callback='onSubmit' data-action='submit'>
           Submit Answers
-          <i class="bx bxs-chevron-right"></i>
+          <i class='bx bxs-chevron-right'></i>
         </button>
+        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
       </form>
     </div>
   </div>
-
 </div>
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  function onSubmit(token) {
+    document.getElementById("questionaire-form").submit();
+  }
+</script>
 
 {% include 'components/footer.html' %} {% endblock %}
