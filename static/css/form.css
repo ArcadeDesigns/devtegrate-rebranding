@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/*variables*/
+:root {
+  /*variables Colors*/
+  --primary-color: #FFFFFF;
+  --secondary-color: #000000;
+  --tertiary-color: #1596F5;
+  --background-color: ------;
+  --text-color: #888888;
+  --reserved-color: #011D28;
+
+  /*variables Text*/
+  --mega-header: 5em;
+  --mini-header: 4em;
+  --header-text: 3em;
+  --medium-text: 2em;
+  --small-text: 1.5em;
+  --p-text: 1.1em;
+  --span-text: 1em;
+  --link-span-text: 0.8em;
+}
+
+.microsoftFormContainer {
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 5%;
+}
+
+.microsoftForm {
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 2%;
+	background-color: whitesmoke;
+	border-radius: 10px;
+	margin-top: 2%;
+	width: 100%;
+	max-width: 1000px;
+}
+
+.microsoftFormHeader {
+	justify-content: center;
+	align-items: flex-start;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+	padding: 10px 0;
+}
+
+.microsoftFormHeader h2 {
+	font-size: var(--p-text);
+	font-weight: 700;
+	color: var(--secondary-color);
+}
+
+.microsoftFormHeader p {
+	font-size: var(--link-span-text);
+	font-weight: 500;
+	color: var(--secondary-color);
+}
+
+.microsoftForm form {
+	justify-content: center;
+	align-items: flex-start;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+}
+
+.microsoftFormInputWrite {
+	justify-content: center;
+	align-items: flex-start;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.microsoftFormInputWrite h3 {
+	font-size: var(--span-text);
+	font-weight: 700;
+	color: var(--secondary-color);
+}
+
+.microsoftFormInputWrite input {
+	background-color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+	border-radius: 10px;
+	padding: 10px;
+	font-size: var(--link-span-text);
+	color: var(--secondary-color);
+	font-weight: 700;
+	outline: none;
+	width: 100%;
+}
+
+.microsoftFormInputWrite input::placeholder {
+	font-size: var(--link-span-text);
+	font-weight: 700;
+	color: var(--secondary-color);
+}
+
+.microsoftFormInputWrite select {
+	background-color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+	border-radius: 10px;
+	padding: 10px;
+	font-size: var(--link-span-text);
+	color: var(--secondary-color);
+	font-weight: 700;
+	outline: none;
+	width: 100%;
+}
+
+.microsoftFormInputWrite select::placeholder {
+	font-size: var(--link-span-text);
+	font-weight: 700;
+	color: var(--secondary-color);
+}
+
+.microsoftForm button {
+	background-color: teal;
+	font-size: var(--link-span-text);
+	font-weight: 500;
+	color: var(--primary-color);
+	outline: none;
+	border-radius: 10px;
+	border: 1px solid teal;
+	padding: 20px;
+}

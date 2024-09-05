@@ -5,6 +5,18 @@ from wtforms.widgets import TextArea
 from flask_ckeditor import CKEditorField
 from flask_wtf.file import FileField
 
+class MicrosoftForm(FlaskForm):
+    name = StringField()
+    email = StringField()
+    contact = StringField()
+    serviceOthers = StringField()
+    companySize = StringField()
+    techChallenge = StringField()
+    companyIndustry = StringField()
+    solutions = StringField()
+    contactMethod = StringField()
+    submit = SubmitField()
+
 class MessagesForm(FlaskForm):
     name = StringField()
     email = StringField()

@@ -321,6 +321,15 @@ footer {
   background-color: var(--primary-color);
 }
 
+.microsoftflexBtn {
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  gap: .5em;
+  width: auto;
+}
+
 .footer-subscription-form form input {
   background-color: transparent;
   border: none;
@@ -906,6 +915,10 @@ footer .span-text {
   
   header {
     display: none;
+  }
+
+  .microsoftflexBtn {
+    flex-direction: column;
   }
 
 

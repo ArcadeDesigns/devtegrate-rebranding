@@ -1,17 +1,17 @@
-User Information:
+Client Information:
   Full Name: Folayemi Ebire
   | Email Address: folayemiebire@gmail.com
   | Contact Number: 08118423770
   | Company Name: Quinn Daisies
-  |Position Held: C.E.O
+  | Position Held: C.E.O
 1.  Do you collect, store, host, process, control, use or share any private or sensitive information* in either paper or electronic form?:
   a.  Paper records: 
   b.  Electronic records: 
-  c.  Answer: No
+  c.  Answer: 
   i.  If “Yes”, please provide the approximate number of unique records: 
-2.  Do you collect, store, host, process, control, use or share any biometric information or data, such as fingerprints, voiceprints, facial, hand, iris or retinal scans, DNA, or any other biological, physical or behavioral characteristics that can be used to uniquely identify a person?: No
+2.  Do you collect, store, host, process, control, use or share any biometric information or data, such as fingerprints, voiceprints, facial, hand, iris or retinal scans, DNA, or any other biological, physical or behavioral characteristics that can be used to uniquely identify a person?: 
 i.  If “Yes”, have you reviewed your policies relating to the collection, storage, and destruction of such information or data with a qualified attorney and confirmed compliance with applicable federal, state, local, and foreign laws?: 
-3.  Do you process, store, or handle credit card transactions?: Yes
+3.  Do you process, store, or handle credit card transactions?: 
 i.  If “Yes”, are you PCI-DSS Compliant?: 
 4.  Do you tag external emails to alert employees that the message originated from outside the organization?: 
 5.  Do you pre-screen emails for potentially malicious attachments and links?: 

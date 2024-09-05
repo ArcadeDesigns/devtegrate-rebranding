@@ -40,16 +40,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///devtegrate.db'
 app.config['SECRET_KEY'] = "GoodDeedsAlexandraMicayo19980626"
 app.config['FLASK_DEBUG'] = True
 
-'''cloudinary.config(
-    cloud_name="...",
-    api_key="...",
-    api_secret="...",
-)
-
-upload("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
-       public_id="olympic_flag")
-url, options = cloudinary_url(
-    "olympic_flag", width=100, height=150, crop="fill")'''
 
 UPLOAD_FOLDER = 'static/images/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -63,10 +53,6 @@ migrate = Migrate(app, db)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
-
-CLIENT_ID = '...'
-CLIENT_SECRET = '...'
-REDIRECT_URI = '...'
 
 # Google Authentication
 GOOGLE_AUTH_URL = 'https://accounts.google.com/o/oauth2/auth'
@@ -638,6 +624,215 @@ def privacy_policy():
         url_link='https://devtegrate.com/privacy-policy',
         revised='2024-07-01'
     )
+
+@app.route('/microsoft-form', methods=['GET', 'POST'])
+def microsoft_form():
+    form = MicrosoftForm()
+    if form.validate_on_submit():
+        secret_response = request.form['g-recaptcha-response']
+        verify_response = requests.post(
+            url=f'https://www.google.com/recaptcha/api/siteverify?secret=6LdgeDcqAAAAAIaV_KdbIEIEZFlHEDyvVha6aWwt&response={secret_response}'
+        ).json()
+        print(verify_response)
+        
+        if not verify_response.get('success') or verify_response.get('score', 0) < 0.5:
+            flash("reCAPTCHA verification failed. Please try again.", 'danger')
+            return redirect(url_for('index'))
+
+        microsft_message_data = {
+            '1. First and Last Name': form.name.data,
+            '2. Email Address': form.email.data,
+            '3. Phone Number': form.contact.data,
+            '4. What services are you interested in? (Select all that apply)': form.serviceOthers.data,
+            '5. What is the size of your business?': form.companySize.data,
+            '6. What is your biggest technology challenge?': form.techChallenge.data,
+            '7. What industry does your company belong to?': form.companyIndustry.data,
+            '8. When are you looking to implement these solutions?': form.solutions.data,
+            '9. Preferred method of contact': form.contactMethod.data,
+        }
+
+        sender_email = 'contact@devtegrate.com'
+        recipient_email = 'contact@devtegrate.com'
+        subject = 'Devtegrate Prospective Client'
+
+        try:
+            api_key = '7313cf6592999b69b87e0136ef2d0eea'
+            api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
+            mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+
+            data = {
+                'Messages': [
+                    {
+                        "From": {
+                            "Email": sender_email,
+                            "Name": "Devtegrate"
+                        },
+                        "To": [
+                            {
+                                "Email": recipient_email,
+                                "Name": "Recipient"
+                            }
+                        ],
+                        "Subject": subject,
+                        "HTMLPart": f'''
+                            <div style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
+                            <div style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                                <div style="background-color: #000000; padding: 20px; text-align: left;">
+                                    <h1 style="color: #ffffff; margin: 0; font-size: 1.2em;">Devtegrate</h1>
+                                </div>
+                                <div style="padding: 20px;">
+                                    <h2 style="color: #333333; margin-top: 0; font-size: 1em;">Dear Tobi Ogebule</h2>
+                                    <p style="color: #666666; font-size: .8em;">We have received new information from a prospective client through the form you distributed. Please review the details at your earliest convenience to take the necessary actions.</p>
+                                    <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                                        <h3 style="color: #333333; margin-top: 0; font-size: 1em;">Prospective Client Answers:</h3>
+                                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                                            <strong>1. First and Last Name:</strong> {microsft_message_data['1. First and Last Name']}
+                                        </p>
+                                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                                            <strong>2. Email Address:</strong> {microsft_message_data['2. Email Address']}
+                                        </p>
+                                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                                            <strong>3. Phone Number:</strong> {microsft_message_data['3. Phone Number']}
+                                        </p>
+                                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                                            <strong>4. What services are you interested in? (Select all that apply):</strong> {microsft_message_data['4. What services are you interested in? (Select all that apply)']}
+                                        </p>
+                                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                                            <strong>5. What is the size of your business?</strong> {microsft_message_data['5. What is the size of your business?']}
+                                        </p>
+                                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                                            <strong>6. What is your biggest technology challenge?</strong> {microsft_message_data['6. What is your biggest technology challenge?']}
+                                        </p>
+                                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                                            <strong>7. What industry does your company belong to?</strong> {microsft_message_data['7. What industry does your company belong to?']}
+                                        </p>
+                                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                                            <strong>8. When are you looking to implement these solutions?</strong> {microsft_message_data['8. When are you looking to implement these solutions?']}
+                                        </p>
+                                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                                            <strong>9. Preferred method of contact:</strong> {microsft_message_data['9. Preferred method of contact']}
+                                        </p>
+                                    </div>
+                                    <div style="text-align: left; margin-top: 20px;">
+                                        <a href="mailto:{microsft_message_data['2. Email Address']}" style="display: inline-block; font-size: .8em; padding: 10px 20px; background-color: #000000; color: #ffffff; text-decoration: none; border-radius: 5px;">Get in touch with Client</a>
+                                    </div>
+                                </div>
+                                <div style="background-color: #000000; padding: 15px; text-align: center;">
+                                    <p style="color: #ffffff; margin: 0; font-size: .8em;">&copy; 2024 Devtegrate. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                        ''',
+                        "CustomID": "AppGettingStartedTest"
+                    }
+                ]
+            }
+
+            result = mailjet.send.create(data=data)
+            if result.status_code == 200:
+                flash("Thank you for reaching out. Your message has been successfully sent. We will promptly review your inquiry and get in touch with you at our earliest convenience.")
+                send_microsoft_message(microsft_message_data)
+                return redirect(url_for('index'))
+            else:
+                flash("Failed to send the email.", 'danger')
+                return redirect(url_for('index'))
+        except Exception as e:
+            flash(f"Error occurred while sending the email: {e}", 'danger')
+            return redirect(url_for('index'))
+
+    return render_template('forms/form.html',
+        form=form,
+        title_tag='',
+        meta_description=' ',
+        url_link=' ',
+        revised='2024-07-01'
+    )
+
+def send_microsoft_message(microsft_message_data):
+    sender_email = 'contact@devtegrate.com'
+    subject = 'Thank You for Contacting Devtegrate'
+    recipient_email = microsft_message_data['2. Email Address']
+    message = f'''<div style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
+            <div style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <!-- Header Section -->
+                <div style="background-color: #000000; padding: 20px; text-align: left;">
+                    <h1 style="color: #ffffff; margin: 0; font-size: 1.2em;">Devtegrate</h1>
+                </div>
+                <!-- Body Section -->
+                <div style="padding: 20px;">
+                    <h2 style="color: #333333; margin-top: 0; font-size: 1em;">Dear {microsft_message_data['1. First and Last Name']}</h2>
+                    <p style="color: #666666; font-size: .8em;">Thank you for contacting Devtegrate. We have received your information and will get back to you shortly.</p>
+                    <p style="color: #666666; font-size: .8em;">Here are the details you provided:</p>
+                    <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                            <strong>First and Last Name:</strong> {microsft_message_data['1. First and Last Name']}
+                        </p>
+                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                            <strong>Email Address:</strong> {microsft_message_data['2. Email Address']}
+                        </p>
+                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                            <strong>Phone Number:</strong> {microsft_message_data['3. Phone Number']}
+                        </p>
+                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                            <strong>Services of Interest:</strong> {microsft_message_data['4. What services are you interested in? (Select all that apply)']}
+                        </p>
+                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                            <strong>Company Size:</strong> {microsft_message_data['5. What is the size of your business?']}
+                        </p>
+                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                            <strong>Biggest Technology Challenge:</strong> {microsft_message_data['6. What is your biggest technology challenge?']}
+                        </p>
+                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                            <strong>Company Industry:</strong> {microsft_message_data['7. What industry does your company belong to?']}
+                        </p>
+                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                            <strong>Implementation Timeline:</strong> {microsft_message_data['8. When are you looking to implement these solutions?']}
+                        </p>
+                        <p style="color: #666666; margin: 0; font-size: 0.9em;">
+                            <strong>Preferred Contact Method:</strong> {microsft_message_data['9. Preferred method of contact']}
+                        </p>
+                    </div>
+                    <p style="color: #666666; font-size: .8em;">We look forward to assisting you.</p>
+                </div>
+                <!-- Footer Section -->
+                <div style="background-color: #000000; padding: 15px; text-align: center;">
+                    <p style="color: #ffffff; margin: 0; font-size: .8em;">&copy; 2024 Devtegrate. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    '''
+    try:
+        api_key = '7313cf6592999b69b87e0136ef2d0eea'
+        api_secret = '06f5e0d8c5df097b9841e91e8bb51e04'
+        mailjet = Client(auth=(api_key, api_secret), version='v3.1')
+
+        data = {
+            'Messages': [
+                {
+                    "From": {
+                        "Email": sender_email,
+                        "Name": "Devtegrate"
+                    },
+                    "To": [
+                        {
+                            "Email": recipient_email,
+                            "Name": microsft_message_data['1. First and Last Name']
+                        }
+                    ],
+                    "Subject": subject,
+                    "HTMLPart": message,
+                    "CustomID": "AppGettingStartedTest"
+                }
+            ]
+        }
+
+        result = mailjet.send.create(data=data)
+        if result.status_code == 200:
+            print("Confirmation email sent successfully.")
+        else:
+            print(f"Failed to send confirmation email: {result.status_code} - {result.text}")
+    except Exception as e:
+        print(f"Error sending confirmation email: {e}")
 
 ####################################################################################################################################################################################
 ####################################################################################################################################################################################
