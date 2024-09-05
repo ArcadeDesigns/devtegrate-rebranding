@@ -1,104 +1,175 @@
 {% extends 'base.html' %}
     {% block content %}
         <div class="microsoftFormContainer">
-	        <div class="microsoftForm">
-	        	<div class="microsoftFormHeader">
-	        		<h2>Unlock Reliable IT Solutions with Devtegrate's Tech Services.</h2>
-	        		<p>At Devtegrate, we offer a comprehensive range of technology services to ensure your business runs smoothly, securely, and in compliance with industry standards. Whether you're looking to safeguard your data, streamline operations, or navigate complex regulations, our services are tailored to meet your unique needs.</p>
-	        	</div>
+        	<div class="microsoftFormScroll">
+		        <div class="microsoftForm">
+		        	<div class="microsoftFormHeader">
+		        		<h2>Unlock Reliable IT Solutions with Devtegrate's Tech Services.</h2>
+		        		<p>At Devtegrate, we offer a comprehensive range of technology services to ensure your business runs smoothly, securely, and in compliance with industry standards. Whether you're looking to safeguard your data, streamline operations, or navigate complex regulations, our services are tailored to meet your unique needs.</p>
+		        	</div>
 
-	        	{% for message in get_flashed_messages() %}
-			        <div class="notification-positioning">
-			            <div class="alert alert-success alert-dismissible fade show" role="alert">
-			                <p class="message-font">Hi! {{ message }}</p>
-			                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-			            </div>
+		        	{% for message in get_flashed_messages() %}
+				        <div class="notification-positioning">
+				            <div class="alert alert-success alert-dismissible fade show" role="alert">
+				                <p class="message-font">Hi! {{ message }}</p>
+				                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				            </div>
+				        </div>
+				    {% endfor %}
+
+		        	<form method="POST" id="response-form">
+		        		{{ form.hidden_tag() }}
+		        		<div class="microsoftFormInputWrite">
+		        			<h3>1. First and Last Name</h3>
+		        			<input type="text" name="name" placeholder="Enter your answer" required/>
+		        		</div>
+
+		        		<div class="microsoftFormInputWrite">
+		        			<h3>2. Email Address</h3>
+		        			<input type="text" name="email" placeholder="Enter your answer" required/>
+		        		</div>
+
+		        		<div class="microsoftFormInputWrite">
+		        			<h3>3. Phone Number</h3>
+		        			<input type="text" name="contact" placeholder="Enter your answer" required/>
+		        		</div>
+
+		        		<div class="microsoftAdvanceFormContainer">
+		        			<h3 for="help-with">4. What services are you interested in? (Select all that apply)</h3>
+		        			<div class="microsoftAdvanceFormDropDown">
+		        				<div class="microsoftSelect">
+		        					<input type="text" name="serviceOthers" required onchange="toggleOtherHelp()" readonly>
+		        					<div class="microsoftDropDownCaret"></div>
+		        				</div>
+
+		        				<div class="microsoftAdvanceDropDwonmenu">
+		        					<div class="microsoftDropDownScroll">
+		        						<li class="active">Select your answer</li>
+		        						<li>Managed IT Services</li>
+		        						<li>Cyber Security Services</li>
+		        						<li>Security and Compliance</li>
+		        						<li>Cloud Services</li>
+		        						<li>Software Development</li>
+		        						<input type="text" id="others" placeholder="Others">
+		        					</div>
+		        				</div>
+		        			</div>
+		        		</div>
+
+		        		<div class="microsoftAdvanceFormContainer">
+		        			<h3 for="help-with">5. What is the size of your business?</h3>
+		        			<div class="microsoftAdvanceFormDropDown">
+		        				<div class="microsoftSelect">
+		        					<input type="text" name="companySize" required onchange="toggleOtherHelp()" readonly>
+		        					<div class="microsoftDropDownCaret"></div>
+		        				</div>
+
+		        				<div class="microsoftAdvanceDropDwonmenu">
+		        					<div class="microsoftDropDownScroll">
+		        						<li class="active">Select your answer</li>
+		        						<li>Small (1-50 employees)</li>
+		        						<li>Medium (51-200 employees)</li>
+		        						<li>Large (200+ employees)</li>
+		        					</div>
+		        				</div>
+		        			</div>
+		        		</div>
+
+		        		<div class="microsoftAdvanceFormContainer">
+		        			<h3 for="help-with">6. What is your biggest technology challenge?</h3>
+		        			<div class="microsoftAdvanceFormDropDown">
+		        				<div class="microsoftSelect">
+		        					<input type="text" name="techChallenge" required onchange="toggleOtherHelp()" readonly>
+		        					<div class="microsoftDropDownCaret"></div>
+		        				</div>
+
+		        				<div class="microsoftAdvanceDropDwonmenu">
+		        					<div class="microsoftDropDownScroll">
+		        						<li class="active">Select your answer</li>
+		        						<li>Data security</li>
+		        						<li>Compliance with industry regulations</li>
+		        						<li>IT infrastructure management</li>
+		        						<li>Operational efficiency</li>
+		        						<input type="text" id="others" placeholder="Others">
+		        					</div>
+		        				</div>
+		        			</div>
+		        		</div>
+
+		        		<div class="microsoftAdvanceFormContainer">
+		        			<h3 for="help-with">7. What industry does your company belong to?</h3>
+		        			<div class="microsoftAdvanceFormDropDown">
+		        				<div class="microsoftSelect">
+		        					<input type="text" name="companyIndustry" required onchange="toggleOtherHelp()" readonly>
+		        					<div class="microsoftDropDownCaret"></div>
+		        				</div>
+
+		        				<div class="microsoftAdvanceDropDwonmenu">
+		        					<div class="microsoftDropDownScroll">
+		        						<li class="active">Select your answer</li>
+		        						<li>Financial Services</li>
+		        						<li>Government</li>
+		        						<li>Healthcare</li>
+		        						<li>Technology</li>
+		        						<input type="text" id="others" placeholder="Others">
+		        					</div>
+		        				</div>
+		        			</div>
+		        		</div>
+
+		        		<div class="microsoftAdvanceFormContainer">
+		        			<h3 for="help-with">8. When are you looking to implement these solutions?</h3>
+		        			<div class="microsoftAdvanceFormDropDown">
+		        				<div class="microsoftSelect">
+		        					<input type="text" name="solutions" required onchange="toggleOtherHelp()" readonly>
+		        					<div class="microsoftDropDownCaret"></div>
+		        				</div>
+
+		        				<div class="microsoftAdvanceDropDwonmenu">
+		        					<div class="microsoftDropDownScroll">
+		        						<li class="active">Select your answer</li>
+		        						<li>Immediately</li>
+		        						<li>Within 3 months</li>
+		        						<li>6 months or more</li>
+		        						<li>Not yet</li>
+		        					</div>
+		        				</div>
+		        			</div>
+		        		</div>
+
+		        		<div class="microsoftAdvanceFormContainer">
+		        			<h3 for="help-with">9. Preferred method of contact</h3>
+		        			<div class="microsoftAdvanceFormDropDown">
+		        				<div class="microsoftSelect">
+		        					<input type="text" name="contactMethod" required onchange="toggleOtherHelp()" readonly>
+		        					<div class="microsoftDropDownCaret"></div>
+		        				</div>
+
+		        				<div class="microsoftAdvanceDropDwonmenu">
+		        					<div class="microsoftDropDownScroll">
+		        						<li class="active">Select your answer</li>
+		        						<li>Email</li>
+		        						<li>Phone</li>
+		        						<li>Schedule a Call</li>
+		        					</div>
+		        				</div>
+		        			</div>
+		        		</div>
+
+		        		<button class="g-recaptcha" data-sitekey="6LdgeDcqAAAAACoKLUqyo_BUcByaDXovZ7I4sOG1" data-callback='onSubmit' data-action='submit'>Submit</button>
+		        		<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+		        	</form>
+
+		        	<div class="microsoftFormFooter">
+			        	<img src="https://res.cloudinary.com/quinn-daisies/image/upload/v1720729962/devtegrate-images/Asset_1_gvxf83.png" alt="Devtegrate DevOps">
+
+			        	<div class="microsoftFormFooterContainer">
+			        		<h2>Devtegrate: Transforming Digital Solutions</h2>
+			        		<p>Devtegrate is a leading technology solutions provider specializing in cloud services, cybersecurity, and IT management. With a commitment to delivering innovative and reliable solutions, Devtegrate helps businesses navigate the complexities of the digital landscape.</p>
+			        	</div>
 			        </div>
-			    {% endfor %}
-
-	        	<form method="POST" id="response-form">
-	        		{{ form.hidden_tag() }}
-	        		<div class="microsoftFormInputWrite">
-	        			<h3>1. First and Last Name</h3>
-	        			<input type="text" name="name" placeholder="Enter your answer" required/>
-	        		</div>
-
-	        		<div class="microsoftFormInputWrite">
-	        			<h3>2. Email Address</h3>
-	        			<input type="text" name="email" placeholder="Enter your answer" required/>
-	        		</div>
-
-	        		<div class="microsoftFormInputWrite">
-	        			<h3>3. Phone Number</h3>
-	        			<input type="text" name="contact" placeholder="Enter your answer" required/>
-	        		</div>
-
-	        		<div class="microsoftFormInputWrite">
-	        			<h3>4. What services are you interested in? (Select all that apply)</h3>
-	        			<select name="serviceOthers" required>
-	        				<option>Managed IT Services</option>
-	        				<option>Cyber Security Services</option>
-	        				<option>Security and Compliance</option>
-	        				<option>Cloud Services</option>
-	        				<option>Software Development</option>
-	        				<input type="text" id="others" placeholder="Others">
-	        			</select>
-	        		</div>
-
-	        		<div class="microsoftFormInputWrite" required>
-	        			<h3>5. What is the size of your business?</h3>
-	        			<select name="companySize">
-	        				<option>Small (1-50 employees)</option>
-	        				<option>Medium (51-200 employees)</option>
-	        				<option>Large (200+ employees)</option>
-	        			</select>
-	        		</div>
-
-	        		<div class="microsoftFormInputWrite" required>
-	        			<h3>6. What is your biggest technology challenge?</h3>
-	        			<select name="techChallenge">
-	        				<option>Data security</option>
-	        				<option>Compliance with industry regulations</option>
-	        				<option>IT infrastructure management</option>
-	        				<option>Operational efficiency</option>
-	        				<input type="text" id="others" placeholder="Others">
-	        			</select>
-	        		</div>
-
-	        		<div class="microsoftFormInputWrite" required>
-	        			<h3>7. What industry does your company belong to?</h3>
-	        			<select name="companyIndustry">
-	        				<option>Financial Services</option>
-	        				<option>Government</option>
-	        				<option>Healthcare</option>
-	        				<option>Technology</option>
-	        				<input type="text" id="others" placeholder="Others">
-	        			</select>
-	        		</div>
-
-	        		<div class="microsoftFormInputWrite">
-	        			<h3>8. When are you looking to implement these solutions?</h3>
-	        			<select name="solutions" required>
-	        				<option>Immediately</option>
-	        				<option>Within 3 months</option>
-	        				<option>6 months or more</option>
-	        				<option>Not yet</option>
-	        			</select>
-	        		</div>
-
-	        		<div class="microsoftFormInputWrite">
-	        			<h3>9. Preferred method of contact</h3>
-	        			<select name="contactMethod" required>
-	        				<option>Email</option>
-	        				<option>Phone</option>
-	        				<option>Schedule a Call</option>
-	        			</select>
-	        		</div>
-
-	        		<button class="g-recaptcha" data-sitekey="6LdgeDcqAAAAACoKLUqyo_BUcByaDXovZ7I4sOG1" data-callback='onSubmit' data-action='submit'>Submit</button>
-	        		<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-	        	</form>
-	        </div>
+		        </div>
+		    </div>
         </div>
 
         <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -106,6 +177,38 @@
 		  function onSubmit(token) {
 		    document.getElementById("response-form").submit();
 		  }
+		</script>
+
+		<script type="text/javascript">
+			const microsoftAdvanceFormDropDowns = document.querySelectorAll('.microsoftAdvanceFormDropDown');
+
+			microsoftAdvanceFormDropDowns.forEach(microsoftAdvanceFormDropDown => {
+				const select = microsoftAdvanceFormDropDown.querySelector('.microsoftSelect');
+				const caret = microsoftAdvanceFormDropDown.querySelector('.microsoftDropDownCaret');
+				const menu = microsoftAdvanceFormDropDown.querySelector('.microsoftAdvanceDropDwonmenu');
+				const options = microsoftAdvanceFormDropDown.querySelectorAll('.microsoftDropDownScroll li');
+				const input = select.querySelector('input');
+
+				select.addEventListener('click', () => {
+					select.classList.toggle('select-clicked');
+					caret.classList.toggle('caret-rotate');
+					menu.classList.toggle('menu-open');
+				});
+
+				options.forEach(option => {
+					option.addEventListener('click', () => {
+						input.value = option.innerText;
+						select.classList.remove('select-clicked');
+						caret.classList.remove('caret-rotate');
+						menu.classList.remove('menu-open');
+						options.forEach(option => {
+							option.classList.remove('active');
+						});
+
+						option.classList.add('active');
+					});
+				});
+			});
 		</script>
 
     {% endblock %}

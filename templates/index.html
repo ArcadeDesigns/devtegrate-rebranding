@@ -254,96 +254,98 @@
                     </div>
 
                     {{ form.csrf_token() }}
-                    <div class="footer-form-ctn-box-box">
-                        <div class="advanceFlex">
-                            <div class="footer-form-ctn-box-box-cn">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
+                    <div class="microsoftFormSpacer">
+                        <div class="footer-form-ctn-box-box">
+                            <div class="advanceFlex">
+                                <div class="footer-form-ctn-box-box-cn">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+
+                                <div class="footer-form-ctn-box-box-cn">
+                                    <label for="work-email">Work Email</label>
+                                    <input type="email" id="work-email" name="email" pattern="^[a-zA-Z0-9._%+-]+@(?!(gmail\.com|yahoo\.com|outlook\.com)).+\.[a-zA-Z]{2,}$" required>
+                                </div>
                             </div>
 
-                            <div class="footer-form-ctn-box-box-cn">
-                                <label for="work-email">Work Email</label>
-                                <input type="email" id="work-email" name="email" pattern="^[a-zA-Z0-9._%+-]+@(?!(gmail\.com|yahoo\.com|outlook\.com)).+\.[a-zA-Z]{2,}$" required>
-                            </div>
-                        </div>
+                            <div class="advanceFlex">
+                                <div class="footer-form-ctn-box-box-cn">
+                                    <label for="company-name">Company Name</label>
+                                    <input type="text" id="company-name" name="company_name" required>
+                                </div>
 
-                        <div class="advanceFlex">
-                            <div class="footer-form-ctn-box-box-cn">
-                                <label for="company-name">Company Name</label>
-                                <input type="text" id="company-name" name="company_name" required>
-                            </div>
-
-                            <div class="footer-form-ctn-box-box-cn">
-                                <label for="company-size">Company Size</label>
-                                <div class="advanceDropDown">
-                                    <div class="select">
-                                        <input type="text" name="company_size" value="" id="company-size" name="company_size" required readonly>
-                                        <div class="caret"></div>
+                                <div class="footer-form-ctn-box-box-cn">
+                                    <label for="company-size">Company Size</label>
+                                    <div class="advanceDropDown">
+                                        <div class="select">
+                                            <input type="text" name="company_size" value="" id="company-size" name="company_size" required readonly>
+                                            <div class="caret"></div>
+                                        </div>
+                                        <div class="advanceDropDwonmenu">
+                                            <div class="menuScroll">
+                                                <li class="active">1-10</li>
+                                                <li>11-50</li>
+                                                <li>51-200</li>
+                                                <li>201-500</li>
+                                                <li>501-1000</li>
+                                                <li>1001+</li>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="advanceDropDwonmenu">
-                                        <div class="menuScroll">
-                                            <li class="active">1-10</li>
-                                            <li>11-50</li>
-                                            <li>51-200</li>
-                                            <li>201-500</li>
-                                            <li>501-1000</li>
-                                            <li>1001+</li>
+                                </div>
+                            </div>
+
+                            <div class="advanceFlex">
+
+                                <div class="footer-form-ctn-box-box-cn">
+                                    <label for="industry">Industry</label>
+                                    <div class="advanceDropDown">
+                                        <div class="select">
+                                            <input type="text" name="industry" value="" id="industry" name="industry" required onchange="toggleOtherIndustry()" readonly>
+                                            <div class="caret"></div>
+                                        </div>
+                                        <div class="advanceDropDwonmenu">
+                                            <div class="menuScroll">
+                                                <li class="active">Health</li>
+                                                <li>Insurance</li>                                        
+                                                <li>Technology</li>
+                                                <li>Government</li>
+                                                <li>Financial Services</li>
+                                                <li>Other</li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="footer-form-ctn-box-box-cn">
+                                    <label for="help-with">What do you need help with?</label>
+                                    <div class="advanceDropDown">
+                                        <div class="select">
+                                            <input type="text" name="help_with" value="" id="help-with" name="help_with" required onchange="toggleOtherHelp()" readonly>
+                                            <div class="caret"></div>
+                                        </div>
+                                        <div class="advanceDropDwonmenu">
+                                            <div class="menuScroll">
+                                                <li class="active">Cloud Services</li>
+                                                <li>Devops</li>
+                                                <li>Compliance</li>
+                                                <li>Automation</li>
+                                                <li>Cyber Security</li>
+                                                <li>Software Development</li>
+                                                <li>Other</li>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="advanceFlex">
-
-                            <div class="footer-form-ctn-box-box-cn">
-                                <label for="industry">Industry</label>
-                                <div class="advanceDropDown">
-                                    <div class="select">
-                                        <input type="text" name="industry" value="" id="industry" name="industry" required onchange="toggleOtherIndustry()" readonly>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <div class="advanceDropDwonmenu">
-                                        <div class="menuScroll">
-                                            <li class="active">Health</li>
-                                            <li>Insurance</li>                                        
-                                            <li>Technology</li>
-                                            <li>Government</li>
-                                            <li>Financial Services</li>
-                                            <li>Other</li>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="footer-form-ctn-box-box-cn">
-                                <label for="help-with">What do you need help with?</label>
-                                <div class="advanceDropDown">
-                                    <div class="select">
-                                        <input type="text" name="help_with" value="" id="help-with" name="help_with" required onchange="toggleOtherHelp()" readonly>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <div class="advanceDropDwonmenu">
-                                        <div class="menuScroll">
-                                            <li class="active">Cloud Services</li>
-                                            <li>Devops</li>
-                                            <li>Compliance</li>
-                                            <li>Automation</li>
-                                            <li>Cyber Security</li>
-                                            <li>Software Development</li>
-                                            <li>Other</li>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <button class="g-recaptcha formBtn" data-sitekey="6Lfe1CwqAAAAAOKO5hLa6QQ7odPPy40m3k4iSiBv" data-callback='onSubmit' data-action='submit'>
+                            Schedule Your Free IT Assessment Call
+                            <i class='bx bxs-chevron-right'></i>
+                        </button>
+                        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
                     </div>
-
-                    <button class="g-recaptcha formBtn" data-sitekey="6Lfe1CwqAAAAAOKO5hLa6QQ7odPPy40m3k4iSiBv" data-callback='onSubmit' data-action='submit'>
-                        Schedule Your Free IT Assessment Call
-                        <i class='bx bxs-chevron-right'></i>
-                    </button>
-                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
                 </form>
             </div>
         </div>

@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
@@ -40,7 +40,10 @@
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	padding: 5%;
+	width: 100%;
+	height: 100vh;
+	background: rgb(34,193,195);
+	background: linear-gradient(0deg, rgba(34,193,195,1) 11%, rgba(133,231,232,1) 51%, rgba(254,254,254,1) 100%);
 }
 
 .microsoftForm {
@@ -52,9 +55,16 @@
 	padding: 2%;
 	background-color: whitesmoke;
 	border-radius: 10px;
-	margin-top: 2%;
 	width: 100%;
 	max-width: 1000px;
+	box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+}
+
+.microsoftFormScroll {
+	width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+	padding: 5%;
 }
 
 .microsoftFormHeader {
@@ -65,16 +75,17 @@
 	flex-direction: column;
 	width: 100%;
 	height: auto;
-	padding: 10px 0;
+	padding: 5% 0 10px 0;
 }
 
 .microsoftFormHeader h2 {
-	font-size: var(--p-text);
+	font-size: var(--small-text);
 	font-weight: 700;
 	color: var(--secondary-color);
 }
 
 .microsoftFormHeader p {
+	padding: 10px 0;
 	font-size: var(--link-span-text);
 	font-weight: 500;
 	color: var(--secondary-color);
@@ -104,7 +115,7 @@
 
 .microsoftFormInputWrite h3 {
 	font-size: var(--span-text);
-	font-weight: 700;
+	font-weight: 500;
 	color: var(--secondary-color);
 }
 
@@ -112,17 +123,21 @@
 	background-color: var(--primary-color);
 	border: 1px solid var(--primary-color);
 	border-radius: 10px;
-	padding: 10px;
-	font-size: var(--link-span-text);
+	padding: 20px;
+	font-size: var(--span-text);
 	color: var(--secondary-color);
-	font-weight: 700;
+	font-weight: 500;
 	outline: none;
 	width: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	margin: auto;
 }
 
 .microsoftFormInputWrite input::placeholder {
 	font-size: var(--link-span-text);
-	font-weight: 700;
+	font-weight: 500;
 	color: var(--secondary-color);
 }
 
@@ -130,16 +145,20 @@
 	background-color: var(--primary-color);
 	border: 1px solid var(--primary-color);
 	border-radius: 10px;
-	padding: 10px;
-	font-size: var(--link-span-text);
+	padding: 20px;
+	font-size: var(--span-text);
 	color: var(--secondary-color);
-	font-weight: 700;
+	font-weight: 500;
 	outline: none;
 	width: 100%;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	margin: auto;
 }
 
 .microsoftFormInputWrite select::placeholder {
-	font-size: var(--link-span-text);
+	font-size: var(--span-text);
 	font-weight: 700;
 	color: var(--secondary-color);
 }
@@ -153,4 +172,191 @@
 	border-radius: 10px;
 	border: 1px solid teal;
 	padding: 20px;
+}
+
+.microsoftFormFooter {
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	height: auto;
+	margin-top: 5%;
+	padding: 25px 0;
+}
+
+.microsoftFormFooter img {
+	width: 150px;
+	height: auto;
+	object-fit: scale-down;
+}
+
+.microsoftFormFooterContainer {
+	padding: 20px 0;
+	justify-content: center;
+	align-items: flex-start;
+	margin: auto;
+}
+
+.microsoftFormFooterContainer h2 {
+	font-size: var(--p-text);
+	font-weight: 500;
+	color: var(--secondary-color);
+}
+
+.microsoftFormFooterContainer p {
+	font-size: var(--link-span-text);
+	font-weight: 500;
+	color: var(--secondary-color);
+}
+
+.microsoftForm form .microsoftAdvanceFormContainer {
+	justify-content: center;
+	align-items: flex-start;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.microsoftForm form .microsoftAdvanceFormContainer h3 {
+	font-size: var(--span-text);
+	font-weight: 500;
+	color: var(--secondary-color);
+}
+
+.microsoftForm form .microsoftAdvanceFormContainer .microsoftAdvanceFormDropDown {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+}
+
+.microsoftSelect {
+    background-color: transparent;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	display: flex;
+	margin: auto;
+    cursor: pointer;
+    transition: background .3s;
+    height: 100%;
+    background-color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+	border-radius: 10px;
+	width: 100%;
+	padding: 0 10px;
+}
+
+.microsoftForm form .microsoftAdvanceFormContainer .microsoftAdvanceFormDropDown .microsoftSelect input {
+    background-color: transparent;
+	border: none;
+	padding: 20px;
+	font-size: var(--span-text);
+	color: var(--secondary-color);
+	font-weight: 500;
+	outline: none;
+	width: 100%;
+}
+
+.inputSelected {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+}
+
+.select-clicked {
+    border-bottom: none;
+}
+
+.microsoftDropDownCaret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--secondary-color);
+    transition: .3s;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);    
+}
+
+.microsoftAdvanceDropDwonmenu {
+    list-style: none;
+    padding: 10px;
+    background-color: ghostwhite;
+    border: 1px solid ghostwhite;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    position: absolute;
+    top: 3em;
+    left: 2%;
+    width: 100%;
+    max-width: 94%;
+    transform: translateX(-0%);
+    opacity: 0;
+    display: none;
+    transition: .2s;
+    z-index: 1;
+}
+
+.microsoftDropDownScroll {
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    padding: 10px;
+    height: 100px;
+    overflow-y: scroll;
+}
+
+.microsoftDropDownScroll input {
+    background-color: transparent;
+	border: none;
+	padding: 20px;
+	font-size: var(--span-text);
+	color: var(--secondary-color);
+	font-weight: 500;
+	outline: none;
+	width: 100%;
+	display: none;
+}
+
+.microsoftDropDownScroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.microsoftDropDownScroll::-webkit-scrollbar-thumb {
+    background-color: var(--tertiary-color);
+    border-radius: 10px;
+}
+
+.microsoftDropDownScroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: var(--text-color);
+}
+
+.microsoftAdvanceDropDwonmenu .microsoftDropDownScroll li {
+    padding: 10px;
+    margin: .3em 0;
+    border-radius: .5em;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: var(--span-text);
+    color: var(--secondary-color);
+}
+
+.microsoftAdvanceDropDwonmenu .microsoftDropDownScroll li:hover {
+    background-color: floralwhite;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
+    overflow: hidden;
 }

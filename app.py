@@ -104,7 +104,7 @@ def index():
         }
 
         sender_email = 'contact@devtegrate.com'
-        recipient_email = 'contact@devtegrate.com'
+        recipient_email = 'tobi@devtegrate.com'
         subject = 'Devtegrate Cloud Service'
 
         try:
@@ -371,7 +371,7 @@ def questionaire():
                         },
                         "To": [
                             {
-                                "Email": 'contact@devtegrate.com',
+                                "Email": 'tobi@devtegrate.com',
                                 "Name": "Recipient"
                             }
                         ],
@@ -652,7 +652,7 @@ def microsoft_form():
         }
 
         sender_email = 'contact@devtegrate.com'
-        recipient_email = 'contact@devtegrate.com'
+        recipient_email = 'tobi@devtegrate.com'
         subject = 'Devtegrate Prospective Client'
 
         try:

@@ -1114,7 +1114,6 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	padding: 4%;
 	position: absolute;
 	background-color: rgba(0, 0, 0, .8);
 }
@@ -1144,12 +1143,23 @@
 	width: 100%;
 }
 
+.microsoftFormSpacer {
+	width: 100%;
+	max-width: 1240px;
+	padding: 0 4%;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: .5em;
+}
+
 .footer-form-ctn-box form {
 	justify-content: center;
 	align-items: flex-start;
 	margin: auto;
 	width: 100%;
-	max-width: 1240px;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
