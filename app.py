@@ -141,6 +141,7 @@ def index():
                                 <a href="mailto:{recipient_email}" style="display: inline-block; background-color: #1596F5; color: #ffffff; font-size: 0.9em; text-align: center; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 20px;">
                                     Would you like to respond?
                                 </a>
+
                             </div>
                         </div>
                         ''',
@@ -713,6 +714,7 @@ def microsoft_form():
                                             <strong>9. Preferred method of contact:</strong> {microsft_message_data['9. Preferred method of contact']}
                                         </p>
                                     </div>
+
                                     <div style="text-align: left; margin-top: 20px;">
                                         <a href="mailto:{microsft_message_data['2. Email Address']}" style="display: inline-block; font-size: .8em; padding: 10px 20px; background-color: #000000; color: #ffffff; text-decoration: none; border-radius: 5px;">Get in touch with Client</a>
                                     </div>
@@ -792,8 +794,37 @@ def send_microsoft_message(microsft_message_data):
                             <strong>Preferred Contact Method:</strong> {microsft_message_data['9. Preferred method of contact']}
                         </p>
                     </div>
+                    
                     <p style="color: #666666; font-size: .8em;">We look forward to assisting you.</p>
+                    
+                    <!-- Call to Action Button -->
+                    <div style="text-align: left; margin-top: 20px;">
+                        <a href="https://wwww.devtegrate.com" style="display: inline-block; font-size: .8em; padding: 10px 20px; background-color: #000000; color: #ffffff; text-decoration: none; border-radius: 5px;">Get Started</a>
+                    </div>
+
+                    <div style="text-align: left; margin-top: 20px;">
+                        <!-- Facebook Share -->
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://devtegrate.com" target="_blank" style="display: inline-block; font-size: 1.2em; padding: 5px 10px; background-color: #000000; color: #ffffff; text-decoration: none; border-radius: 5px;">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+
+                        <!-- Twitter Share -->
+                        <a href="https://twitter.com/intent/tweet?url=https://devtegrate.com&text=Check%20this%20out!" target="_blank" style="display: inline-block; font-size: 1.2em; padding: 5px 10px; background-color: #000000; color: #ffffff; text-decoration: none; border-radius: 5px;">
+                            <i class="bx bxl-twitter"></i>
+                        </a>
+
+                        <!-- LinkedIn Share -->
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://devtegrate.com&title=Title%20Here&summary=Summary%20Here" target="_blank" style="display: inline-block; font-size: 1.2em; padding: 5px 10px; background-color: #000000; color: #ffffff; text-decoration: none; border-radius: 5px;">
+                            <i class="bx bxl-linkedin"></i>
+                        </a>
+
+                        <!-- Instagram (Note: Instagram does not have direct share links) -->
+                        <a href="https://www.instagram.com/" target="_blank" style="display: inline-block; font-size: 1.2em; padding: 5px 10px; background-color: #000000; color: #ffffff; text-decoration: none; border-radius: 5px;">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
+                    </div>
                 </div>
+
                 <!-- Footer Section -->
                 <div style="background-color: #000000; padding: 15px; text-align: center;">
                     <p style="color: #ffffff; margin: 0; font-size: .8em;">&copy; 2024 Devtegrate. All rights reserved.</p>
