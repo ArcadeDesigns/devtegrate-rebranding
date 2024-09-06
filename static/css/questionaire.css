@@ -374,7 +374,7 @@
 .questionaireVideoHeader {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 150vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -407,7 +407,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 1280px) {
 
     .questionaireVideoHeader {
-        height: 100vh;
+        height: 120vh;
     }
 
 }
@@ -415,7 +415,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 1024px) {
 
     .questionaireVideoHeader {
-        height: 120vh;
+        height: 140vh;
     }
 
     .questionaireCtnBoxHeader {
@@ -428,6 +428,19 @@
 
     .questionaireVideoHeader {
         height: 100vh;
+    }
+
+    .orderedList {
+        height: 55vh;
+        margin: 0 auto;
+    }
+
+    .questionaireCtn {
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        height: 100%;
     }
 
 }
@@ -538,6 +551,11 @@
 
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 430px) {
+
+    .questionaireVideoHeader  {
+        height: 1200px;
+        overflow-x: scroll;
+    }
 
     .indicatorCtnContent {
         width: 100%;

@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+{% include 'components/navbar.html' %}
 
 {% for message in get_flashed_messages() %}
         <div class="notification-positioning">
@@ -40,10 +41,10 @@
     </div>
   </div>-->
 
-  <a href="{{ url_for('index') }}" style="background-color: teal; font-size: var(--link-span-text); font-weight: 500; color: var(--primary-color); outline: none; border-radius: 5px; border: 1px solid teal; padding: 10px; position: absolute; z-index: 999; text-decoration: none; left: 5%; top: 10%;">
+  <!--<a href="{{ url_for('index') }}" style="background-color: teal; font-size: var(--link-span-text); font-weight: 500; color: var(--primary-color); outline: none; border-radius: 5px; border: 1px solid teal; padding: 10px; position: absolute; z-index: 999; text-decoration: none; left: 5%; top: 10%;">
     <i class="bx bx-home"></i>
     Go Home
-  </a>
+  </a>-->
 
   <div class="questionaireSlide active">
     <div class="questionaireCtn">
